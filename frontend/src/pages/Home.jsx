@@ -143,6 +143,15 @@ const Home = () => {
     }
   ];
 
+  const evo360Images = [
+    "https://images.unsplash.com/photo-1765728617805-b9f22d64e5b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBmaXRuZXNzfGVufDB8fHx8MTc2ODMyOTQyNHww&ixlib=rb-4.1.0&q=85",
+    "https://images.unsplash.com/photo-1567598508481-65985588e295?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBmaXRuZXNzfGVufDB8fHx8MTc2ODMyOTQyNHww&ixlib=rb-4.1.0&q=85",
+    "https://images.unsplash.com/photo-1744551472726-24a3eb12e82a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBmaXRuZXNzfGVufDB8fHx8MTc2ODMyOTQyNHww&ixlib=rb-4.1.0&q=85",
+    "https://images.pexels.com/photos/35567443/pexels-photo-35567443.jpeg",
+    "https://images.unsplash.com/photo-1616940779493-6958fbd615fe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwxfHx3ZWxsbmVzcyUyMGNlbnRlcnxlbnwwfHx8fDE3NjgzMjk0MzB8MA&ixlib=rb-4.1.0&q=85",
+    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwyfHx3ZWxsbmVzcyUyMGNlbnRlcnxlbnwwfHx8fDE3NjgzMjk0MzB8MA&ixlib=rb-4.1.0&q=85"
+  ];
+
   const handleBooking = () => {
     window.open('https://booking.katarinahealth.com/fr/evo360', '_blank');
   };

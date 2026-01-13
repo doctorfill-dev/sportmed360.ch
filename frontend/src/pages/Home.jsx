@@ -406,60 +406,88 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Functional Room Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <div className="inline-block">
+      {/* evo360 Collaboration Section with Carousel */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4">
               <span className="bg-citron-100 text-gray-900 px-4 py-2 rounded-full text-sm font-medium">
-                Installation de Pointe
+                Collaboration
               </span>
             </div>
-            <h3 className="text-4xl font-bold text-gray-900">
-              Salle Fonctionnelle Équipée pour le Retour au Sport
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">
+              Notre Partenariat avec evo360
             </h3>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Accès direct à une salle fonctionnelle moderne, spécialement conçue pour la rééducation active 
-              et le retour progressif à vos activités sportives. Un environnement optimal pour retrouver 
-              performance et confiance.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              SportMed360 collabore étroitement avec evo360, centre de performance et bien-être. 
+              Accès direct à une salle fonctionnelle moderne pour une rééducation optimale et un retour au sport réussi.
             </p>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
-                  <Target className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 mb-1">Programme Personnalisé</h4>
-                  <p className="text-gray-600">Rééducation adaptée à vos objectifs et votre sport</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-lavender-500 rounded-full flex items-center justify-center">
-                  <Activity className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 mb-1">Équipement Professionnel</h4>
-                  <p className="text-gray-600">Matériel de rééducation et de renforcement de dernière génération</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-citron-400 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-gray-900" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 mb-1">Suivi Continu</h4>
-                  <p className="text-gray-600">Évaluation régulière de votre progression avec tests fonctionnels</p>
-                </div>
+          </div>
+
+          {/* Carousel */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="overflow-hidden rounded-3xl" ref={emblaRef}>
+              <div className="flex">
+                {evo360Images.map((image, index) => (
+                  <div key={index} className="flex-[0_0_100%] min-w-0">
+                    <div className="relative h-[500px]">
+                      <img 
+                        src={image}
+                        alt={`Centre evo360 - Image ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
+            
+            {/* Carousel Controls */}
+            <button 
+              onClick={scrollPrev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+              aria-label="Image précédente"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-900" />
+            </button>
+            <button 
+              onClick={scrollNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+              aria-label="Image suivante"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-900" />
+            </button>
           </div>
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-citron-300 to-lavender-300 rounded-3xl blur-2xl opacity-20"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1717500251997-80b234166d00?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwxfHxmdW5jdGlvbmFsJTIwdHJhaW5pbmclMjByZWhhYmlsaXRhdGlvbiUyMGd5bSUyMGVxdWlwbWVudHxlbnwwfHx8fDE3NjgzMjg3Nzl8MA&ixlib=rb-4.1.0&q=85"
-              alt="Salle fonctionnelle de rééducation"
-              className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
-            />
+
+          {/* Benefits of collaboration */}
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-2xl mb-4">
+                <Dumbbell className="w-8 h-8 text-indigo-600" />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Salle Fonctionnelle</h4>
+              <p className="text-gray-600">
+                Équipements modernes pour rééducation active et retour au sport
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-lavender-100 rounded-2xl mb-4">
+                <Target className="w-8 h-8 text-indigo-600" />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Performance & Bien-être</h4>
+              <p className="text-gray-600">
+                Centre dédié à l'optimisation de vos performances physiques
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-citron-100 rounded-2xl mb-4">
+                <Users className="w-8 h-8 text-gray-900" />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Suivi Intégré</h4>
+              <p className="text-gray-600">
+                Collaboration médicale et sportive pour un accompagnement global
+              </p>
+            </div>
           </div>
         </div>
       </section>

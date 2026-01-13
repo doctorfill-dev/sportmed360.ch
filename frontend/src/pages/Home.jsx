@@ -182,58 +182,108 @@ const Home = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-lavender-50 to-white opacity-60"></div>
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="space-y-6">
-            <div className="inline-block">
-              <span className="bg-citron-100 text-gray-900 px-4 py-2 rounded-full text-sm font-medium inline-flex items-center space-x-2">
-                <CheckCircle className="w-4 h-4" />
-                <span>Centre Médical Pluridisciplinaire</span>
-              </span>
-            </div>
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Votre Santé,
-              <span className="block text-indigo-600">Votre Performance</span>
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Centre de médecine du sport et de santé musculo-squelettique. 
-              Une approche intégrée combinant expertise médicale, physiothérapie et rééducation active.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button 
-                onClick={handleBooking}
-                size="lg"
-                className="bg-indigo-600 hover:bg-indigo-700 text-white text-lg px-8 py-6 transition-all duration-300 hover:shadow-xl hover:scale-105"
-              >
-                Réserver une Consultation
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 text-lg px-8 py-6 transition-all duration-300"
-              >
-                En Savoir Plus
-              </Button>
-            </div>
-            <div className="flex items-center space-x-8 pt-6">
-              <div>
-                <p className="text-3xl font-bold text-indigo-600">LAMal</p>
-                <p className="text-sm text-gray-500">Reconnu</p>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div className="space-y-6">
+              <div className="inline-block">
+                <span className="bg-citron-100 text-gray-900 px-4 py-2 rounded-full text-sm font-medium inline-flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4" />
+                  <span>Centre Médical Pluridisciplinaire</span>
+                </span>
               </div>
-              <div className="w-px h-12 bg-gray-300"></div>
-              <div>
-                <p className="text-3xl font-bold text-indigo-600">LAA</p>
-                <p className="text-sm text-gray-500">Accepté</p>
+              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                Votre Santé,
+                <span className="block text-indigo-600">Votre Performance</span>
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Centre de médecine du sport et de santé musculo-squelettique. 
+                Une approche intégrée combinant expertise médicale, physiothérapie et rééducation active.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Button 
+                  onClick={handleBooking}
+                  size="lg"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white text-lg px-8 py-6 transition-all duration-300 hover:shadow-xl hover:scale-105"
+                >
+                  Réserver une Consultation
+                  <ChevronRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 text-lg px-8 py-6 transition-all duration-300"
+                >
+                  En Savoir Plus
+                </Button>
               </div>
+              <div className="flex items-center space-x-8 pt-6">
+                <div>
+                  <p className="text-3xl font-bold text-indigo-600">LAMal</p>
+                  <p className="text-sm text-gray-500">Reconnu</p>
+                </div>
+                <div className="w-px h-12 bg-gray-300"></div>
+                <div>
+                  <p className="text-3xl font-bold text-indigo-600">LAA</p>
+                  <p className="text-sm text-gray-500">Accepté</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-indigo-400 to-lavender-400 rounded-3xl blur-2xl opacity-20"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1764314484083-cbd0de7e512c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwzfHxzcG9ydHMlMjBtZWRpY2luZSUyMGNsaW5pY3xlbnwwfHx8fDE3NjgzMjg3MjB8MA&ixlib=rb-4.1.0&q=85"
+                alt="Médecine du sport - Évaluation professionnelle"
+                className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
+              />
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-indigo-400 to-lavender-400 rounded-3xl blur-2xl opacity-20"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1764314484083-cbd0de7e512c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwzfHxzcG9ydHMlMjBtZWRpY2luZSUyMGNsaW5pY3xlbnwwfHx8fDE3NjgzMjg3MjB8MA&ixlib=rb-4.1.0&q=85"
-              alt="Médecine du sport - Évaluation professionnelle"
-              className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
-            />
+          
+          {/* Contact Info Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <Card className="border-2 border-indigo-100 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg bg-white">
+              <CardContent className="p-6 flex items-center space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-indigo-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-1">Horaires</p>
+                  <p className="font-bold text-gray-900">Lu-Ve 7h30-18h30</p>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-2 border-indigo-100 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg bg-white">
+              <CardContent className="p-6 flex items-center space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-indigo-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-1">Téléphone</p>
+                  <a href="tel:+41765410360" className="font-bold text-gray-900 hover:text-indigo-600 transition-colors">
+                    +41 76 541 0360
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-2 border-indigo-100 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg bg-white">
+              <CardContent className="p-6 flex items-center space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-indigo-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-1">Adresse</p>
+                  <a 
+                    href="https://maps.app.goo.gl/9MD3DLrxaKWLTy6TA" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-bold text-gray-900 hover:text-indigo-600 transition-colors"
+                  >
+                    Av. Edouard-Dubois 20<br/>2000 Neuchâtel
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

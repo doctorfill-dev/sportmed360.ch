@@ -375,22 +375,21 @@ const Home = () => {
       <section className="py-20 px-6 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">Nos Services</h3>
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">Services Détaillés</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              De la consultation médicale à la rééducation complète, nous vous accompagnons à chaque étape
+              Une prise en charge complète et personnalisée pour chaque patient
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="border-2 border-gray-100 hover:border-indigo-300 transition-all duration-300 hover:shadow-xl bg-white">
                 <CardContent className="p-8">
                   <div className="mb-6">
                     <div className="w-12 h-12 bg-indigo-600 text-white rounded-xl flex items-center justify-center mb-4">
-                      {index === 0 && <Stethoscope className="w-6 h-6" />}
-                      {index === 1 && <Heart className="w-6 h-6" />}
-                      {index === 2 && <Dumbbell className="w-6 h-6" />}
+                      {service.icon}
                     </div>
-                    <h4 className="text-2xl font-bold text-gray-900">{service.title}</h4>
+                    <h4 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h4>
+                    <p className="text-gray-600 text-sm">{service.description}</p>
                   </div>
                   <ul className="space-y-3">
                     {service.items.map((item, itemIndex) => (

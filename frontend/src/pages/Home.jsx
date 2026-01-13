@@ -25,32 +25,46 @@ import {
 } from 'lucide-react';
 
 const Home = () => {
-  const [activeAccordion, setActiveAccordion] = useState(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })]);
 
-  const toggleAccordion = (index) => {
-    setActiveAccordion(activeAccordion === index ? null : index);
-  };
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   const benefits = [
     {
       icon: <Stethoscope className="w-8 h-8" />,
-      title: "Expertise Médicale",
-      description: "Médecins spécialisés en médecine du sport et troubles musculo-squelettiques"
+      title: "Médecine du Sport",
+      description: "Consultations spécialisées en médecine du sport et troubles musculo-squelettiques"
+    },
+    {
+      icon: <Activity className="w-8 h-8" />,
+      title: "MTT - Medical Training Therapy",
+      description: "Thérapie par l'entraînement médical pour une rééducation optimale"
+    },
+    {
+      icon: <FlaskConical className="w-8 h-8" />,
+      title: "Bilans & Analyses",
+      description: "Bilans sanguins complets et analyses biologiques approfondies"
+    },
+    {
+      icon: <Syringe className="w-8 h-8" />,
+      title: "Vaccins & Perfusions",
+      description: "Administration de vaccins et perfusions thérapeutiques"
+    },
+    {
+      icon: <HeartPulse className="w-8 h-8" />,
+      title: "ECG & Tests d'Effort",
+      description: "Électrocardiogrammes au repos et à l'effort pour évaluation cardiaque"
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Approche Pluridisciplinaire",
-      description: "Collaboration étroite entre médecins, physiothérapeutes et spécialistes du mouvement"
-    },
-    {
-      icon: <Activity className="w-8 h-8" />,
-      title: "Rééducation Active",
-      description: "Salle fonctionnelle équipée pour un retour optimal à vos activités"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Prise en Charge Assurée",
-      description: "Remboursement LAMal et LAA selon les conditions légales"
+      description: "Collaboration entre médecins, physiothérapeutes et spécialistes du mouvement"
     }
   ];
 

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import { 
   Stethoscope, 
   Users, 
@@ -13,7 +15,13 @@ import {
   ChevronRight,
   Heart,
   Dumbbell,
-  Target
+  Target,
+  Clock,
+  Droplet,
+  Syringe,
+  FlaskConical,
+  HeartPulse,
+  ChevronLeft
 } from 'lucide-react';
 
 const Home = () => {

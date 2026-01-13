@@ -70,30 +70,75 @@ const Home = () => {
 
   const services = [
     {
-      title: "Consultation Médicale",
+      title: "Médecine du Sport",
+      icon: <Stethoscope className="w-6 h-6" />,
+      description: "Expertise médicale complète pour sportifs et patients actifs",
       items: [
-        "Médecine du sport",
-        "Troubles musculo-squelettiques",
-        "Prévention des blessures",
-        "Bilan de santé sportif"
+        "Consultation médecine du sport",
+        "Diagnostic troubles musculo-squelettiques",
+        "Prévention des blessures sportives",
+        "Suivi médical personnalisé",
+        "Bilan de santé sportif complet"
       ]
     },
     {
-      title: "Physiothérapie",
+      title: "MTT - Medical Training Therapy",
+      icon: <Activity className="w-6 h-6" />,
+      description: "Thérapie par l'entraînement médical guidé",
       items: [
-        "Rééducation post-opératoire",
-        "Traitement des douleurs chroniques",
-        "Thérapie manuelle",
-        "Réathlétisation"
+        "Programme d'entraînement thérapeutique",
+        "Rééducation fonctionnelle active",
+        "Renforcement musculaire ciblé",
+        "Retour au sport progressif",
+        "Suivi avec physiothérapeute"
       ]
     },
     {
-      title: "Retour au Sport",
+      title: "Analyses & Bilans",
+      icon: <FlaskConical className="w-6 h-6" />,
+      description: "Examens médicaux et analyses complètes",
       items: [
-        "Programme personnalisé",
-        "Entraînement fonctionnel",
-        "Tests de performance",
-        "Suivi progressif"
+        "Bilans sanguins complets",
+        "Analyses biologiques approfondies",
+        "Interprétation médicale des résultats",
+        "Suivi personnalisé",
+        "Conseils nutritionnels associés"
+      ]
+    },
+    {
+      title: "Vaccins & Perfusions",
+      icon: <Syringe className="w-6 h-6" />,
+      description: "Soins préventifs et thérapeutiques",
+      items: [
+        "Vaccination complète (voyage, grippe, etc.)",
+        "Perfusions thérapeutiques",
+        "Perfusions vitaminées",
+        "Injections thérapeutiques",
+        "Suivi post-administration"
+      ]
+    },
+    {
+      title: "ECG & Tests Cardiaques",
+      icon: <HeartPulse className="w-6 h-6" />,
+      description: "Évaluations cardiovasculaires complètes",
+      items: [
+        "ECG au repos",
+        "ECG à l'effort (test d'effort)",
+        "Évaluation cardiaque sportive",
+        "Certificats médicaux sportifs",
+        "Suivi cardiologique"
+      ]
+    },
+    {
+      title: "Approche Intégrée",
+      icon: <Users className="w-6 h-6" />,
+      description: "Collaboration pluridisciplinaire optimale",
+      items: [
+        "Médecins spécialistes MSK",
+        "Physiothérapeutes qualifiés",
+        "Collaboration avec evo360",
+        "Suivi coordonné patient",
+        "Communication entre professionnels"
       ]
     }
   ];

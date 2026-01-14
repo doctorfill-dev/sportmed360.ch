@@ -550,13 +550,25 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-lg flex items-center justify-center">
-                  <Heart className="w-7 h-7 text-white" />
-                </div>
+              <div className="flex items-center space-x-3 mb-6">
+                <img 
+                  src="https://evo360.ch/Images/e.png" 
+                  alt="evo360 Logo"
+                  className="w-12 h-12 object-contain"
+                />
                 <div>
                   <h5 className="text-2xl font-bold">SportMed360</h5>
-                  <p className="text-sm text-gray-400">by evo360</p>
+                  <p className="text-sm text-gray-400">
+                    by{' '}
+                    <a 
+                      href="https://evo360.ch" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-indigo-400 transition-colors underline"
+                    >
+                      evo360
+                    </a>
+                  </p>
                 </div>
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">

@@ -161,13 +161,25 @@ const Home = () => {
       {/* Header */}
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-lg flex items-center justify-center">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="https://evo360.ch/Images/e.png" 
+              alt="evo360 Logo"
+              className="w-10 h-10 object-contain"
+            />
             <div>
               <h1 className="text-xl font-bold text-gray-900">SportMed360</h1>
-              <p className="text-xs text-gray-500">by evo360</p>
+              <p className="text-xs text-gray-500">
+                by{' '}
+                <a 
+                  href="https://evo360.ch" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-indigo-600 transition-colors underline"
+                >
+                  evo360
+                </a>
+              </p>
             </div>
           </div>
           <Button 

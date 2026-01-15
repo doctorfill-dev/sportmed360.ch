@@ -122,7 +122,6 @@ const Home = () => {
       items: [
         "Vaccination complète (voyage, grippe, etc.)",
         "Perfusions thérapeutiques",
-        "Perfusions vitaminées",
         "Injections thérapeutiques",
         "Suivi post-administration"
       ]
@@ -133,10 +132,11 @@ const Home = () => {
       description: "Évaluations cardiovasculaires complètes",
       items: [
         "ECG au repos",
-        "ECG à l'effort (test d'effort)",
-        "Évaluation cardiaque sportive",
-        "Certificats médicaux sportifs",
-        "Suivi cardiologique"
+        "ECG à l'effort",
+        "Ergospirométrie (VO2 Max)",
+        "Examens médico-sportifs",
+        "Certificats médicaux spécifiques",
+        "Analyse corporelle"
       ]
     },
     {
@@ -144,11 +144,12 @@ const Home = () => {
       icon: <Users className="w-6 h-6" />,
       description: "Collaboration pluridisciplinaire optimale",
       items: [
-        "Médecins spécialistes MSK",
-        "Physiothérapeutes qualifiés",
-        "Collaboration avec evo360",
-        "Suivi coordonné patient",
-        "Communication entre professionnels"
+        "Médecins spécialisés FMH",
+        "Physiothérapeutes reconnus (Physioswiss)",
+        "Collaboration dans le centre avec coachs sportifs, physiologiste de l'exercice, nutritionniste",
+        "Collaboration externe avec établissements spécialisés",
+        "Suivi coordonné du patient",
+        "Communication interprofessionnelle"
       ]
     }
   ];

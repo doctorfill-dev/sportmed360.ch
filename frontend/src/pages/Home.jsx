@@ -67,9 +67,9 @@ const Home = () => {
       description: "Électrocardiogrammes au repos et à l'effort, Ergospirométrie (VO2 Max), Bilans médico-sportifs (examen complet pour évaluer la santé globale de l'athlète)"
     },
     {
-      icon: <Target className="w-8 h-8" />,
-      title: "Bilans médico-sportifs",
-      description: "Évaluation complète de votre condition physique et de vos performances sportives"
+      icon: <Dumbbell className="w-8 h-8" />,
+      title: "Médecine générale",
+      description: "Soins de santé primaires et suivi médical pour toute la famille"
     },
     {
       icon: <Users className="w-8 h-8" />,

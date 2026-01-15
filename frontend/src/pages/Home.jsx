@@ -245,7 +245,7 @@ const Home = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Horaires</p>
-                  <p className="font-bold text-gray-900">Lu-Ve 7h30-18h30</p>
+                  <p className="font-bold text-gray-900">du Lundi au Vendredi<br/>de 7h30 à 18h30</p>
                 </div>
               </CardContent>
             </Card>

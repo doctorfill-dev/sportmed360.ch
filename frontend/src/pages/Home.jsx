@@ -203,48 +203,34 @@ const Home = () => {
                   <span>Centre Médical Pluridisciplinaire</span>
                 </span>
               </div>
-              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Votre Santé,
-                <span className="block text-indigo-600">Votre Performance</span>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                Votre centre médical spécialisé en médecine du sport et physiothérapie
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Centre de médecine du sport et de santé musculo-squelettique. 
-                Une approche intégrée combinant expertise médicale, physiothérapie et rééducation active.
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Nous réunissons médecine du sport, médecine générale et physiothérapie au sein d'une approche intégrée, moderne et orientée résultats.
               </p>
-              <div className="flex flex-wrap gap-4 pt-4">
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Notre expertise couvre les tests d'effort, l'ergospirométrie, les ECG au repos et à l'effort, les bilans sanguins ainsi que la Medical Training Therapy (MTT) pour la rééducation et la reprise de l'activité physique. Chaque prise en charge est personnalisée, fondée sur des données médicales précises et un suivi coordonné.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                En collaboration étroite avec evo360, SportMed360 accompagne sportifs et personnes actives vers une santé durable, une meilleure performance et une prévention optimale.
+              </p>
+              <div className="pt-4">
                 <Button 
                   onClick={handleBooking}
                   size="lg"
                   className="bg-indigo-600 hover:bg-indigo-700 text-white text-lg px-8 py-6 transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
-                  Réserver une Consultation
+                  Réserver une consultation
                   <ChevronRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button 
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 text-lg px-8 py-6 transition-all duration-300"
-                >
-                  En Savoir Plus
-                </Button>
-              </div>
-              <div className="flex items-center space-x-8 pt-6">
-                <div>
-                  <p className="text-3xl font-bold text-indigo-600">LAMal</p>
-                  <p className="text-sm text-gray-500">Reconnu</p>
-                </div>
-                <div className="w-px h-12 bg-gray-300"></div>
-                <div>
-                  <p className="text-3xl font-bold text-indigo-600">LAA</p>
-                  <p className="text-sm text-gray-500">Accepté</p>
-                </div>
               </div>
             </div>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-indigo-400 to-lavender-400 rounded-3xl blur-2xl opacity-20"></div>
               <img 
-                src="https://images.unsplash.com/photo-1764314484083-cbd0de7e512c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwzfHxzcG9ydHMlMjBtZWRpY2luZSUyMGNsaW5pY3xlbnwwfHx8fDE3NjgzMjg3MjB8MA&ixlib=rb-4.1.0&q=85"
-                alt="Médecine du sport - Évaluation professionnelle"
+                src="https://evo360.ch/Images/hero1.jpg"
+                alt="SportMed360 - Centre médical de médecine du sport"
                 className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
               />
             </div>

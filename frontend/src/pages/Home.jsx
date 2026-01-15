@@ -38,8 +38,13 @@ const Home = () => {
   const benefits = [
     {
       icon: <Stethoscope className="w-8 h-8" />,
-      title: "Médecine du Sport",
+      title: "Médecine du sport",
       description: "Consultations spécialisées en médecine du sport et troubles musculo-squelettiques"
+    },
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "Physiothérapie",
+      description: "Rééducation personnalisée, thérapie manuelle et accompagnement dans votre récupération"
     },
     {
       icon: <Activity className="w-8 h-8" />,
@@ -59,7 +64,12 @@ const Home = () => {
     {
       icon: <HeartPulse className="w-8 h-8" />,
       title: "ECG & Tests d'Effort",
-      description: "Électrocardiogrammes au repos et à l'effort pour évaluation cardiaque"
+      description: "Électrocardiogrammes au repos et à l'effort, Ergospirométrie (VO2 Max), Bilans médico-sportifs (examen complet pour évaluer la santé globale de l'athlète)"
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Bilans médico-sportifs",
+      description: "Évaluation complète de votre condition physique et de vos performances sportives"
     },
     {
       icon: <Users className="w-8 h-8" />,

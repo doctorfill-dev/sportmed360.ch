@@ -327,8 +327,8 @@ const Home = () => {
           <div className="relative order-2 lg:order-1">
             <div className="absolute -inset-4 bg-gradient-to-br from-lavender-300 to-indigo-300 rounded-3xl blur-2xl opacity-20"></div>
             <img 
-              src="https://images.unsplash.com/photo-1764314189421-1858e027bba2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxkb2N0b3JzJTIwcGh5c2lvdGhlcmFwaXN0c3xlbnwwfHx8fDE3NjgzMjg3NTV8MA&ixlib=rb-4.1.0&q=85"
-              alt="Équipe médicale pluridisciplinaire"
+              src="https://evo360.ch/Images/attente.png"
+              alt="SportMed360 - Centre médical nouvelle génération"
               className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
             />
           </div>
@@ -339,12 +339,10 @@ const Home = () => {
               </span>
             </div>
             <h3 className="text-4xl font-bold text-gray-900">
-              SportMed360, la branche médicale de evo360
+              SportMed360, un centre médical nouvelle génération
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Nous sommes un centre médical spécialisé dans la médecine du sport et la santé musculo-squelettique, 
-              intégré à l'écosystème evo360. Notre approche unique combine l'expertise médicale pointue avec 
-              une vision globale du mouvement et de la performance.
+              Un centre médical innovant, idéalement situé à Neuchâtel, réunissant des médecins spécialisés, des physiothérapeutes qualifiés dans un centre dédié au sport, à la performance et à l'activité physique adaptée.
             </p>
             <div className="space-y-4">
               <div className="flex items-start space-x-4">

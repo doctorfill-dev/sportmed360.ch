@@ -300,12 +300,12 @@ const Home = () => {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">Nos Services Médicaux</h3>
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">Nos services</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Une gamme complète de services pour votre santé et votre performance
+              Une approche 360° adaptée au patient
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white">
                 <CardContent className="p-8 text-center space-y-4">
@@ -313,7 +313,7 @@ const Home = () => {
                     {benefit.icon}
                   </div>
                   <h4 className="text-xl font-bold text-gray-900">{benefit.title}</h4>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}

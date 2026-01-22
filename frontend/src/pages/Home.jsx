@@ -381,7 +381,7 @@ const Home = () => {
       <section className="py-20 px-6 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">Services Détaillés</h3>
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">Services détaillés</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Une prise en charge complète et personnalisée pour chaque patient
             </p>

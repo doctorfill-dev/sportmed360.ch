@@ -489,7 +489,7 @@ const Home = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-citron-100 rounded-2xl mb-4">
                 <Users className="w-8 h-8 text-gray-900" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Suivi Intégré</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Suivi intégré</h4>
               <p className="text-gray-600">
                 Collaboration médicale et sportive pour un accompagnement global
               </p>

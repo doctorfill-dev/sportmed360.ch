@@ -422,7 +422,7 @@ const Home = () => {
               </span>
             </div>
             <h3 className="text-4xl font-bold text-gray-900 mb-4">
-              Notre Partenariat avec evo360
+              Notre partenariat avec evo360
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               SportMed360 collabore étroitement avec evo360, centre de performance et bien-être. 

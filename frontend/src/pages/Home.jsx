@@ -196,7 +196,7 @@ const Home = () => {
             onClick={handleBooking}
             className="bg-indigo-600 hover:bg-indigo-700 text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
-            Prendre Rendez-vous
+            Prendre rendez-vous
           </Button>
         </div>
       </header>

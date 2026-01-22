@@ -495,6 +495,18 @@ const Home = () => {
               </p>
             </div>
           </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <Button 
+              onClick={() => window.open('https://evo360.ch/', '_blank')}
+              size="lg"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white text-lg px-10 py-6 transition-all duration-300 hover:shadow-xl hover:scale-105"
+            >
+              Découvrez evo360
+              <ChevronRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </section>
 

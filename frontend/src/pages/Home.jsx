@@ -471,9 +471,9 @@ const Home = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-2xl mb-4">
                 <Dumbbell className="w-8 h-8 text-indigo-600" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Salle Fonctionnelle</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Salle fonctionnelle et abonnements</h4>
               <p className="text-gray-600">
-                Équipements modernes pour rééducation active et retour au sport
+                Accès à des installations modernes et des formules d'abonnement adaptées
               </p>
             </div>
             <div className="text-center">
@@ -482,7 +482,7 @@ const Home = () => {
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-2">Performance & Bien-être</h4>
               <p className="text-gray-600">
-                Centre dédié à l'optimisation de vos performances physiques
+                Coachings individuels, thérapie par lumière rouge, sauna, performance cognitive et bien d'autres
               </p>
             </div>
             <div className="text-center">

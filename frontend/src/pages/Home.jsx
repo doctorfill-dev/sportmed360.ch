@@ -520,17 +520,17 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
               <Clock className="w-10 h-10 text-citron-400 mx-auto mb-3" />
-              <p className="font-bold text-lg mb-1">Disponibilité</p>
-              <p className="text-indigo-100 text-sm">Lu-Ve 7h30-18h30</p>
+              <p className="font-bold text-lg mb-1">Horaires d'ouverture</p>
+              <p className="text-indigo-100 text-sm">du Lundi au Vendredi<br/>de 7h30 à 18h30</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
               <Shield className="w-10 h-10 text-citron-400 mx-auto mb-3" />
               <p className="font-bold text-lg mb-1">Assurances</p>
-              <p className="text-indigo-100 text-sm">LAMal & LAA acceptées</p>
+              <p className="text-indigo-100 text-sm">Prestations prises en charges par l'assurance maladie ou l'assurance accident</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
               <Phone className="w-10 h-10 text-citron-400 mx-auto mb-3" />
-              <p className="font-bold text-lg mb-1">Contact Direct</p>
+              <p className="font-bold text-lg mb-1">Contactez-nous par téléphone</p>
               <a href="tel:+41765410360" className="text-indigo-100 text-sm hover:text-citron-400 transition-colors">
                 +41 76 541 0360
               </a>

@@ -584,15 +584,26 @@ const Home = () => {
               <ul className="space-y-3 text-gray-400">
                 <li className="flex items-start space-x-2">
                   <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                  <span>+41 XX XXX XX XX</span>
+                  <a href="tel:+41765410360" className="hover:text-indigo-400 transition-colors">
+                    +41 76 541 0 360
+                  </a>
                 </li>
                 <li className="flex items-start space-x-2">
                   <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                  <span>contact@sportmed360.ch</span>
+                  <a href="mailto:info@sportmed360.ch" className="hover:text-indigo-400 transition-colors">
+                    info@sportmed360.ch
+                  </a>
                 </li>
                 <li className="flex items-start space-x-2">
                   <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                  <span>Adresse à compléter</span>
+                  <a 
+                    href="https://maps.app.goo.gl/9MD3DLrxaKWLTy6TA" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Avenue Edouard-Dubois 20<br/>2000 Neuchâtel
+                  </a>
                 </li>
               </ul>
             </div>

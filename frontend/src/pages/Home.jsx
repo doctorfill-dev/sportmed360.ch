@@ -35,6 +35,96 @@ const Home = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  // Add Schema.org structured data for SEO
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "@id": "https://medsport-hub.preview.emergentagent.com",
+      "name": "SportMed360",
+      "alternateName": "SportMed360 by evo360",
+      "url": "https://medsport-hub.preview.emergentagent.com",
+      "logo": "https://evo360.ch/Images/e.png",
+      "image": "https://evo360.ch/Images/hero1.jpg",
+      "description": "Centre médical nouvelle génération à Neuchâtel spécialisé en médecine du sport, physiothérapie et Medical Training Therapy (MTT).",
+      "medicalSpecialty": ["Sports Medicine", "Physical Therapy", "Cardiology"],
+      "telephone": "+41765410360",
+      "email": "med@evo360.ch",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenue Edouard-Dubois 20",
+        "addressLocality": "Neuchâtel",
+        "postalCode": "2000",
+        "addressCountry": "CH",
+        "addressRegion": "Neuchâtel"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "46.9930",
+        "longitude": "6.9298"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:30",
+          "closes": "18:30"
+        }
+      ],
+      "priceRange": "CHF",
+      "paymentAccepted": "LAMal, LAA, Cash, Card",
+      "currenciesAccepted": "CHF",
+      "sameAs": [
+        "https://evo360.ch/"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services médicaux",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "Médecine du sport",
+              "description": "Consultations spécialisées en médecine du sport et troubles musculo-squelettiques"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "Physiothérapie",
+              "description": "Rééducation personnalisée, thérapie manuelle et accompagnement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "MTT - Medical Training Therapy",
+              "description": "Thérapie par l'entraînement médical pour une rééducation optimale"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalTest",
+              "name": "ECG et Tests d'effort",
+              "description": "Électrocardiogrammes au repos et à l'effort, Ergospirométrie (VO2 Max)"
+            }
+          }
+        ]
+      }
+    });
+    document.head.appendChild(script);
+    
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const benefits = [
     {
       icon: <Stethoscope className="w-8 h-8" />,

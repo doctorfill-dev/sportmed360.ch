@@ -1,0 +1,10 @@
+# robots.txt pour SportMed360
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://medsport-hub.preview.emergentagent.com/sitemap.xml
+
+# Crawl-delay pour respecter les serveurs
+Crawl-delay: 1

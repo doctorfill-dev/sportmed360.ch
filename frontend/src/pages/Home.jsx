@@ -602,8 +602,8 @@ const Home = () => {
                 </li>
                 <li className="flex items-start space-x-2">
                   <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                  <a href="mailto:info@sportmed360.ch" className="hover:text-indigo-400 transition-colors">
-                    info@sportmed360.ch
+                  <a href="mailto:med@evo360.ch" className="hover:text-indigo-400 transition-colors">
+                    med@evo360.ch
                   </a>
                 </li>
                 <li className="flex items-start space-x-2">

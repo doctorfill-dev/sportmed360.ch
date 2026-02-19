@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Page principale -->
+  <url>
+    <loc>https://medsport-hub.preview.emergentagent.com/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://evo360.ch/Images/hero1.jpg</image:loc>
+      <image:title>SportMed360 - Centre médical de médecine du sport</image:title>
+      <image:caption>Centre médical nouvelle génération à Neuchâtel</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://evo360.ch/Images/attente.png</image:loc>
+      <image:title>Salle d'attente SportMed360</image:title>
+    </image:image>
+  </url>
+  
+</urlset>

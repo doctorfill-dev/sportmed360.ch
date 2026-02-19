@@ -163,7 +163,7 @@ const Home = () => {
   ];
 
   const handleBooking = () => {
-    window.open('https://booking.katarinahealth.com/fr/evo360', '_blank');
+    window.location.href = 'mailto:med@evo360.ch?subject=Demande de rendez-vous - SportMed360';
   };
 
   return (

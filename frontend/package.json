@@ -2,7 +2,7 @@
   "name": "sportmed360",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://doctorfill-dev.github.io/sportmed360.ch",
+  "homepage": "https://sportmed360.ch",
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.8",

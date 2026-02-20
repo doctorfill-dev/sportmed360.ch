@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -17,7 +17,6 @@ import {
   Dumbbell,
   Target,
   Clock,
-  Droplet,
   Syringe,
   FlaskConical,
   HeartPulse,
@@ -42,10 +41,10 @@ const Home = () => {
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
-      "@id": "https://medsport-hub.preview.emergentagent.com",
+      "@id": "https://sportmed360.ch",
       "name": "SportMed360",
       "alternateName": "SportMed360 by evo360",
-      "url": "https://medsport-hub.preview.emergentagent.com",
+      "url": "https://sportmed360.ch",
       "logo": "https://evo360.ch/Images/e.png",
       "image": "https://evo360.ch/Images/hero1.jpg",
       "description": "Centre médical nouvelle génération à Neuchâtel spécialisé en médecine du sport, physiothérapie et Medical Training Therapy (MTT).",

@@ -4,7 +4,7 @@ Allow: /
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://medsport-hub.preview.emergentagent.com/sitemap.xml
+Sitemap: https://sportmed360.ch/sitemap.xml
 
 # Crawl-delay pour respecter les serveurs
 Crawl-delay: 1

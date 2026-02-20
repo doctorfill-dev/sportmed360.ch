@@ -36,91 +36,179 @@ const Home = () => {
 
   // Add Schema.org structured data for SEO
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "MedicalClinic",
-      "@id": "https://sportmed360.ch",
-      "name": "SportMed360",
-      "alternateName": "SportMed360 by evo360",
-      "url": "https://sportmed360.ch",
-      "logo": "https://evo360.ch/Images/e.png",
-      "image": "https://evo360.ch/Images/hero1.jpg",
-      "description": "Centre médical nouvelle génération à Neuchâtel spécialisé en médecine du sport, physiothérapie et Medical Training Therapy (MTT).",
-      "medicalSpecialty": ["Sports Medicine", "Physical Therapy", "Cardiology"],
-      "telephone": "+41765410360",
-      "email": "med@evo360.ch",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Avenue Edouard-Dubois 20",
-        "addressLocality": "Neuchâtel",
-        "postalCode": "2000",
-        "addressCountry": "CH",
-        "addressRegion": "Neuchâtel"
+    const schemas = [
+      // 1. MedicalClinic (principal)
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "@id": "https://sportmed360.ch/#clinic",
+        "name": "SportMed360",
+        "alternateName": "SportMed360 by evo360",
+        "url": "https://sportmed360.ch",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://evo360.ch/Images/e.png",
+          "width": 512,
+          "height": 512
+        },
+        "image": [
+          "https://evo360.ch/Images/hero1.jpg",
+          "https://evo360.ch/Images/attente.png",
+          "https://evo360.ch/Images/centre/10.jpg"
+        ],
+        "description": "Centre médical nouvelle génération à Neuchâtel spécialisé en médecine du sport, physiothérapie et Medical Training Therapy (MTT). ECG, tests d'effort, ergospirométrie, bilans sanguins.",
+        "medicalSpecialty": [
+          "SportsMedicine",
+          "PhysicalTherapy",
+          "Cardiovascular",
+          "Musculoskeletal"
+        ],
+        "availableService": [
+          {
+            "@type": "MedicalProcedure",
+            "name": "Médecine du sport",
+            "description": "Consultations spécialisées en médecine du sport et troubles musculo-squelettiques"
+          },
+          {
+            "@type": "MedicalTherapy",
+            "name": "Physiothérapie",
+            "description": "Rééducation personnalisée, thérapie manuelle et accompagnement"
+          },
+          {
+            "@type": "MedicalTherapy",
+            "name": "MTT - Medical Training Therapy",
+            "description": "Thérapie par l'entraînement médical pour une rééducation optimale"
+          },
+          {
+            "@type": "MedicalTest",
+            "name": "ECG et Tests d'effort",
+            "description": "Électrocardiogrammes au repos et à l'effort, Ergospirométrie (VO2 Max)"
+          },
+          {
+            "@type": "MedicalTest",
+            "name": "Bilans sanguins",
+            "description": "Bilans sanguins complets et analyses biologiques approfondies"
+          },
+          {
+            "@type": "MedicalProcedure",
+            "name": "Vaccins et perfusions",
+            "description": "Administration de vaccins et perfusions thérapeutiques"
+          },
+          {
+            "@type": "MedicalProcedure",
+            "name": "Médecine générale",
+            "description": "Soins de santé primaires et suivi médical pour toute la famille"
+          }
+        ],
+        "telephone": "+41765410360",
+        "email": "med@evo360.ch",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Avenue Edouard-Dubois 20",
+          "addressLocality": "Neuchâtel",
+          "postalCode": "2000",
+          "addressCountry": "CH",
+          "addressRegion": "NE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 46.9930,
+          "longitude": 6.9298
+        },
+        "hasMap": "https://maps.app.goo.gl/9MD3DLrxaKWLTy6TA",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "07:30",
+            "closes": "18:30"
+          }
+        ],
+        "priceRange": "$$",
+        "paymentAccepted": "LAMal, LAA, Cash, Card",
+        "currenciesAccepted": "CHF",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 46.9930,
+            "longitude": 6.9298
+          },
+          "geoRadius": "30000"
+        },
+        "sameAs": [
+          "https://evo360.ch/"
+        ]
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "46.9930",
-        "longitude": "6.9298"
+      // 2. WebSite (recherche Google)
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://sportmed360.ch/#website",
+        "url": "https://sportmed360.ch",
+        "name": "SportMed360",
+        "description": "Centre médical spécialisé en médecine du sport et physiothérapie à Neuchâtel",
+        "publisher": {
+          "@id": "https://sportmed360.ch/#clinic"
+        },
+        "inLanguage": "fr-CH"
       },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "07:30",
-          "closes": "18:30"
-        }
-      ],
-      "priceRange": "CHF",
-      "paymentAccepted": "LAMal, LAA, Cash, Card",
-      "currenciesAccepted": "CHF",
-      "sameAs": [
-        "https://evo360.ch/"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Services médicaux",
+      // 3. BreadcrumbList
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
         "itemListElement": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "MedicalProcedure",
-              "name": "Médecine du sport",
-              "description": "Consultations spécialisées en médecine du sport et troubles musculo-squelettiques"
-            }
-          },
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://sportmed360.ch/"
+          }
+        ]
+      },
+      // 4. LocalBusiness (renforce le SEO local)
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "@id": "https://sportmed360.ch/#business",
+        "name": "SportMed360",
+        "image": "https://evo360.ch/Images/hero1.jpg",
+        "telephone": "+41765410360",
+        "email": "med@evo360.ch",
+        "url": "https://sportmed360.ch",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Avenue Edouard-Dubois 20",
+          "addressLocality": "Neuchâtel",
+          "postalCode": "2000",
+          "addressCountry": "CH"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 46.9930,
+          "longitude": 6.9298
+        },
+        "openingHoursSpecification": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "MedicalProcedure",
-              "name": "Physiothérapie",
-              "description": "Rééducation personnalisée, thérapie manuelle et accompagnement"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "MedicalProcedure",
-              "name": "MTT - Medical Training Therapy",
-              "description": "Thérapie par l'entraînement médical pour une rééducation optimale"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "MedicalTest",
-              "name": "ECG et Tests d'effort",
-              "description": "Électrocardiogrammes au repos et à l'effort, Ergospirométrie (VO2 Max)"
-            }
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "07:30",
+            "closes": "18:30"
           }
         ]
       }
+    ];
+
+    const scripts = schemas.map(schema => {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+      return script;
     });
-    document.head.appendChild(script);
-    
+
     return () => {
-      document.head.removeChild(script);
+      scripts.forEach(script => document.head.removeChild(script));
     };
   }, []);
 

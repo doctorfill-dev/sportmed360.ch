@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
   <!-- Page principale -->
   <url>
     <loc>https://sportmed360.ch/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://evo360.ch/Images/hero1.jpg</image:loc>
-      <image:title>SportMed360 - Centre médical de médecine du sport</image:title>
-      <image:caption>Centre médical nouvelle génération à Neuchâtel</image:caption>
+      <image:title>SportMed360 - Centre de médecine du sport à Neuchâtel</image:title>
+      <image:caption>Centre médical nouvelle génération spécialisé en médecine du sport et physiothérapie</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://evo360.ch/Images/attente.png</image:loc>
-      <image:title>Salle d'attente SportMed360</image:title>
+      <image:title>Centre médical SportMed360 - Espace accueil</image:title>
+      <image:caption>Espace moderne du centre médical SportMed360 à Neuchâtel</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://evo360.ch/Images/centre/10.jpg</image:loc>
+      <image:title>Centre evo360 - Salle fonctionnelle</image:title>
+      <image:caption>Installations modernes pour la rééducation et le Medical Training Therapy</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://evo360.ch/Images/centre/12.jpg</image:loc>
+      <image:title>Centre evo360 - Équipements sportifs</image:title>
+      <image:caption>Équipements de rééducation et de performance sportive</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://evo360.ch/Images/e.png</image:loc>
+      <image:title>Logo evo360 - SportMed360</image:title>
     </image:image>
   </url>
-  
+
 </urlset>

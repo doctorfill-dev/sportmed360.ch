@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/sportmed360.ch">
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

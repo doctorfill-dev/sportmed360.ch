@@ -1,6 +1,19 @@
 /* SportMed360 — Test Proposition v2 · script.js */
 'use strict';
 
+/* ── Service Worker Registration ── */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
 /* ── Footer year ── */
 var yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

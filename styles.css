@@ -739,8 +739,9 @@ h3 {
   display: flex; justify-content: center; gap: .5rem; margin-top: 1.25rem;
 }
 .carousel-dot {
-  width: 12px; height: 12px; border-radius: var(--r-full);
-  background: var(--gray-200); border: none; cursor: pointer; padding: 6px;
+  width: 44px; height: 44px; padding: 16px; /* Larger touch target for mobile */
+  border-radius: var(--r-full);
+  background: var(--gray-200); border: none; cursor: pointer;
   background-clip: content-box;
   transition: background var(--dur), transform var(--dur);
 }

@@ -4,13 +4,13 @@
   "description": "Centre médical spécialisé en médecine du sport, physiothérapie, préparation sportive et remise en forme à Neuchâtel. Centre de performance et de bien-être dédié à la prévention des blessures et à la médecine générale.",
   "icons": [
     {
-      "src": "assets/logo.png",
+      "src": "assets/logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "assets/logo.png",
+      "src": "assets/logo-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

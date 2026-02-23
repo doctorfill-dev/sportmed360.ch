@@ -739,11 +739,12 @@ h3 {
   display: flex; justify-content: center; gap: .5rem; margin-top: 1.25rem;
 }
 .carousel-dot {
-  width: 7px; height: 7px; border-radius: var(--r-full);
-  background: var(--gray-200); border: none; cursor: pointer; padding: 0;
+  width: 12px; height: 12px; border-radius: var(--r-full);
+  background: var(--gray-200); border: none; cursor: pointer; padding: 6px;
+  background-clip: content-box;
   transition: background var(--dur), transform var(--dur);
 }
-.carousel-dot.active { background: var(--indigo); transform: scale(1.4); }
+.carousel-dot.active { background: var(--indigo); background-clip: content-box; transform: scale(1.2); }
 
 /* Perks */
 .perks-row {
@@ -860,7 +861,7 @@ h3 {
 .footer-by a { color: var(--lavender); text-decoration: underline; }
 .footer-by a:hover { color: #c5c0f5; }
 
-.footer-nav h4, .footer-services h4 {
+.footer-heading {
   font-size: .7rem; font-weight: 700; letter-spacing: .1em;
   text-transform: uppercase; color: #fff; margin-bottom: 1rem;
 }
@@ -880,8 +881,8 @@ h3 {
   align-items: center; gap: .5rem;
 }
 .footer-bottom p    { font-size: .8125rem; }
-.footer-addr        { font-size: .8125rem; color: rgba(255,255,255,.35); }
-.footer-addr:hover  { color: rgba(255,255,255,.6); }
+.footer-addr        { font-size: .8125rem; color: rgba(255,255,255,.6); }
+.footer-addr:hover  { color: rgba(255,255,255,.8); }
 
 /* ════════════════════════════════════════
    SCROLL REVEAL

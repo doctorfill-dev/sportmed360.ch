@@ -1,6 +1,0 @@
-# SportMed360 Security Policy
-# https://sportmed360.ch
-
-Contact: mailto:med@evo360.ch
-Preferred-Languages: fr, de, en
-Canonical: https://sportmed360.ch/.well-known/security.txt

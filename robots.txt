@@ -1,0 +1,9 @@
+# robots.txt - SportMed360
+# https://sportmed360.ch
+
+User-agent: *
+Allow: /
+Disallow: /.github/
+
+# Sitemap
+Sitemap: https://sportmed360.ch/sitemap.xml

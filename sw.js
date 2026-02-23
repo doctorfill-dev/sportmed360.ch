@@ -11,7 +11,10 @@ const ASSETS_TO_CACHE = [
   '/assets/fitness_2.webp',
   '/assets/fitness_3.webp',
   '/assets/redlight_1.webp',
-  '/assets/logo.webp'
+  '/assets/logo.webp',
+  '/assets/curty-bertrand.jpg',
+  '/assets/franco_2.jpg',
+  '/assets/logo-mbp.png'
 ];
 
 // Installation : on met en cache les ressources de base

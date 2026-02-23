@@ -1028,20 +1028,30 @@
 
   <script src="script.js" defer></script>
 
-  <!-- Google Analytics (deferred) -->
+  <!-- Google Analytics (optimized loading) -->
   <script>
-    window.addEventListener('load', function() {
-      var s = document.createElement('script');
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-THHRDGB6X6';
-      s.async = true;
-      document.head.appendChild(s);
-      s.onload = function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-THHRDGB6X6');
-      };
-    });
+    (function() {
+      var gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-THHRDGB6X6';
+        s.async = true;
+        document.head.appendChild(s);
+        s.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-THHRDGB6X6');
+        };
+      }
+      // Load on first interaction or after 4 seconds
+      ['touchstart', 'scroll', 'mousemove', 'keydown'].forEach(function(ev) {
+        window.addEventListener(ev, loadGTM, { once: true, passive: true });
+      });
+      setTimeout(loadGTM, 4000);
+    })();
   </script>
 </body>
 </html>

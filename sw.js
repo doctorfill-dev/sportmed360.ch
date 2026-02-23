@@ -12,13 +12,13 @@ const ASSETS_TO_CACHE = [
   '/assets/fitness_3.webp',
   '/assets/redlight_1.webp',
   '/assets/logo.webp',
-  '/assets/curty-bertrand.jpg',
-  '/assets/franco_2.jpg',
-  '/assets/logo-mbp.png',
-  '/assets/centre-11.png',
-  '/assets/centre-12.jpg',
-  '/assets/centre-13.jpg',
-  '/assets/centre-14.png'
+  '/assets/curty-bertrand.webp',
+  '/assets/franco_2.webp',
+  '/assets/logo-mbp.webp',
+  '/assets/centre-11.webp',
+  '/assets/centre-12.webp',
+  '/assets/centre-13.webp',
+  '/assets/centre-14.webp'
 ];
 
 // Installation : on met en cache les ressources de base

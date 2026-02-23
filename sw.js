@@ -14,7 +14,11 @@ const ASSETS_TO_CACHE = [
   '/assets/logo.webp',
   '/assets/curty-bertrand.jpg',
   '/assets/franco_2.jpg',
-  '/assets/logo-mbp.png'
+  '/assets/logo-mbp.png',
+  '/assets/centre-11.png',
+  '/assets/centre-12.jpg',
+  '/assets/centre-13.jpg',
+  '/assets/centre-14.png'
 ];
 
 // Installation : on met en cache les ressources de base

@@ -12,7 +12,7 @@ const ASSETS_TO_CACHE = [
   '/assets/fitness_3.webp',
   '/assets/redlight_1.webp',
   '/assets/logo.webp',
-  '/assets/curty-bertrand.webp',
+  '/assets/curty-bertrand_2.webp',
   '/assets/franco_2.webp',
   '/assets/logo-mbp.webp',
   '/assets/centre-11.webp',

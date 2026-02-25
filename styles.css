@@ -224,7 +224,17 @@ h3 {
 .header-logo {
   display: flex; align-items: center; gap: .625rem; flex-shrink: 0;
 }
-.header-logo img { width: 2rem; height: 2rem; object-fit: contain; }
+.header-logo img { height: 2.5rem; width: auto; object-fit: contain; }
+
+/* Logo swap: white on dark hero, dark on opaque header */
+.header-logo { position: relative; }
+.header-logo .logo-dark,
+.header-logo .logo-white { transition: opacity var(--dur) var(--ease); }
+.header-logo .logo-white { position: absolute; inset: 0; }
+.site-header.transparent .logo-dark  { opacity: 0; }
+.site-header.transparent .logo-white { opacity: 1; }
+.site-header.opaque      .logo-dark  { opacity: 1; }
+.site-header.opaque      .logo-white { opacity: 0; }
 
 .logo-name {
   font-size: 1.0625rem; font-weight: 800;
@@ -803,7 +813,7 @@ h3 {
 .cta-text { display: flex; flex-direction: column; gap: 1.5rem; }
 
 .cta-title {
-  font-size: clamp(2.25rem,5vw,3.5rem);
+  font-size: clamp(2.25rem,5vw,2.5rem);
   font-weight: 900; line-height: 1.05;
   letter-spacing: -.03em; color: var(--gray-900);
 }
@@ -854,7 +864,7 @@ h3 {
 .footer-logo {
   display: inline-flex; align-items: center; gap: .625rem; margin-bottom: .875rem;
 }
-.footer-logo img { width: 2rem; height: 2rem; object-fit: contain; }
+.footer-logo img { height: 2.5rem; width: auto; object-fit: contain; }
 .footer-logo .logo-name { color: #fff; font-size: 1rem; }
 
 .footer-brand p { font-size: .9rem; line-height: 1.7; max-width: 22rem; }

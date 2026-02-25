@@ -18,7 +18,9 @@ const ASSETS_TO_CACHE = [
   '/assets/centre-11.webp',
   '/assets/centre-12.webp',
   '/assets/centre-13.webp',
-  '/assets/centre-14.webp'
+  '/assets/centre-14.webp',
+  '/assets/logo-dark.svg',
+  '/assets/logo-white.svg'
 ];
 
 // Installation : on met en cache les ressources de base

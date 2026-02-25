@@ -40,8 +40,8 @@
   <meta name="ICBM"          content="46.9930, 6.9298" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo-192.png" />
-  <link rel="apple-touch-icon"      href="assets/logo-192.png" />
+  <link rel="icon" type="image/png" href="assets/logo-e-192.svg" />
+  <link rel="apple-touch-icon"      href="assets/logo-e-192.svg" />
   <link rel="manifest"              href="/manifest.json" />
 
   <!-- Preconnect & Preload -->
@@ -221,31 +221,14 @@
   ]
   </script>
 
-  <style>
-    /* Critical CSS: Base and Hero */
-    :root { --indigo: #4622CC; --indigo-dark: #3a1ba8; --indigo-bg: rgba(70,34,204,.1); --indigo-border: rgba(70,34,204,.2); --lavender: #928CDC; --lavender-bg: rgba(146,140,220,.15); --citron: #D7F14E; --citron-dark: #b8d43a; --citron-bg: rgba(215,241,78,.2); --hero-bg: #080613; --hero-mid: #0f0a22; --gray-50: #f8f9fb; --gray-100: #f0f2f6; --gray-200: #e0e4ed; --gray-300: #c6cdd9; --gray-400: #9ba3b5; --gray-500: #6b7280; --gray-600: #4b5563; --gray-700: #374151; --gray-800: #1f2937; --gray-900: #111827; --r-sm: .5rem; --r-md: .875rem; --r-lg: 1.25rem; --r-xl: 1.75rem; --r-full: 9999px; --ease: cubic-bezier(.4,0,.2,1); --dur: .28s; }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body { font-family: 'Inter', -apple-system, sans-serif; font-size: 1rem; line-height: 1.65; color: #111827; background: #fff; -webkit-font-smoothing: antialiased; }
-    img { display: block; max-width: 100%; height: auto; }
-    a { color: inherit; text-decoration: none; }
-    .site-header { position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 200; transition: background var(--dur) var(--ease); }
-    .site-header.transparent { background: transparent; }
-    .header-inner { max-width: 80rem; margin-inline: auto; padding-inline: clamp(1.25rem,4vw,2.5rem); padding-block: 1rem; display: flex; align-items: center; gap: 1.5rem; }
-    .header-logo { display: flex; align-items: center; gap: .625rem; flex-shrink: 0; }
-    .header-logo img { width: 2rem; height: 2rem; object-fit: contain; }
-    .logo-name { font-size: 1.0625rem; font-weight: 800; color: #fff; }
-    .hero { min-height: 100svh; background: linear-gradient(135deg, var(--hero-bg) 0%, var(--hero-mid) 60%, #1a0a3a 100%); display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr auto; position: relative; overflow: hidden; padding-block-start: 4rem; }
-    .hero-content { grid-column: 1; display: flex; flex-direction: column; gap: 1.25rem; padding: 1rem clamp(1.25rem,4vw,2.5rem) 1.5rem; max-width: 80rem; margin-inline: auto; width: 100%; position: relative; z-index: 1; align-self: center; }
-    .hero-title { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900; line-height: 1.02; color: #fff; }
-    .hero-title em { font-style: normal; color: var(--citron); }
-    .hero-sub { font-size: clamp(.9375rem, 1.5vw, 1.125rem); color: rgba(255,255,255,.6); line-height: 1.7; max-width: 36rem; }
-    .btn { display: inline-flex; align-items: center; gap: .45rem; padding: .625rem 1.375rem; font-family: inherit; font-size: .9375rem; font-weight: 600; border: 2px solid transparent; border-radius: var(--r-full); cursor: pointer; transition: background var(--dur) var(--ease); }
-    .btn-citron { background: var(--citron); color: #0d0d0d; border-color: var(--citron); font-weight: 700; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.medbase.ch" />
+  <link rel="preload" as="image" href="assets/fitness_2.webp" fetchpriority="high" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="all" />
 
-  <!-- Non-critical CSS loaded asynchronously -->
-  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -255,8 +238,8 @@
   <header class="site-header" id="site-header" role="banner">
     <div class="header-inner">
       <a href="#hero" class="header-logo" aria-label="SportMed360 — accueil">
-        <img src="assets/logo.webp" alt="" width="36" height="36" aria-hidden="true" />
-        <span class="logo-name">SportMed360</span>
+        <img class="logo-dark"  src="assets/logo-dark.svg"  alt="" width="328" height="40" aria-hidden="true" />
+        <img class="logo-white" src="assets/logo-white.svg" alt="" width="328" height="40" aria-hidden="true" />
       </a>
 
       <nav class="main-nav" aria-label="Navigation principale">
@@ -435,7 +418,7 @@
 
             <div class="hcard-photo-col">
               <img
-                src="assets/curty-bertrand.webp"
+                src="assets/curty-bertrand_2.webp"
                 alt="Dr. Bertrand Curty — médecin du sport et spécialiste FMH médecine interne à Neuchâtel"
                 class="hcard-photo"
                 loading="lazy"
@@ -517,11 +500,7 @@
               </div>
 
               <p class="hcard-bio">
-                Après <strong>plus de 15 ans aux côtés des élites du sport suisse</strong> —
-                physiothérapeute officiel du Neuchâtel-Xamax (depuis 2013), de l'équipe nationale
-                suisse de karaté et de combattants MMA —, Mitko Bogoev fonde MBP Physiothérapie.
-                Ancien basketteur d'élite et combattant international, il comprend le corps du sportif
-                de l'intérieur.
+                  Après <strong>plus de 15 ans aux côtés des élites du sport suisse et international</strong> - physiothérapeute officiel du Neuchâtel-Xamax (depuis 2013), de l'équipe nationale suisse de karaté et de combattants MMA, Mitko Bogoev fonde MBP Physiothérapie en 2022. Ancien basketteur d'élite et combattant international, il possède une compréhension profonde de la physiologie humaine.
               </p>
 
               <ul class="hcard-creds">
@@ -644,6 +623,10 @@
             <div class="hcard-body">
               <div class="hcard-top">
                 <span class="role-pill role-pill--citron">Coach sportive</span>
+                <span class="lang-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  FR · EN
+                </span>
               </div>
 
               <h3 id="hcard-crausaz" class="hcard-name">Maïwenn Crausaz</h3>
@@ -657,6 +640,13 @@
               <p class="hcard-bio">
                 Coach sportive passionnée, Maïwenn Crausaz propose des programmes de préparation sportive et de remise en forme adaptés à chaque profil, du débutant au sportif confirmé.
               </p>
+
+              <ul class="hcard-creds">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <strong>En cours : préparatrice mentale (2026)</strong>
+                </li>
+              </ul>
             </div>
           </article>
 
@@ -679,11 +669,68 @@
                 <span class="tag">Physiologie du sport</span>
                 <span class="tag">Tests de performance</span>
                 <span class="tag">Prévention des blessures</span>
+                <span class="tag">Planification d'entraînements</span>
               </div>
 
               <p class="hcard-bio">
                 Physiologiste du sport, Orlane Gaudenzi met son expertise au service de l'évaluation et de l'optimisation de la performance. Spécialisée dans la prévention des blessures et les bilans physiologiques, elle accompagne sportifs et patients actifs au sein du centre de performance SportMed360.
               </p>
+
+              <ul class="hcard-creds">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <strong>Bachelor et Master en science du mouvement et du sport, spécialité Entraînement et Performance (2023)</strong>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  En cours de formation de préparation mentale (CAS Préamation mentale - Formation continue UNIL-EPFL) (2025)
+                </li>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+
+          <!-- ── Sara Ramos ── -->
+          <article class="hcard" aria-labelledby="hcard-gaudenzi">
+            <div class="hcard-stripe hcard-stripe--indigo" aria-hidden="true"></div>
+
+            <div class="hcard-photo-col">
+              <div class="hcard-avatar hcard-avatar--indigo" aria-hidden="true">SR</div>
+            </div>
+
+            <div class="hcard-body">
+              <div class="hcard-top">
+                <span class="role-pill role-pill--indigo">Assistante médicale</span>
+                <span class="lang-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  FR · EN · PT
+                </span>
+              </div>
+
+              <h3 id="hcard-ramos" class="hcard-name">Sara Ramos</h3>
+
+              <div class="hcard-tags">
+                <span class="tag">Prise de sang</span>
+                <span class="tag">Perfusion</span>
+                <span class="tag">Analyse médicale</span>
+              </div>
+
+              <p class="hcard-bio">
+                Elle accueille et accompagne les patients tout au long de leur prise en charge. Elle réalise les soins médicaux, prépare les consultations, assiste les médecins lors des examens et assure le suivi administratif des dossiers avec rigueur et bienveillance.
+              </p>
+
+              <ul class="hcard-creds">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <strong>CFC d'assistante médicale (2022)</strong>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Premier secours de niveau 3 - IAS (2024)
+                </li>
+                </li>
+              </ul>
             </div>
           </article>
 
@@ -865,17 +912,17 @@
       <div class="section-container cta-inner">
 
         <div class="cta-text">
-          <p class="eyebrow eyebrow--dark">Prenez rendez-vous</p>
+          <p class="eyebrow eyebrow--dark">Prendre rendez-vous</p>
           <h2 id="cta-h2" class="cta-title">
             Votre consultation<br />
-            <span>dès aujourd'hui.</span>
+            <span>à partir d'aujourd'hui.</span>
           </h2>
           <p class="cta-sub">
             Consultation en médecine du sport, médecine générale, physiothérapie ou programme de préparation sportive —
             notre centre médical pluridisciplinaire est à votre disposition.
           </p>
           <button type="button" class="btn btn-dark btn-xl" data-open-contact>
-            Réserver maintenant
+            Prendre rendez-vous
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
@@ -943,8 +990,7 @@
     <div class="section-container footer-inner">
       <div class="footer-brand">
         <a href="#hero" class="footer-logo" aria-label="SportMed360 — accueil">
-          <img src="assets/logo.webp" alt="" width="36" height="36" aria-hidden="true" />
-          <span class="logo-name">SportMed360</span>
+          <img src="assets/logo-white.svg" alt="" aria-hidden="true" />
         </a>
         <p>Centre médical spécialisé en médecine du sport, physiothérapie et préparation sportive à Neuchâtel — votre centre de performance et de bien-être.</p>
         <p class="footer-by">
@@ -994,7 +1040,7 @@
       </button>
 
       <div class="modal-header">
-        <p class="eyebrow">Prenez rendez-vous</p>
+        <p class="eyebrow">Prendre rendez-vous</p>
         <h2 id="modal-title" class="modal-title">Contactez-nous</h2>
         <p class="modal-sub">Remplissez le formulaire ci-dessous et nous vous recontacterons dans les plus brefs délais.</p>
       </div>
@@ -1023,7 +1069,6 @@
             <option value="Médecine du sport">Médecine du sport</option>
             <option value="Physiothérapie">Physiothérapie</option>
             <option value="ECG / Tests d'effort">ECG / Tests d'effort</option>
-            <option value="Bilans sanguins">Bilans sanguins</option>
             <option value="Autre">Autre</option>
           </select>
         </div>

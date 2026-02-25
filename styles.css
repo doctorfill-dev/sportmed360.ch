@@ -864,7 +864,7 @@ h3 {
 .footer-logo {
   display: inline-flex; align-items: center; gap: .625rem; margin-bottom: .875rem;
 }
-.footer-logo img { height: 2.5rem; width: auto; object-fit: contain; }
+.footer-logo img { height: 1.5rem; width: auto; object-fit: contain; }
 .footer-logo .logo-name { color: #fff; font-size: 1rem; }
 
 .footer-brand p { font-size: .9rem; line-height: 1.7; max-width: 22rem; }

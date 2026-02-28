@@ -862,13 +862,11 @@ h3 {
 }
 
 .footer-logo {
-  display: inline-flex; align-items: center; gap: .625rem; margin-bottom: .875rem;
+  display: inline-flex; align-items: center; gap: .625rem; margin-bottom: .75rem;
 }
 .footer-logo img { height: 1.5rem; width: auto; object-fit: contain; }
-.footer-logo .logo-name { color: #fff; font-size: 1rem; }
 
-.footer-brand p { font-size: .9rem; line-height: 1.7; max-width: 22rem; }
-.footer-by { margin-top: .625rem; font-size: .85rem; }
+.footer-by { font-size: .85rem; }
 .footer-by a { color: var(--lavender); text-decoration: underline; }
 .footer-by a:hover { color: #c5c0f5; }
 
@@ -876,24 +874,32 @@ h3 {
   font-size: .7rem; font-weight: 700; letter-spacing: .1em;
   text-transform: uppercase; color: #fff; margin-bottom: 1rem;
 }
-.footer-nav ul, .footer-services ul {
+
+.footer-nav ul, .footer-info ul {
   display: flex; flex-direction: column; gap: .5rem;
 }
-.footer-nav li a { font-size: .9rem; }
-.footer-nav li a:hover { color: #fff; }
-.footer-services li { font-size: .9rem; }
+.footer-nav li a, .footer-info li, .footer-info li a { font-size: .9rem; }
+.footer-nav li a:hover, .footer-info li a:hover { color: #fff; }
+
+.footer-info { font-style: normal; }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.07);
-  padding-block: 1.25rem;
+  padding-block: 1rem 1.5rem;
 }
 .footer-bottom-inner {
   display: flex; flex-wrap: wrap; justify-content: space-between;
-  align-items: center; gap: .5rem;
+  align-items: center; gap: .375rem 1rem;
+  padding-block-end: .625rem;
 }
-.footer-bottom p    { font-size: .8125rem; }
-.footer-addr        { font-size: .8125rem; color: rgba(255,255,255,.6); }
-.footer-addr:hover  { color: rgba(255,255,255,.8); }
+.footer-copy {
+  font-size: .8rem;
+  color: rgba(255,255,255,.45);
+  display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+}
+.footer-copy a { color: rgba(255,255,255,.55); text-decoration: underline; }
+.footer-copy a:hover { color: rgba(255,255,255,.85); }
+.footer-sep { color: rgba(255,255,255,.25); }
 
 /* ════════════════════════════════════════
    SCROLL REVEAL
@@ -1125,6 +1131,140 @@ h3 {
 @media (max-width: 900px) {
   .cta-inner { gap: 2.5rem; }
 }
+
+/* ════════════════════════════════════════
+   COOKIE CONSENT BANNER
+════════════════════════════════════════ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--gray-900);
+  color: var(--gray-300);
+  border-top: 2px solid var(--indigo);
+  box-shadow: 0 -4px 24px rgba(0,0,0,.35);
+  padding: 1rem 1.5rem;
+}
+.cookie-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.cookie-banner p {
+  flex: 1;
+  min-width: 220px;
+  font-size: .875rem;
+  line-height: 1.55;
+  margin: 0;
+  color: var(--gray-300);
+}
+.cookie-banner p a { color: #a89af8; text-decoration: underline; }
+.cookie-actions { display: flex; gap: .625rem; flex-shrink: 0; flex-wrap: wrap; }
+.btn-cookie-accept {
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  padding: .5rem 1.25rem;
+  border-radius: var(--r-sm);
+  font-size: .875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-cookie-accept:hover { background: var(--indigo-dark); }
+.btn-cookie-refuse {
+  background: transparent;
+  color: var(--gray-400);
+  border: 1px solid var(--gray-600);
+  padding: .5rem 1.25rem;
+  border-radius: var(--r-sm);
+  font-size: .875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.btn-cookie-refuse:hover { border-color: var(--gray-400); color: var(--gray-200); }
+
+/* ════════════════════════════════════════
+   FORM — CONSENT CHECKBOX
+════════════════════════════════════════ */
+.form-group--consent {
+  display: flex;
+  align-items: flex-start;
+  gap: .625rem;
+  padding-top: .25rem;
+}
+.form-group--consent input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  margin-top: .15rem;
+  accent-color: var(--indigo);
+  cursor: pointer;
+}
+.form-group--consent label {
+  font-size: .8125rem;
+  color: var(--gray-500);
+  cursor: pointer;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.form-group--consent label a { color: var(--indigo); text-decoration: underline; }
+
+/* ════════════════════════════════════════
+   FOOTER — LEGAL LINKS & DISCLAIMER
+════════════════════════════════════════ */
+.footer-legal-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .25rem .875rem;
+}
+.footer-legal-bar a {
+  font-size: .775rem;
+  color: rgba(255,255,255,.35);
+  transition: color .2s;
+}
+.footer-legal-bar a:hover { color: rgba(255,255,255,.7); }
+.footer-legal-bar span { color: rgba(255,255,255,.2); font-size: .75rem; }
+.footer-disclaimer {
+  font-size: .7rem;
+  color: rgba(255,255,255,.25);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ════════════════════════════════════════
+   LEGAL PAGES (mentions légales, politique)
+════════════════════════════════════════ */
+.legal-page { max-width: 780px; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
+.legal-page h1 { font-size: 2rem; font-weight: 800; margin-bottom: .5rem; color: var(--gray-900); }
+.legal-page .legal-updated { font-size: .825rem; color: var(--gray-500); margin-bottom: 3rem; }
+.legal-page h2 { font-size: 1.125rem; font-weight: 700; margin: 2.5rem 0 .75rem; color: var(--gray-800); }
+.legal-page h3 { font-size: .9375rem; font-weight: 600; margin: 1.5rem 0 .5rem; color: var(--gray-700); }
+.legal-page p { color: var(--gray-600); line-height: 1.75; margin-bottom: .875rem; }
+.legal-page ul { list-style: disc; padding-left: 1.5rem; margin-bottom: .875rem; }
+.legal-page ul li { color: var(--gray-600); line-height: 1.75; margin-bottom: .25rem; }
+.legal-page a { color: var(--indigo); text-decoration: underline; }
+.legal-page .legal-back {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .875rem; font-weight: 600; color: var(--indigo);
+  margin-bottom: 2.5rem;
+  text-decoration: none;
+}
+.legal-page .legal-back:hover { text-decoration: underline; }
+.legal-box {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-left: 4px solid var(--indigo);
+  border-radius: var(--r-md);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.legal-box p { margin: 0; font-size: .875rem; }
 
 /* ════════════════════════════════════════
    RESPONSIVE — SMALL MOBILE (card stacking)

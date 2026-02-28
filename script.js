@@ -1,6 +1,40 @@
 /* SportMed360 — Test Proposition v2 · script.js */
 'use strict';
 
+/* ── Cookie Consent ── */
+(function () {
+  var banner  = document.getElementById('cookie-banner');
+  var accept  = document.getElementById('cookie-accept');
+  var refuse  = document.getElementById('cookie-refuse');
+  var manage  = document.getElementById('cookie-manage');
+  if (!banner) return;
+
+  // Show banner if no choice has been stored yet
+  if (!localStorage.getItem('cookie_consent')) {
+    banner.removeAttribute('hidden');
+  }
+
+  accept.addEventListener('click', function () {
+    localStorage.setItem('cookie_consent', 'accepted');
+    banner.setAttribute('hidden', '');
+    window.dispatchEvent(new Event('cookieConsented'));
+  });
+
+  refuse.addEventListener('click', function () {
+    localStorage.setItem('cookie_consent', 'refused');
+    banner.setAttribute('hidden', '');
+  });
+
+  if (manage) {
+    manage.addEventListener('click', function (e) {
+      e.preventDefault();
+      localStorage.removeItem('cookie_consent');
+      banner.removeAttribute('hidden');
+      banner.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    });
+  }
+}());
+
 /* ── Service Worker Registration ── */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {

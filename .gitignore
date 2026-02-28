@@ -12,3 +12,5 @@ Thumbs.db
 *token.json*
 *credentials.json*
 *.pem
+
+public/

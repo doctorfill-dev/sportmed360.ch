@@ -5,22 +5,31 @@ const ASSETS_TO_CACHE = [
   '/styles.css',
   '/script.js',
   '/manifest.json',
-  '/assets/logo-192.png',
-  '/assets/logo-512.png',
-  '/assets/fitness_1.webp',
-  '/assets/fitness_2.webp',
-  '/assets/fitness_3.webp',
-  '/assets/redlight_1.webp',
-  '/assets/logo.webp',
-  '/assets/curty-bertrand_2.webp',
-  '/assets/franco_2.webp',
-  '/assets/logo-mbp.webp',
-  '/assets/centre-11.webp',
-  '/assets/centre-12.webp',
-  '/assets/centre-13.webp',
-  '/assets/centre-14.webp',
-  '/assets/logo-dark.svg',
-  '/assets/logo-white.svg'
+
+  /* premises */
+  '/assets/premises/logo-192.png',
+  '/assets/premises/logo-512.png',
+  '/assets/premises/fitness_1.webp',
+  '/assets/premises/fitness_2.webp',
+  '/assets/premises/fitness_3.webp',
+  '/assets/premises/redlight_1.webp',
+  '/assets/premises/logo.webp',
+
+  /* logo */
+  '/assets/logo/logo-mbp.webp',
+  '/assets/logo/centre-11.webp',
+  '/assets/logo/centre-12.webp',
+  '/assets/logo/centre-13.webp',
+  '/assets/logo/centre-14.webp',
+  '/assets/logo/logo-dark.svg',
+  '/assets/logo/logo-white.svg',
+
+  /* employees */
+  '/assets/employees/orlane_gaudenzi.webp',
+  '/assets/employees/bertrand_curty.webp',
+  '/assets/employees/franco_pisino.webp',
+  '/assets/employees/maiwenn_crausaz.webp',
+  '/assets/employees/sara_ramos.webp'
 ];
 
 // Installation : on met en cache les ressources de base

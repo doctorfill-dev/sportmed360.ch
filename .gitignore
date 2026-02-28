@@ -1,41 +1,14 @@
-# Dependencies
-node_modules/
-
-# Production builds
-/build
-frontend/build
-dist/
-
-# Environment files
-*.env
-*.env.*
-
 # IDE and editors
 .idea/
 .vscode/
 
 # System files
 .DS_Store
-*.pem
-
-# Logs
-npm-debug.log*
-
-# Testing
-/coverage
-
-# Python
-__pycache__/
-*.pyc
-venv/
-.venv/
+Thumbs.db
 
 # Secrets
+*.env
+*.env.*
 *token.json*
 *credentials.json*
-
-# Archives
-**/*.zip
-**/*.tar.gz
-**/*.tar
-**/*.tgz
+*.pem

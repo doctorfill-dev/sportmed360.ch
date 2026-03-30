@@ -8,23 +8,23 @@ permalink: /index.html
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#4622CC" />
 
-  <title>{{ home.seo.title }}</title>
-  <meta name="description" content="{{ home.seo.description }}" />
-  <meta name="keywords"    content="{{ home.seo.keywords }}" />
+  <title>{{ seo.title }}</title>
+  <meta name="description" content="{{ seo.description }}" />
+  <meta name="keywords"    content="{{ seo.keywords }}" />
   <meta name="author"      content="{{ home.site.name }} by evo360" />
   <meta name="robots"      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <link rel="canonical"    href="{{ home.seo.canonical }}" />
+  <link rel="canonical"    href="{{ seo.canonical }}" />
 
   <meta http-equiv="content-language" content="fr-CH" />
-  <link rel="alternate" hreflang="fr-CH"    href="{{ home.seo.canonical }}" />
-  <link rel="alternate" hreflang="x-default" href="{{ home.seo.canonical }}" />
+  <link rel="alternate" hreflang="fr-CH"    href="{{ seo.canonical }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ seo.canonical }}" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="{{ home.seo.canonical }}" />
-  <meta property="og:title"       content="{{ home.seo.og_title }}" />
-  <meta property="og:description" content="{{ home.seo.og_description }}" />
-  <meta property="og:image"       content="{{ home.seo.og_image }}" />
+  <meta property="og:url"         content="{{ seo.canonical }}" />
+  <meta property="og:title"       content="{{ seo.og_title }}" />
+  <meta property="og:description" content="{{ seo.og_description }}" />
+  <meta property="og:image"       content="{{ seo.og_image }}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height"content="630" />
   <meta property="og:locale"      content="fr_CH" />
@@ -32,9 +32,9 @@ permalink: /index.html
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="{{ home.seo.og_title }}" />
-  <meta name="twitter:description" content="{{ home.seo.og_description }}" />
-  <meta name="twitter:image"       content="{{ home.seo.og_image }}" />
+  <meta name="twitter:title"       content="{{ seo.og_title }}" />
+  <meta name="twitter:description" content="{{ seo.og_description }}" />
+  <meta name="twitter:image"       content="{{ seo.og_image }}" />
 
   <!-- Geo -->
   <meta name="geo.region"    content="CH-NE" />
@@ -66,7 +66,7 @@ permalink: /index.html
     "url": "{{ home.site.url }}",
     "logo": { "@type": "ImageObject", "url": "https://evo360.ch/Images/e.png", "width": 512, "height": 512 },
     "image": ["{{ home.site.url }}/assets/premises/fitness_1.webp"],
-    "description": "{{ home.seo.description }}",
+    "description": "{{ seo.description }}",
     "medicalSpecialty": ["SportsMedicine", "PhysicalTherapy", "Cardiovascular", "Musculoskeletal"],
     "telephone": "{{ home.site.phone }}",
     "email": "{{ home.site.email }}",

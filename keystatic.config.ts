@@ -35,48 +35,44 @@ export default config({
   singletons: {
 
     // ── SEO & Mots-clés ────────────────────────────────────────────────────
-    // Champs dédiés pour pivoter rapidement la stratégie de mots-clés.
+    // Fichier dédié src/_data/seo.json — séparé de home.json pour éviter
+    // les conflits de validation de schéma Keystatic.
     seo: singleton({
       label:  'SEO & Mots-clés',
-      path:   'src/_data/home',
+      path:   'src/_data/seo',
       format: { data: 'json' },
 
       schema: {
-        seo: fields.object(
-          {
-            title: fields.text({
-              label:       'Balise <title>',
-              description: 'Titre affiché dans les résultats Google (50–60 caractères recommandés). Mot-clé principal en premier.',
-            }),
-            description: fields.text({
-              label:       'Meta description',
-              description: 'Accroche dans les résultats Google (150–160 caractères). Inclure les mots-clés prioritaires.',
-              multiline:   true,
-            }),
-            keywords: fields.text({
-              label:       'Mots-clés (meta keywords)',
-              description: 'Liste séparée par des virgules. Priorité : médecin du sport neuchâtel, physiothérapie neuchâtel, cabinet médical sport neuchâtel…',
-              multiline:   true,
-            }),
-            canonical: fields.text({
-              label:       'URL canonique',
-              description: 'URL de référence pour éviter le contenu dupliqué (ex: https://sportmed360.ch/)',
-            }),
-            og_title: fields.text({
-              label:       'Titre Open Graph',
-              description: 'Titre affiché lors du partage sur les réseaux sociaux.',
-            }),
-            og_description: fields.text({
-              label:     'Description Open Graph',
-              multiline: true,
-            }),
-            og_image: fields.text({
-              label:       'Image Open Graph (URL complète)',
-              description: 'Format recommandé : 1200×630 px. Ex: https://sportmed360.ch/assets/premises/fitness_2.webp',
-            }),
-          },
-          { label: 'SEO & Mots-clés' }
-        ),
+        title: fields.text({
+          label:       'Balise <title>',
+          description: 'Titre affiché dans les résultats Google (50–60 caractères recommandés). Mot-clé principal en premier.',
+        }),
+        description: fields.text({
+          label:       'Meta description',
+          description: 'Accroche dans les résultats Google (150–160 caractères). Inclure les mots-clés prioritaires.',
+          multiline:   true,
+        }),
+        keywords: fields.text({
+          label:       'Mots-clés (meta keywords)',
+          description: 'Liste séparée par des virgules. Priorité : médecin du sport neuchâtel, physiothérapie neuchâtel, cabinet médical sport neuchâtel…',
+          multiline:   true,
+        }),
+        canonical: fields.text({
+          label:       'URL canonique',
+          description: 'URL de référence pour éviter le contenu dupliqué (ex: https://sportmed360.ch/)',
+        }),
+        og_title: fields.text({
+          label:       'Titre Open Graph',
+          description: 'Titre affiché lors du partage sur les réseaux sociaux.',
+        }),
+        og_description: fields.text({
+          label:     'Description Open Graph',
+          multiline: true,
+        }),
+        og_image: fields.text({
+          label:       'Image Open Graph (URL complète)',
+          description: 'Format recommandé : 1200×630 px. Ex: https://sportmed360.ch/assets/premises/fitness_2.webp',
+        }),
       },
     }),
 

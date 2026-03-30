@@ -69,9 +69,11 @@ export default config({
           label:     'Description Open Graph',
           multiline: true,
         }),
-        og_image: fields.text({
-          label:       'Image Open Graph (URL complète)',
-          description: 'Format recommandé : 1200×630 px. Ex: https://sportmed360.ch/assets/premises/fitness_2.webp',
+        og_image: fields.image({
+          label:       'Image Open Graph',
+          description: 'Format recommandé : 1200×630 px (JPG/PNG/WebP). Drag & drop ou cliquer pour choisir.',
+          directory:   'src/assets/premises',
+          publicPath:  '/assets/premises/',
         }),
       },
     }),

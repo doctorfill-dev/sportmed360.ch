@@ -9,6 +9,12 @@ import config from './keystatic.config'
 // @ts-ignore
 import notFoundHtml from './_site/404.html'
 
+// Vérifie si le hostname est autorisé à héberger le CMS.
+// Accepte le domaine de prod + tout sous-domaine workers.dev (test).
+function isAllowedHost(hostname: string): boolean {
+  return hostname === 'sportmed360.ch' || hostname.endsWith('.workers.dev')
+}
+
 interface Env {
   ASSETS:                         { fetch(r: Request): Promise<Response> }
   KEYSTATIC_GITHUB_CLIENT_ID:     string
@@ -37,12 +43,16 @@ export default {
             clientSecret: env.KEYSTATIC_GITHUB_CLIENT_SECRET,
             secret:       env.KEYSTATIC_SECRET,
           })
-          // Canonicalise l'URL sur le domaine de production
-          const reqUrl          = new URL(request.url)
-          const canonicalRequest = reqUrl.hostname === 'sportmed360.ch'
+          // Utilise le domaine réel de la requête s'il est autorisé,
+          // sinon repli sur la prod (sécurité contre les requêtes inattendues)
+          const reqUrl = new URL(request.url)
+          const canonicalOrigin = isAllowedHost(reqUrl.hostname)
+            ? reqUrl.origin
+            : 'https://sportmed360.ch'
+          const canonicalRequest = reqUrl.origin === canonicalOrigin
             ? request
             : new Request(
-                new URL(request.url.replace(reqUrl.origin, 'https://sportmed360.ch')).toString(),
+                new URL(request.url.replace(reqUrl.origin, canonicalOrigin)).toString(),
                 request,
               )
           const ksRes = await handler(canonicalRequest)

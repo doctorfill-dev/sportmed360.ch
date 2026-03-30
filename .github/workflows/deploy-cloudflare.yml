@@ -1,10 +1,10 @@
 name: Deploy to Cloudflare Workers
 
-# Déclenché sur push vers la branche de déploiement CMS
-# (NE PAS utiliser main — main → GitHub Pages via l'autre workflow)
+# DÉSACTIVÉ — Le CI est géré directement par le dashboard Cloudflare
+# (Option A choisie — voir issue #44)
+# Ce workflow est conservé en référence mais ne se déclenche plus.
 on:
-  push:
-    branches: [cms_deploy]
+  workflow_dispatch: # manuel uniquement
 
 jobs:
   build-and-deploy:

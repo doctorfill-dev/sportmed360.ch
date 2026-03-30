@@ -20,9 +20,12 @@ export default function (eleventyConfig) {
 
   // ── Passthrough Copy ─────────────────────────────────────────────────────
   eleventyConfig.addPassthroughCopy('src/assets')
+  eleventyConfig.addPassthroughCopy({ 'src/legal': 'legal' })
   eleventyConfig.addPassthroughCopy({ 'manifest.json': 'manifest.json' })
   eleventyConfig.addPassthroughCopy({ 'sw.js': 'sw.js' })
   eleventyConfig.addPassthroughCopy({ 'CNAME': 'CNAME' })
+  eleventyConfig.addPassthroughCopy({ 'robots.txt': 'robots.txt' })
+  eleventyConfig.addPassthroughCopy({ 'sitemap.xml': 'sitemap.xml' })
 
   // ── Filtres ──────────────────────────────────────────────────────────────
   eleventyConfig.addFilter('currentYear', () => new Date().getFullYear())
@@ -33,6 +36,9 @@ export default function (eleventyConfig) {
     if (path.startsWith('src/')) return '/' + path.slice(4)
     return '/' + path
   })
+
+  // ── Ignores ──────────────────────────────────────────────────────────────
+  eleventyConfig.ignores.add('src/legal/**')
 
   // ── Configuration ────────────────────────────────────────────────────────
   return {

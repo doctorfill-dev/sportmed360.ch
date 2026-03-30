@@ -14,3 +14,10 @@ Thumbs.db
 *.pem
 
 public/
+
+# Build output
+_site/
+node_modules/
+
+# Cloudflare
+.wrangler/

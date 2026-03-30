@@ -1,0 +1,52 @@
+name: Optimize images
+
+# Déclenché quand un JPG/PNG/GIF est poussé sur n'importe quelle branche
+# (typiquement après qu'un utilisateur uploade une image via Keystatic)
+on:
+  push:
+    paths:
+      - 'src/assets/**/*.jpg'
+      - 'src/assets/**/*.jpeg'
+      - 'src/assets/**/*.png'
+      - 'src/assets/**/*.gif'
+      - 'src/assets/**/*.tiff'
+      - 'src/assets/**/*.bmp'
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    # Éviter de tourner en boucle sur les commits du bot
+    if: github.actor != 'github-actions[bot]'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Nécessaire pour pouvoir commit en retour
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Sharp
+        run: npm install sharp --save-dev
+
+      - name: Optimize new/changed images
+        run: |
+          # Récupère uniquement les fichiers ajoutés ou modifiés dans ce push
+          git diff --name-only --diff-filter=ACM ${{ github.event.before }} ${{ github.sha }} \
+            | grep -E '\.(jpg|jpeg|png|gif|tiff|bmp)$' \
+            | while read file; do
+                echo "Optimizing: $file"
+                node scripts/optimize-images.mjs "$file"
+              done
+
+      - name: Commit optimized images
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/assets/
+          # Ne commit que s'il y a des changements
+          git diff --staged --quiet || git commit -m "chore: optimize images to WebP [skip ci]"
+          git push

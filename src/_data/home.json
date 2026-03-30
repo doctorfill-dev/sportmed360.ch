@@ -1,0 +1,259 @@
+{
+  "seo": {
+    "title": "SportMed360 – Centre Médical de Médecine du Sport & Physiothérapie | Neuchâtel",
+    "description": "SportMed360 : centre médical spécialisé en médecine du sport, physiothérapie et préparation sportive à Neuchâtel. Centre de performance dédié à la prévention des blessures, remise en forme et médecine générale. LAMal & LAA acceptées.",
+    "keywords": "médecin du sport neuchâtel, physiothérapie neuchâtel, physiothérapeute neuchâtel, médecin généraliste neuchâtel, cabinet médical sport neuchâtel, bilan sportif neuchâtel, ECG effort neuchâtel, test VO2max neuchâtel, préparation physique neuchâtel, médecin agréé LAMal neuchâtel, sportmed neuchâtel, centre médical Neuchâtel, médecine du sport, médecine générale, remise en forme, prévention des blessures, centre de performance",
+    "canonical": "https://sportmed360.ch/",
+    "og_title": "SportMed360 – Centre Médical de Médecine du Sport & Physiothérapie | Neuchâtel",
+    "og_description": "Centre médical spécialisé en médecine du sport, physiothérapie et préparation sportive à Neuchâtel. Centre de performance et de bien-être pour sportifs et patients actifs.",
+    "og_image": "https://sportmed360.ch/assets/premises/fitness_2.webp"
+  },
+  "site": {
+    "name": "SportMed360",
+    "url": "https://sportmed360.ch",
+    "phone": "+41765410360",
+    "phone_display": "+41 76 541 03 60",
+    "email": "med@evo360.ch",
+    "address_street": "Avenue Edouard-Dubois 20",
+    "address_city": "2000 Neuchâtel",
+    "maps_url": "https://maps.app.goo.gl/9MD3DLrxaKWLTy6TA",
+    "hours_short": "Lun–Ven · 7h30–18h30",
+    "hours_days": "Lundi – Vendredi",
+    "hours_time": "7h30 – 18h30",
+    "payment": "LAMal, LAA, Cash, Card"
+  },
+  "nav": {
+    "links": [
+      { "label": "Équipe", "url": "#equipe" },
+      { "label": "Services", "url": "#services" },
+      { "label": "evo360", "url": "#partenariat" },
+      { "label": "Contact", "url": "#contact" }
+    ],
+    "cta_label": "Prendre rendez-vous"
+  },
+  "hero": {
+    "eyebrow": "Centre médical de performance · Neuchâtel",
+    "title_line1": "Médecine",
+    "title_line2": "du Sport",
+    "title_line3": "&\u00a0Physio.",
+    "subtitle": "Centre médical spécialisé en médecine du sport et physiothérapie à Neuchâtel. Préparation sportive, prévention des blessures et remise en forme — une équipe pluridisciplinaire dédiée à votre performance et votre bien-être.",
+    "cta_primary": "Réserver une consultation",
+    "cta_secondary_label": "Notre équipe",
+    "cta_secondary_url": "#equipe",
+    "badge_num": "6",
+    "badge_label": "Spécialistes\nréunis",
+    "mosaic": [
+      { "src": "src/assets/premises/fitness_2.webp",  "alt": "Préparation sportive et remise en forme au centre médical SportMed360 Neuchâtel", "priority": true, "pos": "tl" },
+      { "src": "src/assets/premises/centre-12.webp",  "alt": "Salle de physiothérapie et équipements de rééducation evo360 Neuchâtel", "priority": false, "pos": "tr" },
+      { "src": "src/assets/premises/redlight_1.webp", "alt": "Thérapie par lumière rouge pour la récupération et prévention des blessures", "priority": false, "pos": "bl" },
+      { "src": "src/assets/premises/fitness_1.webp",  "alt": "Centre de performance et médecine sportive SportMed360", "priority": false, "pos": "br" }
+    ],
+    "ticker": [
+      "Médecine du sport",
+      "Physiothérapie",
+      "Préparation sportive",
+      "Centre de performance",
+      "MTT",
+      "ECG & Tests d'effort",
+      "Prévention des blessures",
+      "Ergospirométrie · VO2 Max",
+      "Remise en forme",
+      "Médecine générale"
+    ]
+  },
+  "stats": [
+    { "num": "5",    "sup": "",  "label": "Spécialités médicales" },
+    { "num": "15",   "sup": "+", "label": "Ans d'expérience sportive" },
+    { "num": "360°", "sup": "",  "label": "Approche pluridisciplinaire" },
+    { "num": "2",    "sup": "",  "label": "Assurances acceptées" }
+  ],
+  "team": {
+    "eyebrow": "Experts à votre service",
+    "title": "Notre équipe",
+    "subtitle": "Six professionnels spécialisés en médecine sportive, physiothérapie et préparation sportive — réunis dans un centre de performance dédié à votre santé.",
+    "members": [
+      {
+        "id": "curty",
+        "name": "Dr méd. Bertrand Curty",
+        "role": "Médecin du sport",
+        "color": "indigo",
+        "avatar": "BC",
+        "languages": "FR",
+        "photo": "src/assets/employees/bertrand_curty.webp",
+        "photo_alt": "Dr. Bertrand Curty — médecin du sport et spécialiste FMH médecine interne à Neuchâtel",
+        "tags": ["FMH Médecine interne", "Médecine du sport SEMS", "Psychothérapie déléguée"],
+        "bio": "Depuis <strong>1997</strong>, le Dr Curty est médecin officiel de l'équipe nationale suisse de ski. Titulaire d'un FMH en médecine interne générale et d'un certificat SEMS en médecine du sport, il allie diagnostic médical rigoureux et accompagnement global — du bilan médical complet à la prescription d'activité physique adaptée.",
+        "credentials": [
+          "FMH Médecine interne générale (2001) · Certificat SEMS (2006)",
+          "Médecin de l'équipe nationale suisse de ski depuis 1997",
+          "Directeur du Centre Médical de la Côte (depuis 2009) - Directeur médical MedBase Neuchâtel (depuis 2021)"
+        ],
+        "partnership": {
+          "label": "En partenariat avec",
+          "url": "https://www.medbase.ch/fr/les-centres/detail/medbase-neuchatel-la-cote/#:~:text=Bertrand%20Curty,-Directeur%20medical",
+          "logo_url": "https://www.medbase.ch/fileadmin/templates/img/logo_medbase.svg",
+          "logo_alt": "Logo Medbase",
+          "aria_label": "Medbase Neuchâtel"
+        }
+      },
+      {
+        "id": "bogoev",
+        "name": "Mitko Bogoev",
+        "role": "Physiothérapeute du sport",
+        "color": "lavender",
+        "avatar": "MB",
+        "languages": "FR",
+        "photo": "src/assets/employees/mitko_bogoev.webp",
+        "photo_alt": "Mitko Bogoev - physiothérapeute du sport",
+        "tags": ["BSc & MSc Physiothérapie", "Orthopédie & Traumatologie", "Dry Needling · MTT"],
+        "bio": "Après <strong>plus de 15 ans aux côtés des élites du sport suisse et international</strong> - physiothérapeute officiel du Neuchâtel-Xamax (depuis 2013), de l'équipe nationale suisse de karaté et de combattants MMA, Mitko Bogoev fonde MBP Physiothérapie en 2022. Ancien basketteur d'élite et combattant international, il possède une compréhension profonde de la physiologie humaine.",
+        "credentials": [
+          "Bachelor & Master en physiothérapie du sport (orthopédie & traumatologie)",
+          "Physiothérapeute référent — Équipe nationale suisse de karaté",
+          "Physiothérapeute officiel — Neuchâtel-Xamax depuis 2013"
+        ],
+        "partnership": {
+          "label": "En partenariat avec",
+          "url": "https://mbp-centre.ch/equipe/#:~:text=MITKO%20BOGOEV,-Physiothérapeute",
+          "logo_src": "src/assets/logo/logo-mbp.webp",
+          "logo_alt": "Logo MBP",
+          "aria_label": "MBP Centre"
+        }
+      },
+      {
+        "id": "pisino",
+        "name": "Franco Pisino",
+        "role": "Préparateur physique Swiss Olympic",
+        "color": "citron",
+        "avatar": "FP",
+        "languages": "FR · EN · DE",
+        "photo": "src/assets/employees/franco_pisino.webp",
+        "photo_alt": "Franco Pisino - préparateur physique Swiss Olympic",
+        "tags": ["Conditionnement sportif", "Coach national karaté", "Rugby · Football"],
+        "bio": "Athlète international en karaté sous les couleurs suisses et italiennes (1987–1997), Franco Pisino est aujourd'hui l'un des préparateurs physiques les plus décorés de Suisse. Entraîneur chef de l'équipe nationale suisse de karaté depuis <strong>2000</strong>, il a également préparé l'Union Neuchâtel rugby pendant 12 saisons et accompagné le Neuchâtel-Xamax FCS.",
+        "credentials": [
+          "<strong>Swiss Olympic Coach Award 2019</strong>",
+          "Entraîneur chef — Équipe nationale suisse de karaté depuis 2000",
+          "Co-fondateur de PISINOATHLETICS"
+        ]
+      },
+      {
+        "id": "jauzac",
+        "name": "Elise Jauzac",
+        "role": "Physiothérapeute",
+        "color": "lavender",
+        "avatar": "EJ",
+        "languages": "FR",
+        "photo": "src/assets/employees/elise_jauzac.webp",
+        "photo_alt": "Elise Jauzac - physiothérapeute",
+        "tags": ["Physiothérapie", "Rééducation"],
+        "bio": "Physiothérapeute au sein du centre médical SportMed360, Elise Jauzac accompagne les patients dans leur parcours de rééducation et de remise en forme, avec une approche personnalisée et attentive."
+      },
+      {
+        "id": "pigeau",
+        "name": "Elihu Pigeau",
+        "role": "Physiothérapeute",
+        "color": "lavender",
+        "avatar": "EP",
+        "languages": "",
+        "photo": "",
+        "photo_alt": "",
+        "tags": ["Physiothérapie", "Rééducation"],
+        "bio": "Physiothérapeute au sein du centre médical SportMed360, Elihu Pigeau accompagne les patients dans leur parcours de rééducation et de remise en forme, avec une approche personnalisée et attentive."
+      },
+      {
+        "id": "crausaz",
+        "name": "Maïwenn Crausaz",
+        "role": "Coach sportive",
+        "color": "citron",
+        "avatar": "MC",
+        "languages": "FR · EN",
+        "photo": "src/assets/employees/maiwenn_crausaz.webp",
+        "photo_alt": "Maïwenn Crausaz — Coach sportive au centre médical SportMed360 Neuchâtel",
+        "tags": ["Coaching sportif", "Préparation physique", "Remise en forme"],
+        "bio": "Coach sportive passionnée, Maïwenn Crausaz propose des programmes de préparation sportive et de remise en forme adaptés à chaque profil, du débutant au sportif confirmé.",
+        "credentials": ["<strong>En cours : préparatrice mentale (2026)</strong>"]
+      },
+      {
+        "id": "gaudenzi",
+        "name": "Orlane Gaudenzi",
+        "role": "Physiologiste du sport",
+        "color": "indigo",
+        "avatar": "OG",
+        "languages": "FR",
+        "photo": "src/assets/employees/orlane_gaudenzi.webp",
+        "photo_alt": "Orlane Gaudenzi — Physiologiste du sport",
+        "tags": ["Physiologie du sport", "Tests de performance", "Prévention des blessures", "Planification d'entraînements"],
+        "bio": "Physiologiste du sport, Orlane Gaudenzi met son expertise au service de l'évaluation et de l'optimisation de la performance. Spécialisée dans la prévention des blessures et les bilans physiologiques, elle accompagne sportifs et patients actifs au sein du centre de performance SportMed360.",
+        "credentials": [
+          "<strong>Bachelor et Master en science du mouvement et du sport, spécialité Entraînement et Performance (2025)</strong>",
+          "En cours de formation de préparation mentale (CAS Préparation mentale - Formation continue UNIL-EPFL) (2026)"
+        ]
+      },
+      {
+        "id": "ramos",
+        "name": "Sara Ramos",
+        "role": "Assistante médicale",
+        "color": "indigo",
+        "avatar": "SR",
+        "languages": "FR · EN · PT",
+        "photo": "src/assets/employees/sara_ramos.webp",
+        "photo_alt": "Sara Ramos — Assistante médicale au centre médical SportMed360 Neuchâtel",
+        "tags": ["Prise de sang", "Perfusion", "Analyse médicale"],
+        "bio": "Elle accueille et accompagne les patients tout au long de leur prise en charge. Elle réalise les soins médicaux, prépare les consultations, assiste les médecins lors des examens et assure le suivi administratif des dossiers avec rigueur et bienveillance.",
+        "credentials": [
+          "<strong>CFC d'assistante médicale (2022)</strong>",
+          "Premier secours de niveau 3 - IAS (2024)"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Soins & Prestations",
+    "title": "Ce que\nnous faisons",
+    "subtitle": "Une prise en charge complète, fondée sur des données médicales précises et un suivi coordonné entre professionnels.",
+    "cta": "Prendre rendez-vous",
+    "items": [
+      { "num": "01", "title": "Médecine du sport",          "description": "Consultation spécialisée en médecine sportive, diagnostic musculo-squelettique, prévention des blessures et suivi médical personnalisé dans notre centre médical.",             "icon": "sport" },
+      { "num": "02", "title": "Physiothérapie",              "description": "Rééducation personnalisée, thérapie manuelle, Dry Needling et accompagnement au retour au sport dans notre centre de bien-être et de remise en forme.",                    "icon": "physio" },
+      { "num": "03", "title": "MTT — Medical Training Therapy", "description": "Rééducation active par l'entraînement médical guidé — renforcement ciblé, préparation sportive et retour fonctionnel progressif.",                                       "icon": "mtt" },
+      { "num": "04", "title": "ECG & Tests cardiaques",      "description": "ECG au repos et à l'effort, ergospirométrie (VO2 Max), examens médico-sportifs et certificats médicaux.",                                                                      "icon": "ecg" },
+      { "num": "05", "title": "Bilans sanguins & Analyses",  "description": "Bilans complets, analyses biologiques approfondies et interprétation médicale avec conseils nutritionnels.",                                                                    "icon": "blood" },
+      { "num": "06", "title": "Vaccins & Perfusions",        "description": "Vaccination complète, perfusions thérapeutiques et injections avec suivi post-administration.",                                                                                    "icon": "vaccine" },
+      { "num": "07", "title": "Médecine générale",           "description": "Consultations de médecine générale, check-up complets, suivi de pathologies chroniques et certificats médicaux.",                                                                "icon": "general" }
+    ]
+  },
+  "partnership": {
+    "eyebrow": "Collaboration",
+    "title": "Avec evo360",
+    "subtitle": "SportMed360 est intégré au cœur du centre de bien-être evo360 — accès direct à une salle fonctionnelle moderne, des coachs sportifs et des spécialistes de la remise en forme et du mouvement.",
+    "carousel": [
+      { "src": "src/assets/premises/redlight_1.webp", "alt": "Centre de bien-être evo360 — lumière rouge pour la récupération sportive" },
+      { "src": "src/assets/premises/centre-11.webp",  "alt": "Équipements de rééducation et physiothérapie au centre evo360 Neuchâtel" },
+      { "src": "src/assets/premises/centre-12.webp",  "alt": "Salle de médecine du sport et préparation physique evo360" },
+      { "src": "src/assets/premises/centre-13.webp",  "alt": "Installations modernes pour la remise en forme et le centre de performance" },
+      { "src": "src/assets/premises/centre-14.webp",  "alt": "Espace d'entraînement et préparation sportive evo360 Neuchâtel" }
+    ],
+    "perks": [
+      { "color": "indigo",   "title": "Salle fonctionnelle",    "description": "Installations modernes pour la MTT et la préparation physique." },
+      { "color": "lavender", "title": "Performance & bien-être", "description": "Coaching individuel, lumière rouge, sauna, performance cognitive." },
+      { "color": "citron",   "title": "Suivi intégré",          "description": "Collaboration médicale et sportive pour un accompagnement global." }
+    ],
+    "cta_label": "Découvrir evo360",
+    "cta_url": "https://evo360.ch/"
+  },
+  "contact": {
+    "eyebrow": "Prendre rendez-vous",
+    "title": "Votre consultation",
+    "title_span": "à partir d'aujourd'hui.",
+    "subtitle": "Consultation en médecine du sport, médecine générale, physiothérapie ou programme de préparation sportive — notre centre médical pluridisciplinaire est à votre disposition.",
+    "cta": "Prendre rendez-vous",
+    "formspree_id": "mykdbplr",
+    "maps_embed": "https://www.google.com/maps?q=Avenue+Edouard-Dubois+20,+2000+Neuch%C3%A2tel,+Suisse&output=embed"
+  },
+  "footer": {
+    "tagline": "by evo360",
+    "tagline_url": "https://evo360.ch",
+    "disclaimer": "Les informations de ce site sont fournies à titre indicatif et ne remplacent pas une consultation médicale professionnelle."
+  }
+}

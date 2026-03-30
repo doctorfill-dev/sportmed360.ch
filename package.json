@@ -1,0 +1,28 @@
+{
+  "name": "sportmed360.ch",
+  "version": "1.0.0",
+  "description": "SportMed360 — Centre médical de médecine du sport & physiothérapie, Neuchâtel",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "dev:admin": "vite",
+    "build": "eleventy && vite build",
+    "build:site": "eleventy",
+    "preview": "vite preview",
+    "optimize": "node scripts/optimize-images.mjs"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@keystatic/core": "^0.5.40",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "sharp": "^0.34.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0"
+  }
+}

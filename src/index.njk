@@ -1,0 +1,672 @@
+---
+permalink: /index.html
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4622CC" />
+
+  <title>{{ home.seo.title }}</title>
+  <meta name="description" content="{{ home.seo.description }}" />
+  <meta name="keywords"    content="{{ home.seo.keywords }}" />
+  <meta name="author"      content="{{ home.site.name }} by evo360" />
+  <meta name="robots"      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical"    href="{{ home.seo.canonical }}" />
+
+  <meta http-equiv="content-language" content="fr-CH" />
+  <link rel="alternate" hreflang="fr-CH"    href="{{ home.seo.canonical }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ home.seo.canonical }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="{{ home.seo.canonical }}" />
+  <meta property="og:title"       content="{{ home.seo.og_title }}" />
+  <meta property="og:description" content="{{ home.seo.og_description }}" />
+  <meta property="og:image"       content="{{ home.seo.og_image }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height"content="630" />
+  <meta property="og:locale"      content="fr_CH" />
+  <meta property="og:site_name"   content="{{ home.site.name }}" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="{{ home.seo.og_title }}" />
+  <meta name="twitter:description" content="{{ home.seo.og_description }}" />
+  <meta name="twitter:image"       content="{{ home.seo.og_image }}" />
+
+  <!-- Geo -->
+  <meta name="geo.region"    content="CH-NE" />
+  <meta name="geo.placename" content="Neuchâtel" />
+  <meta name="geo.position"  content="46.9930;6.9298" />
+  <meta name="ICBM"          content="46.9930, 6.9298" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-e-192.svg" />
+  <link rel="apple-touch-icon"           href="/assets/logo/logo-e-192.svg" />
+  <link rel="manifest"                   href="/manifest.json" />
+
+  <!-- Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.medbase.ch" />
+  <link rel="preload" as="image" href="/assets/premises/fitness_2.webp" fetchpriority="high" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
+
+  <!-- Schema.org — MedicalClinic -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "@id": "{{ home.site.url }}/#clinic",
+    "name": "{{ home.site.name }}",
+    "alternateName": "{{ home.site.name }} by evo360",
+    "url": "{{ home.site.url }}",
+    "logo": { "@type": "ImageObject", "url": "https://evo360.ch/Images/e.png", "width": 512, "height": 512 },
+    "image": ["{{ home.site.url }}/assets/premises/fitness_1.webp"],
+    "description": "{{ home.seo.description }}",
+    "medicalSpecialty": ["SportsMedicine", "PhysicalTherapy", "Cardiovascular", "Musculoskeletal"],
+    "telephone": "{{ home.site.phone }}",
+    "email": "{{ home.site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ home.site.address_street }}",
+      "addressLocality": "Neuchâtel",
+      "postalCode": "2000",
+      "addressCountry": "CH",
+      "addressRegion": "NE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 46.9930, "longitude": 6.9298 },
+    "hasMap": "{{ home.site.maps_url }}",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "07:30",
+      "closes": "18:30"
+    }],
+    "paymentAccepted": "{{ home.site.payment }}",
+    "currenciesAccepted": "CHF",
+    "employee": [{% for m in home.team.members %}{ "@id": "{{ home.site.url }}/#{{ m.id }}" }{% if not loop.last %}, {% endif %}{% endfor %}],
+    "sameAs": ["https://evo360.ch/"]
+  }
+  </script>
+
+  <!-- Schema.org — Employees -->
+  {% for m in home.team.members %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "{{ home.site.url }}/#{{ m.id }}",
+    "name": "{{ m.name }}",
+    "jobTitle": "{{ m.role }}"{% if m.photo %},
+    "image": "{{ home.site.url }}/{{ m.photo | replace('src/', '') }}"{% endif %}{% if m.languages %},
+    "knowsLanguage": [{{ m.languages | replace(' · ', '","') | replace(' ', '') | dump }}]{% endif %},
+    "worksFor": { "@id": "{{ home.site.url }}/#clinic" }
+  }
+  </script>
+  {% endfor %}
+
+  <!-- Schema.org — Services -->
+  <script type="application/ld+json">
+  [{% for svc in home.services.items %}
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "name": "{{ svc.title }}",
+      "description": "{{ svc.description }}",
+      "provider": { "@id": "{{ home.site.url }}/#clinic" }
+    }{% if not loop.last %},{% endif %}
+  {% endfor %}]
+  </script>
+
+  <!-- Schema.org — WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "{{ home.site.url }}/#website",
+    "url": "{{ home.site.url }}",
+    "name": "{{ home.site.name }}",
+    "publisher": { "@id": "{{ home.site.url }}/#clinic" },
+    "inLanguage": "fr-CH"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="#hero" class="header-logo" aria-label="{{ home.site.name }} — accueil">
+        <img class="logo-dark"  src="/assets/logo/logo-dark.svg"  alt="" width="328" height="40" aria-hidden="true" />
+        <img class="logo-white" src="/assets/logo/logo-white.svg" alt="" width="328" height="40" aria-hidden="true" />
+      </a>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        {% for link in home.nav.links %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+        {% endfor %}
+      </nav>
+
+      <button type="button" class="btn btn-header" data-open-contact>
+        {{ home.nav.cta_label }}
+      </button>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobile" hidden>
+      {% for link in home.nav.links %}
+      <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
+      <button type="button" class="btn btn-primary mt-1" data-open-contact>{{ home.nav.cta_label }}</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section id="hero" class="hero" aria-labelledby="hero-h1">
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          {{ home.hero.eyebrow }}
+        </p>
+
+        <h1 id="hero-h1" class="hero-title">
+          {{ home.hero.title_line1 }}<br />
+          <em>{{ home.hero.title_line2 }}</em><br />
+          {{ home.hero.title_line3 | safe }}
+        </h1>
+
+        <p class="hero-sub">{{ home.hero.subtitle }}</p>
+
+        <div class="hero-cta-row">
+          <button type="button" class="btn btn-citron btn-lg" data-open-contact>
+            {{ home.hero.cta_primary }}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <a href="{{ home.hero.cta_secondary_url }}" class="btn btn-ghost-light btn-lg">{{ home.hero.cta_secondary_label }}</a>
+        </div>
+
+        <ul class="hero-chips" aria-label="Assurances et horaires">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            LAMal &amp; LAA
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {{ home.site.hours_short }}
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5 19.79 19.79 0 0 1 1.07 2.18a2 2 0 0 1 2.17-2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.64 6.64l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            {{ home.site.phone_display }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mosaic -->
+      <div class="hero-mosaic" aria-hidden="true">
+        {% for img in home.hero.mosaic %}
+        <div class="mosaic-img mosaic-img--{{ img.pos }}">
+          <img src="{{ img.src | toPublicPath }}" alt="{{ img.alt }}"
+            {% if img.priority %}fetchpriority="high"{% else %}loading="lazy" decoding="async"{% endif %}
+          />
+        </div>
+        {% endfor %}
+        <div class="mosaic-badge">
+          <span class="badge-num">{{ home.hero.badge_num }}</span>
+          <span class="badge-label">{{ home.hero.badge_label | replace("\n", "<br/>") | safe }}</span>
+        </div>
+      </div>
+
+      <!-- Ticker (items dupliqués pour la boucle sans couture) -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          {% for item in home.hero.ticker %}<span>{{ item }}</span><span aria-hidden="true">◆</span>{% endfor %}
+          {% for item in home.hero.ticker %}<span>{{ item }}</span><span aria-hidden="true">◆</span>{% endfor %}
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══ STATS ══ -->
+    <div class="stats-strip" role="region" aria-label="Chiffres clés">
+      <div class="stats-inner">
+        {% for stat in home.stats %}
+        <div class="stat">
+          <span class="stat-num">{{ stat.num }}{% if stat.sup %}<sup>{{ stat.sup }}</sup>{% endif %}</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+        {% if not loop.last %}<div class="stat-divider" aria-hidden="true"></div>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ══ ÉQUIPE ══ -->
+    <section id="equipe" class="team-section" aria-labelledby="team-h2">
+      <div class="section-container">
+
+        <header class="section-header">
+          <p class="eyebrow">{{ home.team.eyebrow }}</p>
+          <h2 id="team-h2">{{ home.team.title }}</h2>
+          <p class="section-sub">{{ home.team.subtitle }}</p>
+        </header>
+
+        <div class="team-list">
+          {% for m in home.team.members %}
+          <article class="hcard" aria-labelledby="hcard-{{ m.id }}">
+            <div class="hcard-stripe hcard-stripe--{{ m.color }}" aria-hidden="true"></div>
+
+            <div class="hcard-photo-col">
+              {% if m.photo %}
+              <img
+                src="{{ m.photo | toPublicPath }}"
+                alt="{{ m.photo_alt }}"
+                class="hcard-photo"
+                loading="lazy"
+                decoding="async"
+                width="300" height="360"
+                onerror="this.style.display='none';this.nextElementSibling.removeAttribute('hidden');"
+              />
+              {% endif %}
+              <div class="hcard-avatar hcard-avatar--{{ m.color }}"{% if m.photo %} hidden{% endif %} aria-hidden="true">{{ m.avatar }}</div>
+            </div>
+
+            <div class="hcard-body">
+              <div class="hcard-top">
+                <span class="role-pill role-pill--{{ m.color }}">{{ m.role }}</span>
+                {% if m.languages %}
+                <span class="lang-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  {{ m.languages }}
+                </span>
+                {% endif %}
+              </div>
+
+              <h3 id="hcard-{{ m.id }}" class="hcard-name">{{ m.name }}</h3>
+
+              {% if m.tags %}
+              <div class="hcard-tags">
+                {% for tag in m.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+              </div>
+              {% endif %}
+
+              <p class="hcard-bio">{{ m.bio | safe }}</p>
+
+              {% if m.credentials %}
+              <ul class="hcard-creds">
+                {% for cred in m.credentials %}
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  {{ cred | safe }}
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% if m.partnership %}
+              <div class="hcard-partnership">
+                <span>{{ m.partnership.label }}</span>
+                <a href="{{ m.partnership.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ m.partnership.aria_label }}">
+                  {% if m.partnership.logo_url %}
+                  <img src="{{ m.partnership.logo_url }}" alt="{{ m.partnership.logo_alt }}" loading="lazy" width="100" height="24" />
+                  {% elif m.partnership.logo_src %}
+                  <img src="{{ m.partnership.logo_src | toPublicPath }}" alt="{{ m.partnership.logo_alt }}" loading="lazy" decoding="async" width="24" height="24" />
+                  {% endif %}
+                </a>
+              </div>
+              {% endif %}
+
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ SERVICES ══ -->
+    <section id="services" class="services-section" aria-labelledby="services-h2">
+      <div class="section-container services-layout">
+
+        <div class="services-intro">
+          <p class="eyebrow">{{ home.services.eyebrow }}</p>
+          <h2 id="services-h2">{{ home.services.title | replace("\n", "<br />") | safe }}</h2>
+          <p>{{ home.services.subtitle }}</p>
+          <button type="button" class="btn btn-primary btn-md" data-open-contact>
+            {{ home.services.cta }}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <ol class="services-list">
+          {% for svc in home.services.items %}
+          <li class="service-item">
+            <span class="svc-num" aria-hidden="true">{{ svc.num }}</span>
+            <div class="svc-content">
+              <h3>{{ svc.title }}</h3>
+              <p>{{ svc.description }}</p>
+            </div>
+            <div class="svc-icon" aria-hidden="true">
+              {% if svc.icon == "sport" %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></svg>
+              {% elif svc.icon == "physio" %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              {% elif svc.icon == "mtt" %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              {% elif svc.icon == "ecg" %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+              {% elif svc.icon == "blood" %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+              {% elif svc.icon == "vaccine" %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4-14 14H4v-4L18 2z"/><path d="m14.5 5.5 4 4"/></svg>
+              {% else %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              {% endif %}
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ══ PARTENARIAT EVO360 ══ -->
+    <section id="partenariat" class="partnership-section" aria-labelledby="partnership-h2">
+      <div class="section-container">
+
+        <header class="section-header">
+          <p class="eyebrow">{{ home.partnership.eyebrow }}</p>
+          <h2 id="partnership-h2">{{ home.partnership.title }}</h2>
+          <p class="section-sub">{{ home.partnership.subtitle }}</p>
+        </header>
+
+        <div class="carousel" id="evo360-carousel">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              {% for slide in home.partnership.carousel %}
+              <div class="carousel-slide">
+                <img src="{{ slide.src | toPublicPath }}" alt="{{ slide.alt }}" loading="lazy" decoding="async" />
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <button class="carousel-btn carousel-btn-prev" aria-label="Image précédente">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="carousel-btn carousel-btn-next" aria-label="Image suivante">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="carousel-dots" role="tablist" aria-label="Navigation carrousel"></div>
+        </div>
+
+        <div class="perks-row">
+          {% for perk in home.partnership.perks %}
+          <div class="perk">
+            <div class="perk-icon perk-icon--{{ perk.color }}" aria-hidden="true">
+              {% if perk.color == "indigo" %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5v11"/><path d="M18 5v11"/><path d="M2 9h4"/><path d="M18 9h4"/><path d="M4 5h4"/><path d="M16 5h4"/><path d="M4 15h4"/><path d="M16 15h4"/><path d="M6 9h12"/></svg>
+              {% elif perk.color == "lavender" %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              {% else %}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              {% endif %}
+            </div>
+            <h3>{{ perk.title }}</h3>
+            <p>{{ perk.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="pship-cta">
+          <a href="{{ home.partnership.cta_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-md">
+            {{ home.partnership.cta_label }}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ CONTACT / CTA ══ -->
+    <section id="contact" class="cta-section" aria-labelledby="cta-h2">
+      <div class="section-container cta-inner">
+
+        <div class="cta-text">
+          <p class="eyebrow eyebrow--dark">{{ home.contact.eyebrow }}</p>
+          <h2 id="cta-h2" class="cta-title">
+            {{ home.contact.title }}<br />
+            <span>{{ home.contact.title_span }}</span>
+          </h2>
+          <p class="cta-sub">{{ home.contact.subtitle }}</p>
+          <button type="button" class="btn btn-dark btn-xl" data-open-contact>
+            {{ home.contact.cta }}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <address class="cta-contact" aria-label="Coordonnées {{ home.site.name }}">
+          <div class="cta-contact-item">
+            <div class="cta-contact-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>Horaires</strong>
+              <span>{{ home.site.hours_days }}<br />{{ home.site.hours_time }}</span>
+            </div>
+          </div>
+          <div class="cta-contact-item">
+            <div class="cta-contact-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5 19.79 19.79 0 0 1 1.07 2.18a2 2 0 0 1 2.17-2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.64 6.64l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Téléphone</strong>
+              <a href="tel:{{ home.site.phone }}">{{ home.site.phone_display }}</a>
+            </div>
+          </div>
+          <div class="cta-contact-item">
+            <div class="cta-contact-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:{{ home.site.email }}">{{ home.site.email }}</a>
+            </div>
+          </div>
+          <div class="cta-contact-item">
+            <div class="cta-contact-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>Adresse</strong>
+              <a href="{{ home.site.maps_url }}" target="_blank" rel="noopener noreferrer">
+                {{ home.site.address_street }}<br />{{ home.site.address_city }}
+              </a>
+            </div>
+          </div>
+        </address>
+
+        <div class="map-wrapper">
+          <iframe
+            src="{{ home.contact.maps_embed }}"
+            title="Localisation {{ home.site.name }} — {{ home.site.address_street }}, Neuchâtel"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="section-container footer-inner">
+
+      <div class="footer-brand">
+        <a href="#hero" class="footer-logo" aria-label="{{ home.site.name }} — accueil">
+          <img src="/assets/logo/logo-white.svg" alt="" aria-hidden="true" />
+        </a>
+        <p class="footer-by">
+          {{ home.footer.tagline }} <a href="{{ home.footer.tagline_url }}" target="_blank" rel="noopener noreferrer">evo360</a>
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Liens rapides">
+        <p class="footer-heading">Navigation</p>
+        <ul>
+          {% for link in home.nav.links %}
+          <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <address class="footer-info">
+        <p class="footer-heading">Informations</p>
+        <ul>
+          <li><a href="tel:{{ home.site.phone }}">{{ home.site.phone_display }}</a></li>
+          <li><a href="mailto:{{ home.site.email }}">{{ home.site.email }}</a></li>
+          <li>
+            <a href="{{ home.site.maps_url }}" target="_blank" rel="noopener noreferrer">
+              {{ home.site.address_street }}, Neuchâtel
+            </a>
+          </li>
+          <li>{{ home.site.hours_short }}</li>
+        </ul>
+      </address>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="section-container footer-bottom-inner">
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> {{ home.site.name }}
+          <span class="footer-sep" aria-hidden="true">·</span>
+          Développé par <a href="https://github.com/doctorfill-dev" target="_blank" rel="noopener noreferrer">doctorfill-dev</a>
+        </p>
+        <nav class="footer-legal-bar" aria-label="Liens légaux">
+          <a href="/legal/mentions-legales.html">Mentions légales</a>
+          <span aria-hidden="true">·</span>
+          <a href="/legal/politique-de-confidentialite.html">Confidentialité</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" id="cookie-manage">Cookies</a>
+        </nav>
+      </div>
+      <div class="section-container">
+        <p class="footer-disclaimer">{{ home.footer.disclaimer }}</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ CONTACT MODAL ══ -->
+  <div class="modal-overlay" id="contact-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" aria-label="Fermer" data-close-contact>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-header">
+        <p class="eyebrow">Prendre rendez-vous</p>
+        <h2 id="modal-title" class="modal-title">Contactez-nous</h2>
+        <p class="modal-sub">Remplissez le formulaire ci-dessous et nous vous recontacterons dans les plus brefs délais.</p>
+      </div>
+      <form id="contact-form" action="https://formspree.io/f/{{ home.contact.formspree_id }}" method="POST" class="modal-form">
+        <div class="form-group">
+          <label for="contact-name">Nom complet</label>
+          <input type="text" id="contact-name" name="name" required placeholder="Votre nom et prénom" />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" required placeholder="votre@email.ch" />
+        </div>
+        <div class="form-group">
+          <label for="contact-phone">Téléphone <span class="optional">(facultatif)</span></label>
+          <input type="tel" id="contact-phone" name="phone" placeholder="+41 XX XXX XX XX" />
+        </div>
+        <div class="form-group">
+          <label for="contact-subject">Objet</label>
+          <select id="contact-subject" name="subject" required>
+            <option value="" disabled selected>Choisissez un sujet</option>
+            <option value="Demande de rendez-vous">Demande de rendez-vous</option>
+            <option value="Médecine du sport">Médecine du sport</option>
+            <option value="Physiothérapie">Physiothérapie</option>
+            <option value="ECG / Tests d'effort">ECG / Tests d'effort</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" required rows="4" placeholder="Décrivez votre demande…"></textarea>
+        </div>
+        <div class="form-group form-group--consent">
+          <input type="checkbox" id="contact-consent" name="consent" required />
+          <label for="contact-consent">
+            J'accepte que mes données soient traitées par {{ home.site.name }} afin de traiter ma demande.
+            Les données sont transmises via <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Formspree</a>.
+            <a href="/legal/politique-de-confidentialite.html" target="_blank">Politique de confidentialité</a>
+          </label>
+        </div>
+        <input type="hidden" name="_subject" value="Nouveau message — {{ home.site.name }}" />
+        <button type="submit" class="btn btn-primary btn-lg modal-submit">
+          Envoyer
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+      <div id="contact-success" class="modal-success" hidden>
+        <div class="success-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Message envoyé !</h3>
+        <p>Merci pour votre message. Nous vous recontacterons dans les plus brefs délais.</p>
+        <button type="button" class="btn btn-primary btn-md" data-close-contact>Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COOKIE BANNER ══ -->
+  <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Consentement cookies" hidden>
+    <div class="cookie-banner-inner">
+      <p>
+        Ce site utilise <strong>Google Analytics</strong> pour mesurer l'audience de façon anonymisée.
+        Aucune donnée personnelle n'est transmise sans votre accord.
+        <a href="/legal/politique-de-confidentialite.html">En savoir plus</a>
+      </p>
+      <div class="cookie-actions">
+        <button id="cookie-accept" class="btn-cookie-accept">Accepter</button>
+        <button id="cookie-refuse" class="btn-cookie-refuse">Refuser</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/script.js" defer></script>
+
+  <script>
+    (function() {
+      function loadGA() {
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-THHRDGB6X6';
+        s.async = true;
+        document.head.appendChild(s);
+        s.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-THHRDGB6X6', { anonymize_ip: true });
+        };
+      }
+      if (localStorage.getItem('cookie_consent') === 'accepted') { loadGA(); }
+      window.addEventListener('cookieConsented', loadGA, { once: true });
+    })();
+  </script>
+</body>
+</html>

@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
+# DÉSACTIVÉ — Production migrée sur Cloudflare Workers
+# Ce workflow est conservé en référence uniquement.
 on:
-  push:
-    branches: [main]
+  workflow_dispatch: # manuel uniquement
 
 permissions:
   contents: read

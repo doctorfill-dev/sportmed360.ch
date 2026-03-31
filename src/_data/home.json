@@ -209,13 +209,22 @@
         "role": "Physiothérapeute",
         "color": "lavender",
         "avatar": "EP",
+        "languages": "FR · ES · EN",
         "tags": [
           "Physiothérapie",
           "Rééducation"
         ],
         "bio": "Physiothérapeute au sein du centre médical SportMed360, Elihu Pigeau accompagne les patients dans leur parcours de rééducation et de remise en forme, avec une approche personnalisée et attentive.",
-        "credentials": [],
-        "partnership": {}
+        "credentials": [
+          "Diplômé en physiothérapie (2010) - Université européenne de Madrid",
+          "Formation avancé en kinésiotape"
+        ],
+        "partnership": {
+          "label": "Zenith Physiothérapie",
+          "url": "https://zenith-physio.ch/",
+          "logo_url": "https://zenith-physio.ch/clubdesk/fileservlet?type=image&id=1000025&s=djEtrEEyM6iTJumneYdOADJdRGlJ-9Vi7IsuFlyFvVg3I2Q=&imageFormat=_512x512",
+          "logo_alt": "logo zenith"
+        }
       },
       {
         "id": "crausaz",
@@ -339,6 +348,32 @@
       }
     ]
   },
+  "faq": [
+    {
+      "question": "Comment prendre rendez-vous chez SportMed360 ?",
+      "answer": "Vous pouvez prendre rendez-vous via le formulaire de contact sur notre site ou par téléphone au +41 76 541 03 60, du lundi au vendredi de 7h30 à 18h30."
+    },
+    {
+      "question": "Quelles assurances sont acceptées ?",
+      "answer": "SportMed360 accepte la LAMal (assurance de base obligatoire) et la LAA (assurance accidents). Les consultations de médecine du sport, physiothérapie et médecine générale sont remboursées sur ordonnance médicale. Renseignez-vous auprès de votre caisse-maladie pour les assurances complémentaires."
+    },
+    {
+      "question": "Faut-il une ordonnance pour la physiothérapie ?",
+      "answer": "En Suisse, une ordonnance médicale est nécessaire pour une prise en charge LAMal en physiothérapie. Le Dr Curty peut vous la délivrer lors d'une consultation au centre. Certaines assurances complémentaires peuvent couvrir des traitements sans ordonnance."
+    },
+    {
+      "question": "Où se trouve le centre SportMed360 ?",
+      "answer": "SportMed360 est situé Avenue Edouard-Dubois 20, 2000 Neuchâtel — au sein du centre de bien-être evo360, facilement accessible en transport public et avec parking disponible à proximité."
+    },
+    {
+      "question": "Proposez-vous des consultations pour les sportifs amateurs ?",
+      "answer": "Oui, SportMed360 accompagne aussi bien les sportifs de haut niveau que les sportifs amateurs, les personnes en reprise d'activité ou souhaitant améliorer leur condition physique. Aucun niveau sportif minimum n'est requis."
+    },
+    {
+      "question": "Qu'est-ce que la médecine du sport ?",
+      "answer": "La médecine du sport est une spécialité médicale dédiée à la prévention, au diagnostic et au traitement des pathologies liées à l'activité physique. Elle s'adresse aux sportifs de tous niveaux mais aussi aux patients souhaitant pratiquer ou reprendre une activité physique en toute sécurité."
+    }
+  ],
   "partnership": {
     "eyebrow": "Collaboration",
     "title": "Avec evo360",
@@ -394,32 +429,6 @@
     "formspree_id": "mykdbplr",
     "maps_embed": "https://www.google.com/maps?q=Avenue+Edouard-Dubois+20,+2000+Neuch%C3%A2tel,+Suisse&output=embed"
   },
-  "faq": [
-    {
-      "question": "Comment prendre rendez-vous chez SportMed360 ?",
-      "answer": "Vous pouvez prendre rendez-vous via le formulaire de contact sur notre site ou par téléphone au +41 76 541 03 60, du lundi au vendredi de 7h30 à 18h30."
-    },
-    {
-      "question": "Quelles assurances sont acceptées ?",
-      "answer": "SportMed360 accepte la LAMal (assurance de base obligatoire) et la LAA (assurance accidents). Les consultations de médecine du sport, physiothérapie et médecine générale sont remboursées sur ordonnance médicale. Renseignez-vous auprès de votre caisse-maladie pour les assurances complémentaires."
-    },
-    {
-      "question": "Faut-il une ordonnance pour la physiothérapie ?",
-      "answer": "En Suisse, une ordonnance médicale est nécessaire pour une prise en charge LAMal en physiothérapie. Le Dr Curty peut vous la délivrer lors d'une consultation au centre. Certaines assurances complémentaires peuvent couvrir des traitements sans ordonnance."
-    },
-    {
-      "question": "Où se trouve le centre SportMed360 ?",
-      "answer": "SportMed360 est situé Avenue Edouard-Dubois 20, 2000 Neuchâtel — au sein du centre de bien-être evo360, facilement accessible en transport public et avec parking disponible à proximité."
-    },
-    {
-      "question": "Proposez-vous des consultations pour les sportifs amateurs ?",
-      "answer": "Oui, SportMed360 accompagne aussi bien les sportifs de haut niveau que les sportifs amateurs, les personnes en reprise d'activité ou souhaitant améliorer leur condition physique. Aucun niveau sportif minimum n'est requis."
-    },
-    {
-      "question": "Qu'est-ce que la médecine du sport ?",
-      "answer": "La médecine du sport est une spécialité médicale dédiée à la prévention, au diagnostic et au traitement des pathologies liées à l'activité physique. Elle s'adresse aux sportifs de tous niveaux mais aussi aux patients souhaitant pratiquer ou reprendre une activité physique en toute sécurité."
-    }
-  ],
   "footer": {
     "tagline": "by evo360",
     "tagline_url": "https://evo360.ch",

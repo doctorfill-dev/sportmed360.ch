@@ -65,7 +65,7 @@ permalink: /index.html
     "url": "{{ home.site.url }}",
     "logo": { "@type": "ImageObject", "url": "{{ home.site.url }}/assets/logo/logo.webp" },
     "image": ["{{ home.site.url }}/assets/premises/hero/mosaic/0/src.webp"],
-    "description": "{{ seo.description }}",
+    "description": "{{ seo.description | jsonEscape | safe }}",
     "medicalSpecialty": ["SportsMedicine", "PhysicalTherapy", "Cardiovascular", "Musculoskeletal"],
     "telephone": "{{ home.site.phone }}",
     "email": "{{ home.site.email }}",
@@ -102,7 +102,7 @@ permalink: /index.html
     "name": "{{ m.name }}",
     "jobTitle": "{{ m.role }}"{% if m.photo %},
     "image": "{{ home.site.url }}/{{ m.photo | replace('src/', '') }}"{% endif %}{% if m.languages %},
-    "knowsLanguage": [{{ m.languages | replace(' · ', '","') | replace(' ', '') | dump }}]{% endif %},
+    "knowsLanguage": {{ m.languages | toJsonArray | safe }}{% endif %},
     "worksFor": { "@id": "{{ home.site.url }}/#clinic" }
   }
   </script>
@@ -114,8 +114,8 @@ permalink: /index.html
     {
       "@context": "https://schema.org",
       "@type": "MedicalProcedure",
-      "name": "{{ svc.title }}",
-      "description": "{{ svc.description }}",
+      "name": "{{ svc.title | jsonEscape | safe }}",
+      "description": "{{ svc.description | jsonEscape | safe }}",
       "provider": { "@id": "{{ home.site.url }}/#clinic" }
     }{% if not loop.last %},{% endif %}
   {% endfor %}]
@@ -130,8 +130,8 @@ permalink: /index.html
     "mainEntity": [{% for item in home.faq %}
       {
         "@type": "Question",
-        "name": "{{ item.question }}",
-        "acceptedAnswer": { "@type": "Answer", "text": "{{ item.answer }}" }
+        "name": "{{ item.question | jsonEscape | safe }}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{ item.answer | jsonEscape | safe }}" }
       }{% if not loop.last %},{% endif %}
     {% endfor %}]
   }

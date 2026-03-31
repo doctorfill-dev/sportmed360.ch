@@ -11,7 +11,7 @@ permalink: /index.html
   <title>{{ seo.title }}</title>
   <meta name="description" content="{{ seo.description }}" />
   <meta name="keywords"    content="{{ seo.keywords }}" />
-  <meta name="author"      content="{{ home.site.name }} by evo360" />
+  <meta name="author"      content="{{ home.site.name }}" />
   <meta name="robots"      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical"    href="{{ seo.canonical }}" />
 
@@ -41,7 +41,6 @@ permalink: /index.html
   <meta name="geo.placename" content="Neuchâtel" />
   <meta name="geo.position"  content="46.9930;6.9298" />
   <meta name="ICBM"          content="46.9930, 6.9298" />
-  <!-- juste for one run-->
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="./assets/logo/logo-e-192.svg" />
@@ -52,7 +51,7 @@ permalink: /index.html
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.medbase.ch" />
-  <link rel="preload" as="image" href="/assets/premises/fitness_2.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/premises/hero/mosaic/0/src.webp" fetchpriority="high" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
 
@@ -63,10 +62,9 @@ permalink: /index.html
     "@type": "MedicalClinic",
     "@id": "{{ home.site.url }}/#clinic",
     "name": "{{ home.site.name }}",
-    "alternateName": "{{ home.site.name }} by evo360",
     "url": "{{ home.site.url }}",
-    "logo": { "@type": "ImageObject", "url": "https://evo360.ch/Images/e.png", "width": 512, "height": 512 },
-    "image": ["{{ home.site.url }}/assets/premises/fitness_1.webp"],
+    "logo": { "@type": "ImageObject", "url": "{{ home.site.url }}/assets/logo/logo.webp" },
+    "image": ["{{ home.site.url }}/assets/premises/hero/mosaic/0/src.webp"],
     "description": "{{ seo.description }}",
     "medicalSpecialty": ["SportsMedicine", "PhysicalTherapy", "Cardiovascular", "Musculoskeletal"],
     "telephone": "{{ home.site.phone }}",
@@ -90,7 +88,7 @@ permalink: /index.html
     "paymentAccepted": "{{ home.site.payment }}",
     "currenciesAccepted": "CHF",
     "employee": [{% for m in home.team.members %}{ "@id": "{{ home.site.url }}/#{{ m.id }}" }{% if not loop.last %}, {% endif %}{% endfor %}],
-    "sameAs": ["https://evo360.ch/"]
+    "parentOrganization": { "@type": "Organization", "name": "evo360", "url": "https://evo360.ch" }
   }
   </script>
 

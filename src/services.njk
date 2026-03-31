@@ -160,7 +160,7 @@ permalink: "services/{{ service.slug }}/"
           {% for member_id in service.team_members %}
             {% for m in home.team.members %}
               {% if m.id == member_id %}
-              <article class="svc-member-card">
+              <a href="/#hcard-{{ m.id }}" class="svc-member-card" aria-label="Voir le profil complet de {{ m.name }}">
                 {% if m.photo %}
                 <img
                   src="{{ m.photo | toPublicPath }}"
@@ -178,8 +178,12 @@ permalink: "services/{{ service.slug }}/"
                   {% if m.languages %}
                   <span class="svc-member-lang">{{ m.languages }}</span>
                   {% endif %}
+                  <span class="svc-member-profile-link">
+                    Voir le profil complet
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                  </span>
                 </div>
-              </article>
+              </a>
               {% endif %}
             {% endfor %}
           {% endfor %}

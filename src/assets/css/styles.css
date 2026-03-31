@@ -1460,7 +1460,16 @@ h3 {
   border: 1px solid var(--gray-200);
   border-radius: var(--r-lg);
   min-width: 240px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
+.svc-member-card:hover {
+  border-color: var(--indigo-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.svc-member-card:hover .svc-member-profile-link { color: var(--indigo); }
 .svc-member-photo {
   width: 56px;
   height: 56px;
@@ -1487,6 +1496,16 @@ h3 {
 .svc-member-name { font-size: .9375rem; font-weight: 600; color: var(--gray-900); }
 .svc-member-role { font-size: .825rem; color: var(--gray-500); }
 .svc-member-lang { font-size: .775rem; color: var(--indigo); font-weight: 500; margin-top: .2rem; }
+.svc-member-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  font-size: .775rem;
+  font-weight: 500;
+  color: var(--gray-400);
+  margin-top: .35rem;
+  transition: color var(--dur) var(--ease);
+}
 
 /* CTA */
 .svc-cta-section {

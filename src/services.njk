@@ -155,7 +155,7 @@ permalink: "services/{{ service.slug }}/"
     {% if service.team_members and service.team_members.length %}
     <section class="svc-team-section" aria-labelledby="svc-team-h2">
       <div class="section-container">
-        <h2 id="svc-team-h2">Votre praticien</h2>
+        <h2 id="svc-team-h2">{% if service.team_members.length > 1 %}Votre équipe{% else %}Votre praticien{% endif %}</h2>
         <div class="svc-team-grid">
           {% for member_id in service.team_members %}
             {% for m in home.team.members %}

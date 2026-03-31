@@ -30,6 +30,24 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter('padStart', (val, len, char = '0') => String(val).padStart(len, char))
   eleventyConfig.addGlobalData('dateNow', () => new Date().toISOString().split('T')[0])
 
+  // Echappe une valeur pour l'inclure dans une chaine JSON (JSON-LD).
+  // N'introduit AUCUNE entite HTML — seuls les caracteres JSON speciaux sont echappes.
+  eleventyConfig.addFilter('jsonEscape', (str) =>
+    String(str ?? '')
+      .replace(/\\/g, '\\\\')
+      .replace(/"/g, '\\"')
+      .replace(/\n/g, '\\n')
+      .replace(/\r/g, '\\r')
+      .replace(/\t/g, '\\t')
+  )
+
+  // Convertit une chaine "FR · EN · DE" en tableau JSON ["FR","EN","DE"].
+  // A utiliser avec | safe pour eviter le double-echappement Nunjucks.
+  eleventyConfig.addFilter('toJsonArray', (str) => {
+    const items = String(str ?? '').split(' · ').map(s => s.trim()).filter(Boolean)
+    return JSON.stringify(items)
+  })
+
   eleventyConfig.addFilter('toPublicPath', (path) => {
     if (!path) return ''
     if (path.startsWith('/')) return path

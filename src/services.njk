@@ -49,7 +49,7 @@ permalink: "services/{{ service.slug }}/"
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Accueil",  "item": "{{ home.site.url }}/" },
       { "@type": "ListItem", "position": 2, "name": "Services", "item": "{{ home.site.url }}/#services" },
-      { "@type": "ListItem", "position": 3, "name": "{{ service.title }}", "item": "{{ home.site.url }}/services/{{ service.slug }}/" }
+      { "@type": "ListItem", "position": 3, "name": "{{ service.title | jsonEscape | safe }}", "item": "{{ home.site.url }}/services/{{ service.slug }}/" }
     ]
   }
   </script>
@@ -59,8 +59,8 @@ permalink: "services/{{ service.slug }}/"
   {
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
-    "name": "{{ service.title }}",
-    "description": "{{ service.seo_description }}",
+    "name": "{{ service.title | jsonEscape | safe }}",
+    "description": "{{ service.seo_description | jsonEscape | safe }}",
     "url": "{{ home.site.url }}/services/{{ service.slug }}/",
     "procedureType": "https://schema.org/TherapeuticProcedure",
     "recognizingAuthority": { "@type": "Organization", "name": "SEMS — Swiss Exercise and Sports Medicine" },

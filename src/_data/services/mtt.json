@@ -15,6 +15,13 @@
     "Coordination entre physiothérapeutes et préparateur physique"
   ],
   "details": "La MTT est réalisée par Franco Pisino, préparateur physique certifié Swiss Olympic, en coordination étroite avec l'équipe de physiothérapie. L'accès aux installations d'evo360 — salle fonctionnelle, équipements de musculation et de cardio — offre un environnement optimal pour la progression du patient vers un retour au sport ou à l'activité quotidienne.",
-  "team_members": ["pisino", "bogoev"],
-  "related": ["physiotherapie", "medecine-du-sport"]
+  "team_members": [
+    "crausaz",
+    "pisino",
+    "bogoev"
+  ],
+  "related": [
+    "physiotherapie",
+    "medecine-du-sport"
+  ]
 }

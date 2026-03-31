@@ -1,0 +1,20 @@
+{
+  "title": "ECG & Bilan sportif",
+  "page_title": "Bilan Sportif & ECG à l'Effort à Neuchâtel | SportMed360",
+  "seo_description": "Bilan sportif complet à Neuchâtel : ECG au repos et à l'effort, ergospirométrie (VO2 Max), certificats médico-sportifs. Dr Curty, spécialiste SEMS. LAMal & LAA.",
+  "order": 4,
+  "icon": "ecg",
+  "description": "ECG au repos et à l'effort, ergospirométrie (VO2 Max), examens médico-sportifs et certificats médicaux.",
+  "intro": "Le bilan sportif complet est la base d'une pratique physique sécurisée et optimisée. Au centre SportMed360 à Neuchâtel, le Dr Curty réalise des examens cardio-respiratoires poussés — ECG à l'effort, test VO2 Max et ergospirométrie — pour évaluer votre capacité physique, dépister d'éventuelles contre-indications et personnaliser votre entraînement.",
+  "benefits": [
+    "ECG au repos et à l'effort (ergocycle ou tapis de course)",
+    "Ergospirométrie — mesure du VO2 Max et des seuils ventilatoires",
+    "Certificat médico-sportif de non contre-indication",
+    "Bilan de reprise sportive après blessure ou interruption prolongée",
+    "Évaluation des risques cardiovasculaires à l'effort",
+    "Conseils personnalisés sur les zones d'entraînement optimales"
+  ],
+  "details": "L'ergospirométrie (VO2 Max) est le gold standard de l'évaluation de la capacité aérobie. Elle permet de déterminer précisément les seuils ventilatoires SV1 et SV2, indispensables à la prescription d'entraînement scientifique. Ce bilan est recommandé pour tout sportif souhaitant optimiser ses performances, démarrer un suivi structuré ou reprendre après une interruption.",
+  "team_members": ["curty"],
+  "related": ["medecine-du-sport", "bilans-sanguins"]
+}

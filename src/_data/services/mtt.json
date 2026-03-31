@@ -1,0 +1,20 @@
+{
+  "title": "MTT — Medical Training Therapy",
+  "page_title": "Medical Training Therapy (MTT) à Neuchâtel | SportMed360",
+  "seo_description": "MTT à Neuchâtel : rééducation active par l'entraînement médical guidé. Renforcement ciblé, préparation sportive et retour fonctionnel avec préparateur physique Swiss Olympic.",
+  "order": 3,
+  "icon": "mtt",
+  "description": "Rééducation active par l'entraînement médical guidé — renforcement ciblé, préparation sportive et retour fonctionnel progressif.",
+  "intro": "La MTT (Medical Training Therapy) est une approche de rééducation active qui utilise l'exercice physique guidé comme outil thérapeutique. Intégrée au cœur du centre evo360 à Neuchâtel, elle permet un travail de renforcement musculaire ciblé, de proprioception et de préparation physique dans un environnement médical sécurisé.",
+  "benefits": [
+    "Renforcement musculaire ciblé post-blessure ou post-opératoire",
+    "Proprioception et rééducation neuro-musculaire",
+    "Préparation physique et retour progressif au sport",
+    "Accès aux équipements de fitness professionnel evo360",
+    "Programme individualisé avec suivi par préparateur physique Swiss Olympic",
+    "Coordination entre physiothérapeutes et préparateur physique"
+  ],
+  "details": "La MTT est réalisée par Franco Pisino, préparateur physique certifié Swiss Olympic, en coordination étroite avec l'équipe de physiothérapie. L'accès aux installations d'evo360 — salle fonctionnelle, équipements de musculation et de cardio — offre un environnement optimal pour la progression du patient vers un retour au sport ou à l'activité quotidienne.",
+  "team_members": ["pisino", "bogoev"],
+  "related": ["physiotherapie", "medecine-du-sport"]
+}

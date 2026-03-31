@@ -1,0 +1,20 @@
+{
+  "title": "Médecine générale",
+  "page_title": "Médecin Généraliste à Neuchâtel | SportMed360",
+  "seo_description": "Médecin généraliste à Neuchâtel au cabinet médical SportMed360 : consultations, check-up, suivi des pathologies chroniques, certificats médicaux. Dr Curty FMH, LAMal & LAA.",
+  "order": 7,
+  "icon": "general",
+  "description": "Consultations de médecine générale, check-up complets, suivi de pathologies chroniques et certificats médicaux.",
+  "intro": "En complément de sa spécialisation en médecine du sport, le Dr Curty assure des consultations de médecine générale au cabinet médical SportMed360 à Neuchâtel. Titulaire d'un FMH en médecine interne générale, il prend en charge l'ensemble des problématiques de santé courantes avec une approche globale et préventive.",
+  "benefits": [
+    "Consultations de médecine générale et interne",
+    "Check-up médical complet (annuel ou ponctuel)",
+    "Suivi des pathologies chroniques (diabète, hypertension, dyslipidémie)",
+    "Certificats médicaux (travail, sport, assurance)",
+    "Gestion des maladies aiguës et infections courantes",
+    "Coordination avec les spécialistes et l'équipe pluridisciplinaire"
+  ],
+  "details": "L'avantage du cabinet médical SportMed360 est d'offrir une prise en charge pluridisciplinaire intégrée : le médecin généraliste travaille en coordination directe avec les physiothérapeutes, le préparateur physique et la physiologiste du sport. Un atout unique pour les patients souhaitant allier suivi médical de qualité et prise en charge active de leur santé.",
+  "team_members": ["curty"],
+  "related": ["vaccins-perfusions", "bilans-sanguins", "medecine-du-sport"]
+}

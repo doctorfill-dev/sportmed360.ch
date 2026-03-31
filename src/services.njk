@@ -1,0 +1,286 @@
+---
+pagination:
+  data: servicePages
+  size: 1
+  alias: service
+permalink: "services/{{ service.slug }}/"
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4622CC" />
+
+  <title>{{ service.page_title }}</title>
+  <meta name="description" content="{{ service.seo_description }}" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="{{ home.site.url }}/services/{{ service.slug }}/" />
+
+  <meta http-equiv="content-language" content="fr-CH" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="{{ home.site.url }}/services/{{ service.slug }}/" />
+  <meta property="og:title"       content="{{ service.page_title }}" />
+  <meta property="og:description" content="{{ service.seo_description }}" />
+  <meta property="og:locale"      content="fr_CH" />
+  <meta property="og:site_name"   content="{{ home.site.name }}" />
+
+  <!-- Geo -->
+  <meta name="geo.region"    content="CH-NE" />
+  <meta name="geo.placename" content="Neuchâtel" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-e-192.svg" />
+  <link rel="apple-touch-icon"           href="/assets/logo/logo-e-192.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
+
+  <!-- Schema.org — BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil",  "item": "{{ home.site.url }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "{{ home.site.url }}/#services" },
+      { "@type": "ListItem", "position": 3, "name": "{{ service.title }}", "item": "{{ home.site.url }}/services/{{ service.slug }}/" }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org — MedicalProcedure -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "{{ service.title }}",
+    "description": "{{ service.seo_description }}",
+    "url": "{{ home.site.url }}/services/{{ service.slug }}/",
+    "procedureType": "https://schema.org/TherapeuticProcedure",
+    "recognizingAuthority": { "@type": "Organization", "name": "SEMS — Swiss Exercise and Sports Medicine" },
+    "provider": {
+      "@type": "MedicalClinic",
+      "@id": "{{ home.site.url }}/#clinic",
+      "name": "{{ home.site.name }}",
+      "telephone": "{{ home.site.phone }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ home.site.address_street }}",
+        "addressLocality": "Neuchâtel",
+        "postalCode": "2000",
+        "addressCountry": "CH"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+
+<body class="service-page">
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header opaque" role="banner">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="{{ home.site.name }} — accueil">
+        <img class="logo-dark"  src="/assets/logo/logo-dark.svg"  alt="" width="328" height="40" aria-hidden="true" />
+        <img class="logo-white" src="/assets/logo/logo-white.svg" alt="" width="328" height="40" aria-hidden="true" />
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="/#equipe">Équipe</a>
+        <a href="/#services">Services</a>
+        <a href="/#partenariat">evo360</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a href="/#contact" class="btn btn-header">{{ home.nav.cta_label }}</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══ BREADCRUMB ══ -->
+    <nav class="svc-breadcrumb" aria-label="Fil d'Ariane">
+      <div class="section-container">
+        <ol>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li aria-current="page">{{ service.title }}</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ══ HERO ══ -->
+    <section class="svc-hero">
+      <div class="section-container svc-hero-inner">
+        <span class="svc-num-badge" aria-hidden="true">{{ service.order | default("0") | string | padStart(2, "0") }}</span>
+        <div class="svc-hero-text">
+          <p class="eyebrow eyebrow--dark">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            {{ home.site.name }} · Neuchâtel
+          </p>
+          <h1>{{ service.title }}</h1>
+          <p class="svc-intro">{{ service.intro }}</p>
+          <a href="/#contact" class="btn btn-primary btn-lg">
+            Prendre rendez-vous
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PRESTATIONS ══ -->
+    <section class="svc-benefits-section" aria-labelledby="svc-benefits-h2">
+      <div class="section-container">
+        <h2 id="svc-benefits-h2">Ce que nous proposons</h2>
+        <ul class="svc-benefits-list">
+          {% for benefit in service.benefits %}
+          <li>{{ benefit }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ DÉTAILS ══ -->
+    {% if service.details %}
+    <section class="svc-details-section">
+      <div class="section-container">
+        <p>{{ service.details }}</p>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- ══ ÉQUIPE ══ -->
+    {% if service.team_members and service.team_members.length %}
+    <section class="svc-team-section" aria-labelledby="svc-team-h2">
+      <div class="section-container">
+        <h2 id="svc-team-h2">Votre praticien</h2>
+        <div class="svc-team-grid">
+          {% for member_id in service.team_members %}
+            {% for m in home.team.members %}
+              {% if m.id == member_id %}
+              <article class="svc-member-card">
+                {% if m.photo %}
+                <img
+                  src="{{ m.photo | toPublicPath }}"
+                  alt="{{ m.photo_alt or m.name }}"
+                  class="svc-member-photo"
+                  width="80" height="80"
+                  loading="lazy"
+                />
+                {% else %}
+                <div class="svc-member-initials svc-member-initials--{{ m.color }}" aria-hidden="true">{{ m.avatar }}</div>
+                {% endif %}
+                <div class="svc-member-info">
+                  <strong class="svc-member-name">{{ m.name }}</strong>
+                  <span class="svc-member-role">{{ m.role }}</span>
+                  {% if m.languages %}
+                  <span class="svc-member-lang">{{ m.languages }}</span>
+                  {% endif %}
+                </div>
+              </article>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- ══ CTA ══ -->
+    <section class="svc-cta-section">
+      <div class="section-container svc-cta-inner">
+        <div>
+          <h2>Prendre rendez-vous</h2>
+          <p>Du lundi au vendredi · {{ home.site.hours_time }}</p>
+        </div>
+        <div class="svc-cta-actions">
+          <a href="/#contact" class="btn btn-citron btn-xl">
+            Réserver une consultation
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="tel:{{ home.site.phone }}" class="btn btn-ghost-light btn-xl">{{ home.site.phone_display }}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SERVICES LIÉS ══ -->
+    {% if service.related and service.related.length %}
+    <section class="svc-related-section" aria-labelledby="svc-related-h2">
+      <div class="section-container">
+        <h2 id="svc-related-h2">Autres services</h2>
+        <div class="svc-related-grid">
+          {% for related_slug in service.related %}
+            {% for s in servicePages %}
+              {% if s.slug == related_slug %}
+              <a href="/services/{{ s.slug }}/" class="svc-related-card">
+                <span class="svc-related-num">{{ s.order | default("0") | string | padStart(2, "0") }}</span>
+                <strong class="svc-related-title">{{ s.title }}</strong>
+                <span class="svc-related-desc">{{ s.description }}</span>
+              </a>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="section-container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="{{ home.site.name }} — accueil">
+          <img src="/assets/logo/logo-white.svg" alt="" aria-hidden="true" />
+        </a>
+        <p class="footer-by">
+          {{ home.footer.tagline }} <a href="{{ home.footer.tagline_url }}" target="_blank" rel="noopener noreferrer">evo360</a>
+        </p>
+      </div>
+      <nav class="footer-nav" aria-label="Liens rapides">
+        <p class="footer-heading">Services</p>
+        <ul>
+          {% for s in servicePages %}
+          <li><a href="/services/{{ s.slug }}/">{{ s.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <address class="footer-info">
+        <p class="footer-heading">Informations</p>
+        <ul>
+          <li><a href="tel:{{ home.site.phone }}">{{ home.site.phone_display }}</a></li>
+          <li><a href="mailto:{{ home.site.email }}">{{ home.site.email }}</a></li>
+          <li><a href="{{ home.site.maps_url }}" target="_blank" rel="noopener noreferrer">{{ home.site.address_street }}, Neuchâtel</a></li>
+          <li>{{ home.site.hours_short }}</li>
+        </ul>
+      </address>
+    </div>
+    <div class="footer-bottom">
+      <div class="section-container footer-bottom-inner">
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> {{ home.site.name }}
+          <span class="footer-sep" aria-hidden="true">·</span>
+          Développé par <a href="https://github.com/doctorfill-dev" target="_blank" rel="noopener noreferrer">doctorfill-dev</a>
+        </p>
+        <nav class="footer-legal-bar" aria-label="Liens légaux">
+          <a href="/legal/mentions-legales.html">Mentions légales</a>
+          <span aria-hidden="true">·</span>
+          <a href="/legal/politique-de-confidentialite.html">Confidentialité</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

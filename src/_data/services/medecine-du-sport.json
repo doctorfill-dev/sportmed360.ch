@@ -1,0 +1,20 @@
+{
+  "title": "Médecine du sport",
+  "page_title": "Médecin du Sport à Neuchâtel | SportMed360",
+  "seo_description": "Consultations en médecine du sport à Neuchâtel avec le Dr Curty. Diagnostic musculo-squelettique, prévention des blessures, certificats médicaux. LAMal & LAA acceptées.",
+  "order": 1,
+  "icon": "sport",
+  "description": "Consultation spécialisée en médecine sportive, diagnostic musculo-squelettique, prévention des blessures et suivi médical personnalisé dans notre centre médical.",
+  "intro": "La médecine du sport accompagne les sportifs de tous niveaux — du débutant au compétiteur — ainsi que toute personne souhaitant pratiquer une activité physique en sécurité. Au centre SportMed360 à Neuchâtel, le Dr Bertrand Curty assure des consultations spécialisées alliant rigueur médicale et compréhension du mouvement.",
+  "benefits": [
+    "Consultation médicale sportive et diagnostic musculo-squelettique",
+    "Prévention et traitement des blessures sportives",
+    "Certificats médicaux pour la pratique sportive",
+    "Suivi médical personnalisé et plans de retour au sport",
+    "Prescription d'activité physique adaptée (PAPS)",
+    "Coordination avec l'équipe de physiothérapie et de préparation physique"
+  ],
+  "details": "Médecin officiel de l'équipe nationale suisse de ski depuis 1997, le Dr Curty dispose d'un FMH en médecine interne générale et d'un certificat SEMS en médecine du sport. Son approche intègre le diagnostic médical rigoureux, le suivi global de la santé et la compréhension des exigences sportives spécifiques à chaque patient.",
+  "team_members": ["curty"],
+  "related": ["ecg-bilan-sportif", "physiotherapie", "mtt"]
+}

@@ -178,6 +178,19 @@ h3 {
 .btn-ghost-light:hover {
   background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.4);
 }
+.btn-phone {
+  background: #fff;
+  color: var(--indigo);
+  border-color: var(--indigo-border);
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.btn-phone:hover {
+  background: var(--indigo-bg);
+  border-color: var(--indigo);
+  box-shadow: 0 4px 14px rgba(70,34,204,.15);
+  transform: translateY(-1px);
+}
 .btn-header {
   background: var(--indigo); color: #fff; border-color: var(--indigo);
   font-size: .875rem; padding: .5rem 1.125rem;

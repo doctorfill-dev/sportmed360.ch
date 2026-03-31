@@ -25,10 +25,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'sw.js': 'sw.js' })
   eleventyConfig.addPassthroughCopy({ 'CNAME': 'CNAME' })
   eleventyConfig.addPassthroughCopy({ 'robots.txt': 'robots.txt' })
-  eleventyConfig.addPassthroughCopy({ 'sitemap.xml': 'sitemap.xml' })
-
   // ── Filtres ──────────────────────────────────────────────────────────────
   eleventyConfig.addFilter('currentYear', () => new Date().getFullYear())
+  eleventyConfig.addFilter('padStart', (val, len, char = '0') => String(val).padStart(len, char))
+  eleventyConfig.addGlobalData('dateNow', () => new Date().toISOString().split('T')[0])
 
   eleventyConfig.addFilter('toPublicPath', (path) => {
     if (!path) return ''

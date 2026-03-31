@@ -1,0 +1,25 @@
+{
+  "title": "Vaccins & Perfusions",
+  "page_title": "Vaccination & Perfusions Thérapeutiques à Neuchâtel | SportMed360",
+  "seo_description": "Vaccination et perfusions thérapeutiques à Neuchâtel : vaccins standards et de voyage, perfusions de vitamines et minéraux, suivi médical. Centre SportMed360, LAMal & LAA.",
+  "order": 6,
+  "icon": "vaccine",
+  "description": "Vaccination complète, perfusions thérapeutiques et injections avec suivi post-administration.",
+  "intro": "Le centre médical SportMed360 à Neuchâtel propose un service complet de vaccination et de perfusions thérapeutiques. Que ce soit pour une vaccination de routine, avant un voyage ou pour une récupération sportive optimisée, le Dr Curty assure la prescription et l'administration avec suivi médical.",
+  "benefits": [
+    "Vaccins standards (grippe, tétanos, ROR, hépatites A et B, etc.)",
+    "Perfusions thérapeutiques de vitamines et minéraux (C, antibiotiques, fer, magnésium, zinc)",
+    "Suivi post-administration et gestion des effets secondaires",
+    "Mise à jour et gestion du carnet de vaccination",
+    "Conseils personnalisés pour les voyages en zones à risque",
+    "Injection (vitamine D, B12)"
+  ],
+  "details": "Les perfusions thérapeutiques permettent une absorption rapide et complète des micronutriments essentiels directement dans la circulation sanguine — particulièrement bénéfiques pour les sportifs en période d'effort intense, de récupération post-compétition ou de fatigue chronique. Chaque perfusion est précédée d'une consultation médicale et d'une évaluation des besoins.",
+  "team_members": [
+    "curty"
+  ],
+  "related": [
+    "medecine-du-sport",
+    "medecine-generale"
+  ]
+}

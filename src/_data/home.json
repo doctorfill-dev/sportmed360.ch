@@ -209,13 +209,23 @@
         "role": "Physiothérapeute",
         "color": "lavender",
         "avatar": "EP",
+        "languages": "FR · ES · EN",
+        "photo_alt": "elihu pigeau neuchâtel physiothérapie",
         "tags": [
           "Physiothérapie",
-          "Rééducation"
+          "Kinésiotape"
         ],
         "bio": "Physiothérapeute au sein du centre médical SportMed360, Elihu Pigeau accompagne les patients dans leur parcours de rééducation et de remise en forme, avec une approche personnalisée et attentive.",
-        "credentials": [],
-        "partnership": {}
+        "credentials": [
+          "<strong>Diplômé en physiothérapie (2010) - Université européenne de Madrid</strong>",
+          "Formation avancé en kinésiotape"
+        ],
+        "partnership": {
+          "label": "Zenith Physiothérapie",
+          "url": "https://zenith-physio.ch/",
+          "logo_url": "https://zenith-physio.ch/clubdesk/fileservlet?type=image&id=1000025&s=djEtrEEyM6iTJumneYdOADJdRGlJ-9Vi7IsuFlyFvVg3I2Q=&imageFormat=_512x512",
+          "logo_alt": "logo zenith"
+        }
       },
       {
         "id": "crausaz",
@@ -292,46 +302,79 @@
         "num": "01",
         "title": "Médecine du sport",
         "description": "Consultation spécialisée en médecine sportive, diagnostic musculo-squelettique, prévention des blessures et suivi médical personnalisé dans notre centre médical.",
-        "icon": "sport"
+        "icon": "sport",
+        "slug": "medecine-du-sport"
       },
       {
         "num": "02",
         "title": "Physiothérapie",
         "description": "Rééducation personnalisée, thérapie manuelle, Dry Needling et accompagnement au retour au sport dans notre centre de bien-être et de remise en forme.",
-        "icon": "physio"
+        "icon": "physio",
+        "slug": "physiotherapie"
       },
       {
         "num": "03",
         "title": "MTT — Medical Training Therapy",
         "description": "Rééducation active par l'entraînement médical guidé — renforcement ciblé, préparation sportive et retour fonctionnel progressif.",
-        "icon": "mtt"
+        "icon": "mtt",
+        "slug": "mtt"
       },
       {
         "num": "04",
         "title": "ECG & Tests cardiaques",
         "description": "ECG au repos et à l'effort, ergospirométrie (VO2 Max), examens médico-sportifs et certificats médicaux.",
-        "icon": "ecg"
+        "icon": "ecg",
+        "slug": "ecg-bilan-sportif"
       },
       {
         "num": "05",
         "title": "Bilans sanguins & Analyses",
         "description": "Bilans complets, analyses biologiques approfondies et interprétation médicale avec conseils nutritionnels.",
-        "icon": "blood"
+        "icon": "blood",
+        "slug": "bilans-sanguins"
       },
       {
         "num": "06",
         "title": "Vaccins & Perfusions",
         "description": "Vaccination complète, perfusions thérapeutiques et injections avec suivi post-administration.",
-        "icon": "vaccine"
+        "icon": "vaccine",
+        "slug": "vaccins-perfusions"
       },
       {
         "num": "07",
         "title": "Médecine générale",
         "description": "Consultations de médecine générale, check-up complets, suivi de pathologies chroniques et certificats médicaux.",
-        "icon": "general"
+        "icon": "general",
+        "slug": "medecine-generale"
       }
     ]
   },
+  "faq": [
+    {
+      "question": "Comment prendre rendez-vous chez SportMed360 ?",
+      "answer": "Vous pouvez prendre rendez-vous via le formulaire de contact sur notre site ou par téléphone au +41 76 541 03 60, du lundi au vendredi de 7h30 à 18h30."
+    },
+    {
+      "question": "Quelles assurances sont acceptées ?",
+      "answer": "SportMed360 accepte la LAMal (assurance de base obligatoire) et la LAA (assurance accidents). Les consultations de médecine du sport, physiothérapie et médecine générale sont remboursées sur ordonnance médicale. Renseignez-vous auprès de votre caisse-maladie pour les assurances complémentaires."
+    },
+    {
+      "question": "Faut-il une ordonnance pour la physiothérapie ?",
+      "answer": "En Suisse, une ordonnance médicale est nécessaire pour une prise en charge LAMal en physiothérapie. Le Dr Curty peut vous la délivrer lors d'une consultation au centre. Certaines assurances complémentaires peuvent couvrir des traitements sans ordonnance."
+    },
+    {
+      "question": "Où se trouve le centre SportMed360 ?",
+      "answer": "SportMed360 est situé Avenue Edouard-Dubois 20, 2000 Neuchâtel — au sein du centre de bien-être evo360, facilement accessible en transport public et avec parking disponible à proximité."
+    },
+    {
+      "question": "Proposez-vous des consultations pour les sportifs amateurs ?",
+      "answer": "Oui, SportMed360 accompagne aussi bien les sportifs de haut niveau que les sportifs amateurs, les personnes en reprise d'activité ou souhaitant améliorer leur condition physique. Aucun niveau sportif minimum n'est requis."
+    },
+    {
+      "question": "Qu'est-ce que la médecine du sport ?",
+      "answer": "La médecine du sport est une spécialité médicale dédiée à la prévention, au diagnostic et au traitement des pathologies liées à l'activité physique. Elle s'adresse aux sportifs de tous niveaux mais aussi aux patients souhaitant pratiquer ou reprendre une activité physique en toute sécurité."
+    }
+  ],
   "partnership": {
     "eyebrow": "Collaboration",
     "title": "Avec evo360",

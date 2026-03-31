@@ -1,0 +1,20 @@
+{
+  "title": "Bilans sanguins & Analyses",
+  "page_title": "Bilan Sanguin & Analyses Médicales à Neuchâtel | SportMed360",
+  "seo_description": "Bilans sanguins complets à Neuchâtel : analyses biologiques, bilan de performance sportive, interprétation médicale et conseils nutritionnels. Dr Curty, LAMal & LAA.",
+  "order": 5,
+  "icon": "blood",
+  "description": "Bilans complets, analyses biologiques approfondies et interprétation médicale avec conseils nutritionnels.",
+  "intro": "Un bilan sanguin complet est un outil précieux pour surveiller votre santé, optimiser vos performances sportives et détecter d'éventuelles carences ou anomalies. Au centre SportMed360 à Neuchâtel, le Dr Curty prescrit et interprète des bilans biologiques adaptés à votre situation, avec une approche orientée performance et bien-être.",
+  "benefits": [
+    "Bilan sanguin standard et étendu (NFS, biochimie, hormones)",
+    "Bilan spécifique sportif (fer, ferritine, vitamine D, magnésium, B12)",
+    "Dépistage des carences fréquentes chez le sportif",
+    "Interprétation médicale personnalisée des résultats",
+    "Conseils nutritionnels et complémentation adaptée",
+    "Suivi longitudinal des marqueurs biologiques"
+  ],
+  "details": "Les analyses sont réalisées par des laboratoires partenaires agréés et prises en charge par l'assurance de base LAMal sur ordonnance médicale. Les résultats sont analysés et commentés lors d'une consultation de suivi avec le Dr Curty, qui intègre les données biologiques dans une vision globale de votre santé et de vos objectifs.",
+  "team_members": ["curty"],
+  "related": ["medecine-du-sport", "ecg-bilan-sportif"]
+}

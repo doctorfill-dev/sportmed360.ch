@@ -6,7 +6,7 @@
 //   LOCAL  → npm run dev:admin  (lit/écrit sur le disque)
 //   GITHUB → production Cloudflare (lit/écrit via l'API GitHub)
 
-import { config, fields, singleton } from '@keystatic/core'
+import { config, fields, singleton, collection } from '@keystatic/core'
 
 // @ts-ignore
 const isLocal =
@@ -28,6 +28,7 @@ export default config({
     navigation: {
       'SEO & Métadonnées': ['seo'],
       'Page d\'accueil':   ['home'],
+      'Pages de service':  ['services'],
       'Médias':            ['media'],
     },
   },
@@ -262,6 +263,10 @@ export default config({
                   ],
                   defaultValue: 'sport',
                 }),
+                slug: fields.text({
+                  label:       'Slug de la page dédiée',
+                  description: 'Correspond au nom du fichier dans src/_data/services/ (ex: medecine-du-sport). Laissez vide si pas de page dédiée.',
+                }),
               }),
               {
                 label:     'Services',
@@ -270,6 +275,25 @@ export default config({
             ),
           },
           { label: 'Section Services' }
+        ),
+
+        // ── FAQ ────────────────────────────────────────────────────────────
+        faq: fields.array(
+          fields.object({
+            question: fields.text({
+              label: 'Question',
+              description: 'Formuler comme une vraie question que pose un patient.',
+            }),
+            answer: fields.text({
+              label:     'Réponse',
+              multiline: true,
+              description: 'Réponse claire et concise. Inclure les mots-clés naturellement.',
+            }),
+          }),
+          {
+            label:     'FAQ — Questions fréquentes',
+            itemLabel: (props) => props.fields.question.value || 'Question',
+          }
         ),
 
         // ── Section Partenariat evo360 ────────────────────────────────────
@@ -359,4 +383,84 @@ export default config({
     }),
 
   }, // fin singletons
+
+  // ── Collection Pages de service ─────────────────────────────────────────
+  collections: {
+    services: collection({
+      label:     'Pages de service',
+      slugField: 'title',
+      path:      'src/_data/services/*',
+      format:    { data: 'json' },
+
+      schema: {
+        title: fields.slug({
+          name: { label: 'Titre du service', description: 'Ex: Physiothérapie' },
+          slug: { label: 'URL slug', description: 'Généré automatiquement. Ex: physiotherapie → /services/physiotherapie/' },
+        }),
+        page_title: fields.text({
+          label:       'Titre SEO de la page',
+          description: 'Affiché dans les résultats Google (50–60 car.). Inclure la ville. Ex: Physiothérapie à Neuchâtel | SportMed360',
+        }),
+        seo_description: fields.text({
+          label:       'Description SEO (150–160 car.)',
+          multiline:   true,
+          description: 'Accroche affichée dans Google. Inclure mots-clés + localisation + assurances.',
+        }),
+        order: fields.number({
+          label:       'Ordre d\'affichage',
+          description: 'Détermine l\'ordre dans le sitemap et la navigation. 1 = premier.',
+        }),
+        icon: fields.select({
+          label:   'Icône (même options que sur la homepage)',
+          options: [
+            { label: 'Croix médicale (médecine du sport)', value: 'sport' },
+            { label: 'Cœur (physiothérapie)',              value: 'physio' },
+            { label: 'Courbe (MTT)',                        value: 'mtt' },
+            { label: 'ECG (tests cardiaques)',              value: 'ecg' },
+            { label: 'Tableau (analyses sanguines)',        value: 'blood' },
+            { label: 'Seringue (vaccins)',                  value: 'vaccine' },
+            { label: 'Personnes (médecine générale)',       value: 'general' },
+          ],
+          defaultValue: 'sport',
+        }),
+        description: fields.text({
+          label:       'Description courte (homepage)',
+          multiline:   true,
+          description: 'Texte affiché sur la carte de service de la homepage. 1–2 phrases avec mots-clés.',
+        }),
+        intro: fields.text({
+          label:       'Introduction (page de service)',
+          multiline:   true,
+          description: 'Paragraphe d\'introduction sur la page dédiée. 3–5 phrases, inclure localisation + expertise.',
+        }),
+        benefits: fields.array(
+          fields.text({ label: 'Prestation / Bénéfice', description: 'Ex: ECG au repos et à l\'effort' }),
+          {
+            label:     'Ce que nous proposons',
+            itemLabel: (props) => props.value || 'Prestation',
+          }
+        ),
+        details: fields.text({
+          label:       'Informations complémentaires',
+          multiline:   true,
+          description: 'Détails supplémentaires : praticien, remboursement, particularités. Optionnel.',
+        }),
+        team_members: fields.array(
+          fields.text({ label: 'ID du membre', description: 'Ex: curty, bogoev, pisino, jauzac, pigeau' }),
+          {
+            label:     'Membres de l\'équipe qui assurent ce service',
+            itemLabel: (props) => props.value || 'Membre',
+          }
+        ),
+        related: fields.array(
+          fields.text({ label: 'Slug du service lié', description: 'Ex: physiotherapie, ecg-bilan-sportif' }),
+          {
+            label:     'Services liés (affichés en bas de page)',
+            itemLabel: (props) => props.value || 'Service',
+          }
+        ),
+      },
+    }),
+  }, // fin collections
+
 })

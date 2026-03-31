@@ -121,6 +121,23 @@ permalink: /index.html
   {% endfor %}]
   </script>
 
+  <!-- Schema.org — FAQPage -->
+  {% if home.faq and home.faq.length %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{% for item in home.faq %}
+      {
+        "@type": "Question",
+        "name": "{{ item.question }}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{ item.answer }}" }
+      }{% if not loop.last %},{% endif %}
+    {% endfor %}]
+  }
+  </script>
+  {% endif %}
+
   <!-- Schema.org — WebSite -->
   <script type="application/ld+json">
   {
@@ -352,8 +369,18 @@ permalink: /index.html
           <li class="service-item">
             <span class="svc-num" aria-hidden="true">{{ svc.num }}</span>
             <div class="svc-content">
+              {% if svc.slug %}
+              <h3><a href="/services/{{ svc.slug }}/" class="svc-title-link">{{ svc.title }}</a></h3>
+              {% else %}
               <h3>{{ svc.title }}</h3>
+              {% endif %}
               <p>{{ svc.description }}</p>
+              {% if svc.slug %}
+              <a href="/services/{{ svc.slug }}/" class="svc-more-link" aria-label="En savoir plus sur {{ svc.title }}">
+                En savoir plus
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+              {% endif %}
             </div>
             <div class="svc-icon" aria-hidden="true">
               {% if svc.icon == "sport" %}
@@ -378,6 +405,33 @@ permalink: /index.html
 
       </div>
     </section>
+
+    <!-- ══ FAQ ══ -->
+    {% if home.faq and home.faq.length %}
+    <section id="faq" class="faq-section" aria-labelledby="faq-h2">
+      <div class="section-container faq-inner">
+        <header class="section-header">
+          <p class="eyebrow">Questions fréquentes</p>
+          <h2 id="faq-h2">Tout ce que vous<br />devez savoir</h2>
+        </header>
+        <dl class="faq-list">
+          {% for item in home.faq %}
+          <div class="faq-item">
+            <dt class="faq-question">
+              <button type="button" aria-expanded="false" aria-controls="faq-answer-{{ loop.index }}">
+                {{ item.question }}
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-{{ loop.index }}" hidden>
+              <p>{{ item.answer }}</p>
+            </dd>
+          </div>
+          {% endfor %}
+        </dl>
+      </div>
+    </section>
+    {% endif %}
 
     <!-- ══ PARTENARIAT EVO360 ══ -->
     <section id="partenariat" class="partnership-section" aria-labelledby="partnership-h2">
@@ -648,6 +702,24 @@ permalink: /index.html
   </div>
 
   <script src="/assets/js/script.js" defer></script>
+
+  <!-- FAQ accordion -->
+  <script>
+    document.querySelectorAll('.faq-question button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true'
+        // Ferme tous les autres
+        document.querySelectorAll('.faq-question button[aria-expanded="true"]').forEach(b => {
+          if (b !== btn) {
+            b.setAttribute('aria-expanded', 'false')
+            document.getElementById(b.getAttribute('aria-controls')).hidden = true
+          }
+        })
+        btn.setAttribute('aria-expanded', String(!expanded))
+        document.getElementById(btn.getAttribute('aria-controls')).hidden = expanded
+      })
+    })
+  </script>
 
   <script>
     (function() {

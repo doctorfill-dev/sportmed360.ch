@@ -1,0 +1,20 @@
+{
+  "title": "Physiothérapie",
+  "page_title": "Physiothérapie à Neuchâtel | SportMed360",
+  "seo_description": "Physiothérapeutes spécialisés dans le sport à Neuchâtel. Rééducation, thérapie manuelle, Dry Needling et retour au sport. Prise en charge LAMal sur ordonnance.",
+  "order": 2,
+  "icon": "physio",
+  "description": "Rééducation personnalisée, thérapie manuelle, Dry Needling et accompagnement au retour au sport dans notre centre de bien-être et de remise en forme.",
+  "intro": "Notre équipe de physiothérapeutes spécialisés dans le sport intervient sur toutes les pathologies musculo-squelettiques : blessures sportives, suites opératoires, douleurs chroniques ou aiguës. Basés au cœur d'evo360 à Neuchâtel, ils combinent techniques manuelles de pointe et accès direct aux installations de rééducation active.",
+  "benefits": [
+    "Rééducation personnalisée post-traumatique et post-opératoire",
+    "Thérapie manuelle orthopédique et sportive",
+    "Dry Needling (puncture sèche à des fins thérapeutiques)",
+    "Électrothérapie et ultrasons thérapeutiques",
+    "Programme de retour au sport progressif et sécurisé",
+    "Coordination directe avec médecin et préparateur physique"
+  ],
+  "details": "La physiothérapie est prise en charge par l'assurance de base LAMal sur ordonnance médicale. Une consultation préalable avec le Dr Curty permet d'obtenir la prescription nécessaire au remboursement. Les assurances complémentaires peuvent couvrir certains traitements sans ordonnance. Renseignez-vous auprès de votre caisse-maladie.",
+  "team_members": ["bogoev", "jauzac", "pigeau"],
+  "related": ["mtt", "medecine-du-sport"]
+}

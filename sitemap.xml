@@ -5,67 +5,38 @@
   <!-- Page principale -->
   <url>
     <loc>https://sportmed360.ch/</loc>
-    <lastmod>2026-02-23</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://sportmed360.ch/assets/logo.webp</image:loc>
+      <image:loc>https://sportmed360.ch/assets/logo/logo.webp</image:loc>
       <image:title>Logo SportMed360 - Centre médical de médecine du sport à Neuchâtel</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://sportmed360.ch/assets/fitness_1.webp</image:loc>
-      <image:title>Centre de performance et préparation sportive - SportMed360 Neuchâtel</image:title>
+      <image:loc>https://sportmed360.ch/assets/premises/hero/mosaic/0/src.webp</image:loc>
+      <image:title>Salle de préparation sportive et remise en forme - SportMed360 Neuchâtel</image:title>
       <image:caption>Centre médical spécialisé en médecine du sport, physiothérapie et remise en forme à Neuchâtel</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://sportmed360.ch/assets/fitness_2.webp</image:loc>
-      <image:title>Physiothérapie et remise en forme - SportMed360</image:title>
-      <image:caption>Prévention des blessures et préparation sportive au centre de bien-être SportMed360</image:caption>
+      <image:loc>https://sportmed360.ch/assets/premises/hero/mosaic/1/src.webp</image:loc>
+      <image:title>Salle de physiothérapie et équipements de rééducation - SportMed360</image:title>
+      <image:caption>Physiothérapie, rééducation et retour au sport au centre médical SportMed360 Neuchâtel</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://sportmed360.ch/assets/fitness_3.webp</image:loc>
-      <image:title>Médecine sportive et centre de performance - SportMed360</image:title>
-      <image:caption>Centre de performance dédié à la médecine générale, médecine du sport et physiothérapie</image:caption>
+      <image:loc>https://sportmed360.ch/assets/premises/hero/mosaic/2/src.webp</image:loc>
+      <image:title>Thérapie par lumière rouge pour la récupération - SportMed360</image:title>
+      <image:caption>Prévention des blessures et récupération sportive au centre médical SportMed360</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://sportmed360.ch/assets/redlight_1.webp</image:loc>
-      <image:title>Centre de bien-être et récupération - SportMed360 Neuchâtel</image:title>
-      <image:caption>Thérapie par lumière rouge pour la récupération et la prévention des blessures</image:caption>
+      <image:loc>https://sportmed360.ch/assets/premises/hero/mosaic/3/src.webp</image:loc>
+      <image:title>Centre de performance et médecine sportive - SportMed360 Neuchâtel</image:title>
+      <image:caption>Centre de performance dédié à la médecine du sport, médecine générale et physiothérapie à Neuchâtel</image:caption>
     </image:image>
-  </url>
-
-  <!-- Sections principales (ancres) -->
-  <url>
-    <loc>https://sportmed360.ch/#equipe</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sportmed360.ch/#services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sportmed360.ch/#evo360</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sportmed360.ch/#contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Pages légales -->
-  <url>
-    <loc>https://sportmed360.ch/legal/mentions-legales.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://sportmed360.ch/legal/politique-de-confidentialite.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <image:image>
+      <image:loc>https://sportmed360.ch/assets/premises/fitness_3.webp</image:loc>
+      <image:title>Équipements de fitness médical et entraînement thérapeutique - SportMed360</image:title>
+      <image:caption>MTT - Medical Training Therapy et préparation sportive personnalisée à Neuchâtel</image:caption>
+    </image:image>
   </url>
 
 </urlset>

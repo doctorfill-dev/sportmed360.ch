@@ -1491,8 +1491,9 @@ h3 {
 /* CTA */
 .svc-cta-section {
   padding: 4rem 0;
-  background: var(--indigo);
-  color: #fff;
+  background: var(--gray-100);
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
 }
 .svc-cta-inner {
   display: flex;
@@ -1504,9 +1505,10 @@ h3 {
 .svc-cta-section h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 800;
+  color: var(--gray-900);
   margin-bottom: .375rem;
 }
-.svc-cta-section p { opacity: .8; font-size: 1rem; }
+.svc-cta-section p { font-size: 1rem; color: var(--gray-500); }
 .svc-cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
 
 /* Related */
@@ -1536,6 +1538,13 @@ h3 {
 .svc-related-num { font-size: .75rem; font-weight: 700; color: var(--indigo); letter-spacing: .08em; text-transform: uppercase; }
 .svc-related-title { font-size: 1rem; font-weight: 600; color: var(--gray-900); }
 .svc-related-desc { font-size: .825rem; color: var(--gray-500); line-height: 1.5; margin-top: .2rem; }
+
+/* Back to home */
+.svc-back-home {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
 
 /* Service page — responsive */
 @media (max-width: 640px) {

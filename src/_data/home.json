@@ -143,12 +143,15 @@
         "avatar": "ST",
         "languages": "FR ",
         "tags": [
-          "Formation approfondie en médecine du Sport et de l’Exercice (SEMS) (2026)",
-          "Spécialiste en médecine interne générale (2025)",
-          "Centre de médecine du sport du CHUV (2024-2025)"
+          "Médecine du sport SEMS",
+          "Médecine interne"
         ],
         "bio": "Titulaire d’un titre de spécialiste en médecine interne générale et d’une formation approfondie en médecine du Sport et de l’Exercice (SEMS), il est à disposition pour toute demande ou problématique en lien avec l’activité physique et le sport.  Fort de son expérience au Centre SportAdo du CHUV, il porte également un intérêt particulier à la médecine du sport chez l’enfant et l’adolescent et accueille les jeunes sportifs dès 12 ans.",
-        "credentials": [],
+        "credentials": [
+          "Centre de médecine du sport du CHUV (2024-2025)",
+          "Spécialiste en médecine interne générale (2025)",
+          "Formation approfondie en médecine du Sport et de l’Exercice (SEMS) (2026)"
+        ],
         "partnership": {
           "label": "En partenariat avec",
           "url": "https://www.medbase.ch/fr/les-centres/detail/medbase-neuchatel-la-cote/#:~:text=Bertrand%20Curty,-Directeur%20medical",

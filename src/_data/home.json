@@ -144,7 +144,11 @@
         "languages": "FR ",
         "tags": [],
         "credentials": [],
-        "partnership": {}
+        "partnership": {
+          "label": "En partenariat avec",
+          "url": "https://www.medbase.ch/fr/les-centres/detail/medbase-neuchatel-la-cote/#:~:text=Bertrand%20Curty,-Directeur%20medical",
+          "logo_url": "https://www.medbase.ch/fileadmin/templates/img/logo_medbase.svg"
+        }
       },
       {
         "id": "bogoev",

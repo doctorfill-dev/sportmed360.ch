@@ -137,12 +137,17 @@
         }
       },
       {
-        "name": "Stefano Tripiciano ",
+        "name": "Dr Stefano Tripiciano ",
         "role": "Médecin du sport ",
         "color": "indigo",
         "avatar": "ST",
         "languages": "FR ",
-        "tags": [],
+        "tags": [
+          "Formation approfondie en médecine du Sport et de l’Exercice (SEMS) (2026)",
+          "Spécialiste en médecine interne générale (2025)",
+          "Centre de médecine du sport du CHUV (2024-2025)"
+        ],
+        "bio": "Titulaire d’un titre de spécialiste en médecine interne générale et d’une formation approfondie en médecine du Sport et de l’Exercice (SEMS), il est à disposition pour toute demande ou problématique en lien avec l’activité physique et le sport.  Fort de son expérience au Centre SportAdo du CHUV, il porte également un intérêt particulier à la médecine du sport chez l’enfant et l’adolescent et accueille les jeunes sportifs dès 12 ans.",
         "credentials": [],
         "partnership": {
           "label": "En partenariat avec",

@@ -142,6 +142,7 @@
         "color": "indigo",
         "avatar": "ST",
         "languages": "FR · IT · EN",
+        "photo": "/assets/employees/team/members/1/photo.jpg",
         "tags": [
           "Médecine interne",
           "Médecine du sport SEMS"
@@ -164,7 +165,7 @@
         "role": "Physiothérapeute du sport",
         "color": "lavender",
         "avatar": "MB",
-        "languages": "FR",
+        "languages": "FR · DE · IT · ES · EN",
         "photo": "/assets/employees/team/members/2/photo.webp",
         "photo_alt": "Mitko Bogoev — physiothérapeute du sport à Neuchâtel",
         "tags": [
@@ -192,7 +193,7 @@
         "role": "Préparateur physique Swiss Olympic",
         "color": "citron",
         "avatar": "FP",
-        "languages": "FR · EN · DE",
+        "languages": "FR · EN · IT · DE",
         "photo": "/assets/employees/team/members/3/photo.webp",
         "photo_alt": "Franco Pisino — préparateur physique Swiss Olympic à Neuchâtel",
         "tags": [
@@ -214,7 +215,7 @@
         "role": "Physiothérapeute",
         "color": "lavender",
         "avatar": "EJ",
-        "languages": "FR",
+        "languages": "FR · EN · ES",
         "photo": "/assets/employees/team/members/4/photo.webp",
         "photo_alt": "Elise Jauzac — physiothérapeute à Neuchâtel",
         "tags": [
@@ -222,7 +223,12 @@
           "Rééducation"
         ],
         "bio": "Physiothérapeute au sein du centre médical SportMed360, Elise Jauzac accompagne les patients dans leur parcours de rééducation et de remise en forme, avec une approche personnalisée et attentive.",
-        "credentials": [],
+        "credentials": [
+          "Diplôme international, orienté Technologie E-health (International Degrees Physiotherapy Barcelona) (2017-2021)",
+          "GLA:D pour le Dos, Suisse (Fribourg 2022)",
+          "Physio du Sport, par Kinésport expert (Lyon, 2025-2026)",
+          "Dry needling et chaînes musculaires et clinique du coureur (à venir)"
+        ],
         "partnership": {}
       },
       {
@@ -232,6 +238,7 @@
         "color": "lavender",
         "avatar": "EP",
         "languages": "FR · ES · EN",
+        "photo": "/assets/employees/team/members/5/photo.jpg",
         "photo_alt": "elihu pigeau neuchâtel physiothérapie",
         "tags": [
           "Physiothérapie",

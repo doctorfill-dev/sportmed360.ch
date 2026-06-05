@@ -348,13 +348,6 @@
         "description": "Vaccination complète, perfusions thérapeutiques et injections avec suivi post-administration.",
         "icon": "vaccine",
         "slug": "vaccins-perfusions"
-      },
-      {
-        "num": "07",
-        "title": "Médecine générale",
-        "description": "Consultations de médecine générale, check-up complets, suivi de pathologies chroniques et certificats médicaux.",
-        "icon": "general",
-        "slug": "medecine-generale"
       }
     ]
   },

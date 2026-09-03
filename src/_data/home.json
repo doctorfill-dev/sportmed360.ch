@@ -239,7 +239,10 @@
         "avatar": "EL",
         "languages": "FR",
         "photo_alt": "Eliot Vaucher neuchâtel physiothérapie",
-        "tags": [],
+        "tags": [
+          "Physiothérapie ",
+          "Kynesiotape"
+        ],
         "credentials": [],
         "partnership": {
           "url": "https://zenith-physio.ch/",

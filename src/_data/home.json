@@ -160,41 +160,13 @@
         }
       },
       {
-        "id": "bogoev",
-        "name": "Mitko Bogoev",
-        "role": "Physiothérapeute du sport",
-        "color": "lavender",
-        "avatar": "MB",
-        "languages": "FR · DE · IT · ES · EN",
-        "photo": "/assets/employees/team/members/2/photo.webp",
-        "photo_alt": "Mitko Bogoev — physiothérapeute du sport à Neuchâtel",
-        "tags": [
-          "BSc & MSc Physiothérapie",
-          "Orthopédie & Traumatologie",
-          "Dry Needling · MTT"
-        ],
-        "bio": "Après <strong>plus de 15 ans aux côtés des élites du sport suisse et international</strong> - physiothérapeute officiel du Neuchâtel-Xamax (depuis 2013), de l'équipe nationale suisse de karaté et de combattants MMA, Mitko Bogoev fonde MBP Physiothérapie en 2022. Ancien basketteur d'élite et combattant international, il possède une compréhension profonde de la physiologie humaine.",
-        "credentials": [
-          "Bachelor & Master en physiothérapie du sport (orthopédie & traumatologie)",
-          "Physiothérapeute référent — Équipe nationale suisse de karaté",
-          "Physiothérapeute officiel — Neuchâtel-Xamax depuis 2013"
-        ],
-        "partnership": {
-          "label": "En partenariat avec",
-          "url": "https://mbp-centre.ch/equipe/#:~:text=MITKO%20BOGOEV,-Physiothérapeute",
-          "logo_src": "/assets/logo/team/members/2/partnership/logo_src.webp",
-          "logo_alt": "Logo MBP",
-          "aria_label": "MBP Centre"
-        }
-      },
-      {
         "id": "pisino",
         "name": "Franco Pisino",
         "role": "Préparateur physique Swiss Olympic",
         "color": "citron",
         "avatar": "FP",
         "languages": "FR · EN · IT · DE",
-        "photo": "/assets/employees/team/members/3/photo.webp",
+        "photo": "/assets/employees/team/members/2/photo.webp",
         "photo_alt": "Franco Pisino — préparateur physique Swiss Olympic à Neuchâtel",
         "tags": [
           "Conditionnement sportif",
@@ -216,7 +188,7 @@
         "color": "lavender",
         "avatar": "EJ",
         "languages": "FR · EN · ES",
-        "photo": "/assets/employees/team/members/4/photo.webp",
+        "photo": "/assets/employees/team/members/3/photo.webp",
         "photo_alt": "Elise Jauzac — physiothérapeute à Neuchâtel",
         "tags": [
           "Physiothérapie",
@@ -238,7 +210,7 @@
         "color": "lavender",
         "avatar": "EP",
         "languages": "FR · ES · EN",
-        "photo": "/assets/employees/team/members/5/photo.jpg",
+        "photo": "/assets/employees/team/members/4/photo.jpg",
         "photo_alt": "elihu pigeau neuchâtel physiothérapie",
         "tags": [
           "Physiothérapie",
@@ -263,7 +235,7 @@
         "color": "indigo",
         "avatar": "OG",
         "languages": "FR",
-        "photo": "/assets/employees/team/members/6/photo.webp",
+        "photo": "/assets/employees/team/members/5/photo.webp",
         "photo_alt": "Orlane Gaudenzi — Physiologiste du sport",
         "tags": [
           "Physiologie du sport",
@@ -285,7 +257,7 @@
         "color": "indigo",
         "avatar": "SR",
         "languages": "FR · EN · PT",
-        "photo": "/assets/employees/team/members/7/photo.webp",
+        "photo": "/assets/employees/team/members/6/photo.webp",
         "photo_alt": "Sara Ramos — Assistante médicale au centre médical SportMed360 Neuchâtel",
         "tags": [
           "Prise de sang",

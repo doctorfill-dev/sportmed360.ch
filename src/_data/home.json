@@ -270,6 +270,17 @@
           "Premier secours de niveau 3 - IAS (2024)"
         ],
         "partnership": {}
+      },
+      {
+        "id": "Vaucher",
+        "name": "Eliot Vaucher",
+        "role": "Physiothérapeuthe",
+        "color": "lavender",
+        "avatar": "EL",
+        "languages": "FR",
+        "tags": [],
+        "credentials": [],
+        "partnership": {}
       }
     ]
   },

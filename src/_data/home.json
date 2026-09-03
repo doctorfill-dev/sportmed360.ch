@@ -182,13 +182,35 @@
         "partnership": {}
       },
       {
+        "id": "gaudenzi",
+        "name": "Orlane Gaudenzi",
+        "role": "Physiologiste du sport",
+        "color": "indigo",
+        "avatar": "OG",
+        "languages": "FR",
+        "photo": "/assets/employees/team/members/3/photo.webp",
+        "photo_alt": "Orlane Gaudenzi — Physiologiste du sport",
+        "tags": [
+          "Physiologie du sport",
+          "Tests de performance",
+          "Prévention des blessures",
+          "Planification d'entraînements"
+        ],
+        "bio": "Physiologiste du sport, Orlane Gaudenzi met son expertise au service de l'évaluation et de l'optimisation de la performance. Spécialisée dans la prévention des blessures et les bilans physiologiques, elle accompagne sportifs et patients actifs au sein du centre de performance SportMed360.",
+        "credentials": [
+          "<strong>Bachelor et Master en science du mouvement et du sport, spécialité Entraînement et Performance (2025)</strong>",
+          "En cours de formation de préparation mentale (CAS Préparation mentale - Formation continue UNIL-EPFL) (2026)"
+        ],
+        "partnership": {}
+      },
+      {
         "id": "jauzac",
         "name": "Elise Jauzac",
         "role": "Physiothérapeute",
         "color": "lavender",
         "avatar": "EJ",
         "languages": "FR · EN · ES",
-        "photo": "/assets/employees/team/members/3/photo.webp",
+        "photo": "/assets/employees/team/members/4/photo.webp",
         "photo_alt": "Elise Jauzac — physiothérapeute à Neuchâtel",
         "tags": [
           "Physiothérapie",
@@ -213,7 +235,7 @@
         "color": "lavender",
         "avatar": "EP",
         "languages": "FR · ES · EN",
-        "photo": "/assets/employees/team/members/4/photo.jpg",
+        "photo": "/assets/employees/team/members/5/photo.jpg",
         "photo_alt": "elihu pigeau neuchâtel physiothérapie",
         "tags": [
           "Physiothérapie",
@@ -237,7 +259,7 @@
         "role": "Physiothérapeuthe",
         "color": "lavender",
         "avatar": "EL",
-        "languages": "FR",
+        "languages": "FR DE",
         "photo_alt": "Eliot Vaucher neuchâtel physiothérapie",
         "tags": [
           "Physiothérapie ",
@@ -250,26 +272,16 @@
         }
       },
       {
-        "id": "gaudenzi",
-        "name": "Orlane Gaudenzi",
-        "role": "Physiologiste du sport",
-        "color": "indigo",
-        "avatar": "OG",
-        "languages": "FR",
-        "photo": "/assets/employees/team/members/6/photo.webp",
-        "photo_alt": "Orlane Gaudenzi — Physiologiste du sport",
-        "tags": [
-          "Physiologie du sport",
-          "Tests de performance",
-          "Prévention des blessures",
-          "Planification d'entraînements"
-        ],
-        "bio": "Physiologiste du sport, Orlane Gaudenzi met son expertise au service de l'évaluation et de l'optimisation de la performance. Spécialisée dans la prévention des blessures et les bilans physiologiques, elle accompagne sportifs et patients actifs au sein du centre de performance SportMed360.",
-        "credentials": [
-          "<strong>Bachelor et Master en science du mouvement et du sport, spécialité Entraînement et Performance (2025)</strong>",
-          "En cours de formation de préparation mentale (CAS Préparation mentale - Formation continue UNIL-EPFL) (2026)"
-        ],
-        "partnership": {}
+        "id": "Pichard",
+        "name": "Margaux Pichard",
+        "role": "Ergothérapeuthe",
+        "color": "lavender",
+        "avatar": "MP",
+        "tags": [],
+        "credentials": [],
+        "partnership": {
+          "url": "https://www.rachis.clinic"
+        }
       },
       {
         "id": "ramos",
@@ -278,7 +290,7 @@
         "color": "indigo",
         "avatar": "SR",
         "languages": "FR · EN · PT",
-        "photo": "/assets/employees/team/members/7/photo.webp",
+        "photo": "/assets/employees/team/members/8/photo.webp",
         "photo_alt": "Sara Ramos — Assistante médicale au centre médical SportMed360 Neuchâtel",
         "tags": [
           "Prise de sang",

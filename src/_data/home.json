@@ -201,7 +201,10 @@
           "Physio du Sport, par Kinésport expert (Lyon, 2025-2026)",
           "Dry needling et chaînes musculaires et clinique du coureur (à venir)"
         ],
-        "partnership": {}
+        "partnership": {
+          "url": "https://zenith-physio.ch/",
+          "logo_url": "https://zenith-physio.ch/clubdesk/fileservlet?type=image&id=1000025&s=djEtrEEyM6iTJumneYdOADJdRGlJ-9Vi7IsuFlyFvVg3I2Q=&imageFormat=_512x512"
+        }
       },
       {
         "id": "pigeau",
@@ -229,13 +232,28 @@
         }
       },
       {
+        "id": "Vaucher",
+        "name": "Eliot Vaucher",
+        "role": "Physiothérapeuthe",
+        "color": "lavender",
+        "avatar": "EL",
+        "languages": "FR",
+        "photo_alt": "Eliot Vaucher neuchâtel physiothérapie",
+        "tags": [],
+        "credentials": [],
+        "partnership": {
+          "url": "https://zenith-physio.ch/",
+          "logo_url": "https://zenith-physio.ch/clubdesk/fileservlet?type=image&id=1000025&s=djEtrEEyM6iTJumneYdOADJdRGlJ-9Vi7IsuFlyFvVg3I2Q=&imageFormat=_512x512"
+        }
+      },
+      {
         "id": "gaudenzi",
         "name": "Orlane Gaudenzi",
         "role": "Physiologiste du sport",
         "color": "indigo",
         "avatar": "OG",
         "languages": "FR",
-        "photo": "/assets/employees/team/members/5/photo.webp",
+        "photo": "/assets/employees/team/members/6/photo.webp",
         "photo_alt": "Orlane Gaudenzi — Physiologiste du sport",
         "tags": [
           "Physiologie du sport",
@@ -257,7 +275,7 @@
         "color": "indigo",
         "avatar": "SR",
         "languages": "FR · EN · PT",
-        "photo": "/assets/employees/team/members/6/photo.webp",
+        "photo": "/assets/employees/team/members/7/photo.webp",
         "photo_alt": "Sara Ramos — Assistante médicale au centre médical SportMed360 Neuchâtel",
         "tags": [
           "Prise de sang",
@@ -269,18 +287,6 @@
           "<strong>CFC d'assistante médicale (2022)</strong>",
           "Premier secours de niveau 3 - IAS (2024)"
         ],
-        "partnership": {}
-      },
-      {
-        "id": "Vaucher",
-        "name": "Eliot Vaucher",
-        "role": "Physiothérapeuthe",
-        "color": "lavender",
-        "avatar": "EL",
-        "languages": "FR",
-        "photo_alt": "Eliot Vaucher neuchâtel physiothérapie",
-        "tags": [],
-        "credentials": [],
         "partnership": {}
       }
     ]

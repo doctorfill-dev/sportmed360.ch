@@ -9,7 +9,7 @@
 //   node scripts/optimize-images.mjs [chemin/image.jpg]  — fichier spécifique
 
 import sharp from 'sharp'
-import { readdir, stat, unlink } from 'fs/promises'
+import { readdir, stat } from 'fs/promises'
 import { join, extname, basename, dirname } from 'path'
 
 const ASSETS_DIR = 'src/assets'
@@ -50,11 +50,7 @@ async function optimizeImage(inputPath) {
 
     console.log(`✓ ${inputPath} → ${outputPath} (${saving}% plus léger, ${metadata.width}px → max ${MAX_WIDTH}px)`)
 
-    // Supprimer le fichier original si différent du WebP
-    if (inputPath !== outputPath) {
-      await unlink(inputPath)
-      console.log(`  🗑  Supprimé : ${inputPath}`)
-    }
+    // Keep the CMS-referenced source. The WebP output is a safe derivative.
   } catch (err) {
     console.error(`✗ Erreur sur ${inputPath} :`, err.message)
   }

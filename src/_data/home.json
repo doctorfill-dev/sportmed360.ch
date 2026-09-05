@@ -6,12 +6,23 @@
     "phone_display": "+41 76 541 03 60",
     "email": "med@evo360.ch",
     "address_street": "Avenue Edouard-Dubois 20",
-    "address_city": "2000 Neuchâtel",
+    "address_city": "Neuchâtel",
+    "postal_code": "2000",
+    "address_region": "NE",
+    "address_country": "CH",
+    "latitude": "46.9930",
+    "longitude": "6.9298",
     "maps_url": "https://maps.app.goo.gl/9MD3DLrxaKWLTy6TA",
     "hours_short": "Lun–Ven · 7h30–18h30",
     "hours_days": "Lundi – Vendredi",
     "hours_time": "7h30 – 18h30",
-    "payment": "LAMal, LAA, Cash, Card"
+    "hours_open": "07:30",
+    "hours_close": "18:30",
+    "opening_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "payment": "LAMal, LAA, Cash, Card",
+    "payment_badge": "LAMal & LAA",
+    "parent_organization_name": "evo360",
+    "parent_organization_url": "https://evo360.ch"
   },
   "nav": {
     "links": [
@@ -306,51 +317,7 @@
     "eyebrow": "Soins & Prestations",
     "title": "Ce que\nnous faisons",
     "subtitle": "Une prise en charge complète, fondée sur des données médicales précises et un suivi coordonné entre professionnels.",
-    "cta": "Prendre rendez-vous",
-    "items": [
-      {
-        "num": "01",
-        "title": "Médecine du sport",
-        "description": "Consultation spécialisée en médecine sportive, diagnostic musculo-squelettique, prévention des blessures et suivi médical personnalisé dans notre centre médical.",
-        "icon": "sport",
-        "slug": "medecine-du-sport"
-      },
-      {
-        "num": "02",
-        "title": "Physiothérapie",
-        "description": "Rééducation personnalisée, thérapie manuelle, Dry Needling et accompagnement au retour au sport dans notre centre de bien-être et de remise en forme.",
-        "icon": "physio",
-        "slug": "physiotherapie"
-      },
-      {
-        "num": "03",
-        "title": "MTT — Medical Training Therapy",
-        "description": "Rééducation active par l'entraînement médical guidé — renforcement ciblé, préparation sportive et retour fonctionnel progressif.",
-        "icon": "mtt",
-        "slug": "mtt"
-      },
-      {
-        "num": "04",
-        "title": "ECG & Tests cardiaques",
-        "description": "ECG au repos et à l'effort, ergospirométrie (VO2 Max), examens médico-sportifs et certificats médicaux.",
-        "icon": "ecg",
-        "slug": "ecg-bilan-sportif"
-      },
-      {
-        "num": "05",
-        "title": "Bilans sanguins & Analyses",
-        "description": "Bilans complets, analyses biologiques approfondies et interprétation médicale avec conseils nutritionnels.",
-        "icon": "blood",
-        "slug": "bilans-sanguins"
-      },
-      {
-        "num": "06",
-        "title": "Vaccins & Perfusions",
-        "description": "Vaccination complète, perfusions thérapeutiques et injections avec suivi post-administration.",
-        "icon": "vaccine",
-        "slug": "vaccins-perfusions"
-      }
-    ]
+    "cta": "Prendre rendez-vous"
   },
   "faq": [
     {

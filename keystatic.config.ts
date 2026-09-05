@@ -96,12 +96,23 @@ export default config({
             phone_display: fields.text({ label: 'Téléphone (affichage, ex: +41 76 541 03 60)' }),
             email:         fields.text({ label: 'Email' }),
             address_street:fields.text({ label: 'Rue & numéro' }),
-            address_city:  fields.text({ label: 'Code postal & ville' }),
+            address_city:  fields.text({ label: 'Ville' }),
+            postal_code:   fields.text({ label: 'Code postal' }),
+            address_region: fields.text({ label: 'Canton / région (ex: NE)' }),
+            address_country: fields.text({ label: 'Code pays ISO (ex: CH)' }),
+            latitude:      fields.text({ label: 'Latitude' }),
+            longitude:     fields.text({ label: 'Longitude' }),
             maps_url:      fields.text({ label: 'Lien Google Maps' }),
             hours_short:   fields.text({ label: 'Horaires (court, ex: Lun–Ven · 7h30–18h30)' }),
             hours_days:    fields.text({ label: 'Horaires — jours (ex: Lundi – Vendredi)' }),
             hours_time:    fields.text({ label: 'Horaires — heures (ex: 7h30 – 18h30)' }),
+            hours_open:    fields.text({ label: 'Heure d’ouverture ISO (ex: 07:30)' }),
+            hours_close:   fields.text({ label: 'Heure de fermeture ISO (ex: 18:30)' }),
+            opening_days:  fields.array(fields.text({ label: 'Jour Schema.org en anglais (ex: Monday)' }), { label: 'Jours d’ouverture Schema.org' }),
             payment:       fields.text({ label: 'Moyens de paiement (Schema.org)' }),
+            payment_badge: fields.text({ label: 'Libellé court des assurances (hero)' }),
+            parent_organization_name: fields.text({ label: 'Organisation parente / partenaire' }),
+            parent_organization_url: fields.text({ label: 'URL de l’organisation parente / partenaire' }),
           },
           { label: 'Informations générales' }
         ),
@@ -245,34 +256,6 @@ export default config({
             title:    fields.text({ label: 'Titre (\\n pour saut de ligne)', multiline: true }),
             subtitle: fields.text({ label: 'Sous-titre', multiline: true }),
             cta:      fields.text({ label: 'Texte bouton' }),
-            items: fields.array(
-              fields.object({
-                num:         fields.text({ label: 'Numéro (ex: 01)' }),
-                title:       fields.text({ label: 'Titre du service', description: 'Utiliser le mot-clé cible dans le titre (ex: Physiothérapie, Médecine du sport).' }),
-                description: fields.text({ label: 'Description courte', multiline: true, description: 'Inclure les mots-clés géo (Neuchâtel) et médicaux cibles.' }),
-                icon: fields.select({
-                  label:   'Icône',
-                  options: [
-                    { label: 'Croix médicale (médecine du sport)', value: 'sport' },
-                    { label: 'Cœur (physiothérapie)',              value: 'physio' },
-                    { label: 'Courbe (MTT)',                        value: 'mtt' },
-                    { label: 'ECG (tests cardiaques)',              value: 'ecg' },
-                    { label: 'Tableau (analyses sanguines)',        value: 'blood' },
-                    { label: 'Seringue (vaccins)',                  value: 'vaccine' },
-                    { label: 'Personnes (médecine générale)',       value: 'general' },
-                  ],
-                  defaultValue: 'sport',
-                }),
-                slug: fields.text({
-                  label:       'Slug de la page dédiée',
-                  description: 'Correspond au nom du fichier dans src/_data/services/ (ex: medecine-du-sport). Laissez vide si pas de page dédiée.',
-                }),
-              }),
-              {
-                label:     'Services',
-                itemLabel: (props) => props.fields.title.value || 'Service',
-              }
-            ),
           },
           { label: 'Section Services' }
         ),
@@ -410,6 +393,7 @@ export default config({
           label:       'Ordre d\'affichage',
           description: 'Détermine l\'ordre dans le sitemap et la navigation. 1 = premier.',
         }),
+        show_on_home: fields.checkbox({ label: 'Afficher sur l’accueil', defaultValue: true }),
         icon: fields.select({
           label:   'Icône (même options que sur la homepage)',
           options: [

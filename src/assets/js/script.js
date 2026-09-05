@@ -35,6 +35,31 @@
   }
 }());
 
+/* ── Analytics (only after explicit consent) ── */
+(function () {
+  var MEASUREMENT_ID = 'G-THHRDGB6X6';
+  var loaded = false;
+
+  function loadAnalytics() {
+    if (loaded || document.querySelector('script[data-sportmed360-analytics]')) return;
+    loaded = true;
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + MEASUREMENT_ID;
+    script.async = true;
+    script.dataset.sportmed360Analytics = 'true';
+    document.head.appendChild(script);
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', MEASUREMENT_ID, { anonymize_ip: true });
+    };
+  }
+
+  if (localStorage.getItem('cookie_consent') === 'accepted') loadAnalytics();
+  window.addEventListener('cookieConsented', loadAnalytics, { once: true });
+}());
+
 /* ── Service Worker Registration ── */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {

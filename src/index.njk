@@ -6,13 +6,6 @@ permalink: /index.html
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-T5C2D5G3');</script>
-  <!-- End Google Tag Manager -->
   <meta name="theme-color" content="#4622CC" />
 
   <title>{{ seo.title }}</title>
@@ -44,10 +37,10 @@ permalink: /index.html
   <meta name="twitter:image"       content="{{ home.site.url }}{{ seo.og_image | toPublicPath }}" />
 
   <!-- Geo -->
-  <meta name="geo.region"    content="CH-NE" />
-  <meta name="geo.placename" content="Neuchâtel" />
-  <meta name="geo.position"  content="46.9930;6.9298" />
-  <meta name="ICBM"          content="46.9930, 6.9298" />
+  <meta name="geo.region"    content="{{ home.site.address_country }}-{{ home.site.address_region }}" />
+  <meta name="geo.placename" content="{{ home.site.address_city }}" />
+  <meta name="geo.position"  content="{{ home.site.latitude }};{{ home.site.longitude }}" />
+  <meta name="ICBM"          content="{{ home.site.latitude }}, {{ home.site.longitude }}" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="./assets/logo/logo-e-192.svg" />
@@ -58,7 +51,8 @@ permalink: /index.html
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.medbase.ch" />
-  <link rel="preload" as="image" href="/assets/premises/hero/mosaic/0/src.webp" fetchpriority="high" />
+  {% set heroPreload = home.hero.mosaic[0] %}
+  {% if heroPreload %}<link rel="preload" as="image" href="{{ heroPreload.src | toPublicPath }}" fetchpriority="high" />{% endif %}
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
 
@@ -71,7 +65,7 @@ permalink: /index.html
     "name": "{{ home.site.name }}",
     "url": "{{ home.site.url }}",
     "logo": { "@type": "ImageObject", "url": "{{ home.site.url }}/assets/logo/logo.webp" },
-    "image": ["{{ home.site.url }}/assets/premises/hero/mosaic/0/src.webp"],
+    "image": ["{{ home.site.url }}{{ heroPreload.src | toPublicPath }}"],
     "description": "{{ seo.description | jsonEscape | safe }}",
     "medicalSpecialty": ["SportsMedicine", "PhysicalTherapy", "Cardiovascular", "Musculoskeletal"],
     "telephone": "{{ home.site.phone }}",
@@ -79,23 +73,23 @@ permalink: /index.html
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "{{ home.site.address_street }}",
-      "addressLocality": "Neuchâtel",
-      "postalCode": "2000",
-      "addressCountry": "CH",
-      "addressRegion": "NE"
+      "addressLocality": "{{ home.site.address_city }}",
+      "postalCode": "{{ home.site.postal_code }}",
+      "addressCountry": "{{ home.site.address_country }}",
+      "addressRegion": "{{ home.site.address_region }}"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 46.9930, "longitude": 6.9298 },
+    "geo": { "@type": "GeoCoordinates", "latitude": {{ home.site.latitude }}, "longitude": {{ home.site.longitude }} },
     "hasMap": "{{ home.site.maps_url }}",
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "07:30",
-      "closes": "18:30"
+      "dayOfWeek": {{ home.site.opening_days | dump | safe }},
+      "opens": "{{ home.site.hours_open }}",
+      "closes": "{{ home.site.hours_close }}"
     }],
     "paymentAccepted": "{{ home.site.payment }}",
     "currenciesAccepted": "CHF",
     "employee": [{% for m in home.team.members %}{ "@id": "{{ home.site.url }}/#{{ m.id }}" }{% if not loop.last %}, {% endif %}{% endfor %}],
-    "parentOrganization": { "@type": "Organization", "name": "evo360", "url": "https://evo360.ch" }
+    "parentOrganization": { "@type": "Organization", "name": "{{ home.site.parent_organization_name }}", "url": "{{ home.site.parent_organization_url }}" }
   }
   </script>
 
@@ -117,14 +111,14 @@ permalink: /index.html
 
   <!-- Schema.org — Services -->
   <script type="application/ld+json">
-  [{% for svc in home.services.items %}
+  [{% for svc in servicePages %}{% if svc.show_on_home != false %}
     {
       "@context": "https://schema.org",
       "@type": "MedicalProcedure",
       "name": "{{ svc.title | jsonEscape | safe }}",
       "description": "{{ svc.description | jsonEscape | safe }}",
       "provider": { "@id": "{{ home.site.url }}/#clinic" }
-    }{% if not loop.last %},{% endif %}
+    }{% if not loop.last %},{% endif %}{% endif %}
   {% endfor %}]
   </script>
 
@@ -162,40 +156,7 @@ permalink: /index.html
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5C2D5G3"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <header class="site-header" id="site-header" role="banner">
-    <div class="header-inner">
-      <a href="#hero" class="header-logo" aria-label="{{ home.site.name }} — accueil">
-        <img class="logo-dark"  src="/assets/logo/logo-dark.svg"  alt="" width="328" height="40" aria-hidden="true" />
-        <img class="logo-white" src="/assets/logo/logo-white.svg" alt="" width="328" height="40" aria-hidden="true" />
-      </a>
-
-      <nav class="main-nav" aria-label="Navigation principale">
-        {% for link in home.nav.links %}
-        <a href="{{ link.url }}">{{ link.label }}</a>
-        {% endfor %}
-      </nav>
-
-      <button type="button" class="btn btn-header" data-open-contact>
-        {{ home.nav.cta_label }}
-      </button>
-
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobile" hidden>
-      {% for link in home.nav.links %}
-      <a href="{{ link.url }}">{{ link.label }}</a>
-      {% endfor %}
-      <button type="button" class="btn btn-primary mt-1" data-open-contact>{{ home.nav.cta_label }}</button>
-    </nav>
-  </header>
+  {% include "site-header.njk" %}
 
   <main>
 
@@ -227,7 +188,7 @@ permalink: /index.html
         <ul class="hero-chips" aria-label="Assurances et horaires">
           <li>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            LAMal &amp; LAA
+            {{ home.site.payment_badge }}
           </li>
           <li>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -376,9 +337,10 @@ permalink: /index.html
         </div>
 
         <ol class="services-list">
-          {% for svc in home.services.items %}
+          {% for svc in servicePages %}
+          {% if svc.show_on_home != false %}
           <li class="service-item">
-            <span class="svc-num" aria-hidden="true">{{ svc.num }}</span>
+            <span class="svc-num" aria-hidden="true">{{ svc.order | string | padStart(2, "0") }}</span>
             <div class="svc-content">
               {% if svc.slug %}
               <h3><a href="/services/{{ svc.slug }}/" class="svc-title-link">{{ svc.title }}</a></h3>
@@ -411,6 +373,7 @@ permalink: /index.html
               {% endif %}
             </div>
           </li>
+          {% endif %}
           {% endfor %}
         </ol>
 
@@ -553,7 +516,7 @@ permalink: /index.html
             <div>
               <strong>Adresse</strong>
               <a href="{{ home.site.maps_url }}" target="_blank" rel="noopener noreferrer">
-                {{ home.site.address_street }}<br />{{ home.site.address_city }}
+                {{ home.site.address_street }}<br />{{ home.site.postal_code }} {{ home.site.address_city }}
               </a>
             </div>
           </div>
@@ -562,7 +525,7 @@ permalink: /index.html
         <div class="map-wrapper">
           <iframe
             src="{{ home.contact.maps_embed }}"
-            title="Localisation {{ home.site.name }} — {{ home.site.address_street }}, Neuchâtel"
+            title="Localisation {{ home.site.name }} — {{ home.site.address_street }}, {{ home.site.address_city }}"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen
@@ -602,8 +565,8 @@ permalink: /index.html
           <li><a href="tel:{{ home.site.phone }}">{{ home.site.phone_display }}</a></li>
           <li><a href="mailto:{{ home.site.email }}">{{ home.site.email }}</a></li>
           <li>
-            <a href="{{ home.site.maps_url }}" target="_blank" rel="noopener noreferrer">
-              {{ home.site.address_street }}, Neuchâtel
+              <a href="{{ home.site.maps_url }}" target="_blank" rel="noopener noreferrer">
+              {{ home.site.address_street }}, {{ home.site.postal_code }} {{ home.site.address_city }}
             </a>
           </li>
           <li>{{ home.site.hours_short }}</li>
@@ -732,23 +695,5 @@ permalink: /index.html
     })
   </script>
 
-  <script>
-    (function() {
-      function loadGA() {
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-THHRDGB6X6';
-        s.async = true;
-        document.head.appendChild(s);
-        s.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-THHRDGB6X6', { anonymize_ip: true });
-        };
-      }
-      if (localStorage.getItem('cookie_consent') === 'accepted') { loadGA(); }
-      window.addEventListener('cookieConsented', loadGA, { once: true });
-    })();
-  </script>
 </body>
 </html>

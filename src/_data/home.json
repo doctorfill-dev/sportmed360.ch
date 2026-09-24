@@ -8,8 +8,8 @@
     "address_street": "Avenue Edouard-Dubois 20",
     "address_city": "2000 Neuchâtel",
     "maps_url": "https://maps.app.goo.gl/9MD3DLrxaKWLTy6TA",
-    "hours_short": "Lun–Ven · 7h30–18h30",
-    "hours_days": "Lundi – Vendredi",
+    "hours_short": "Lun–Ven · 7h30–18h30 ",
+    "hours_days": "Lundi – Vendredi ",
     "hours_time": "7h30 – 18h30",
     "payment": "LAMal, LAA, Card"
   },

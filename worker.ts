@@ -69,10 +69,9 @@ export default {
           // @ts-ignore
           return new Response(ksRes.body ?? null, { status: ksRes.status, headers })
         } catch (err: unknown) {
-          const message = err instanceof Error
-            ? `${err.name}: ${err.message}\n${err.stack ?? ''}`
-            : String(err)
-          return new Response(JSON.stringify({ error: message }, null, 2), {
+          const requestId = crypto.randomUUID()
+          console.error('Keystatic request failed', { requestId, err })
+          return new Response(JSON.stringify({ error: 'Une erreur interne est survenue.', requestId }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },
           })
@@ -100,8 +99,13 @@ export default {
       if (response.status === 404) return serve404()
       return response
 
-    } catch {
-      return serve404()
+    } catch (err: unknown) {
+      const requestId = crypto.randomUUID()
+      console.error('Worker request failed', { requestId, err })
+      return new Response('Une erreur interne est survenue.', {
+        status: 500,
+        headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store', 'X-Request-ID': requestId },
+      })
     }
   },
 }

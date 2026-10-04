@@ -1,0 +1,21 @@
+<header class="site-header {% if headerOpaque %}opaque{% endif %}" id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="{{ headerBase | default('') }}#hero" class="header-logo" aria-label="{{ home.site.name }} — accueil">
+      <img class="logo-dark" src="/assets/logo/logo-dark.svg" alt="" width="328" height="40" aria-hidden="true" />
+      <img class="logo-white" src="/assets/logo/logo-white.svg" alt="" width="328" height="40" aria-hidden="true" />
+    </a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      {% for link in home.nav.links %}<a href="{{ headerBase | default('') }}{{ link.url }}">{{ link.label }}</a>{% endfor %}
+    </nav>
+    {% if headerBase %}
+    <button type="button" class="btn btn-header" data-open-contact>{{ home.nav.cta_label }}</button>
+    {% else %}
+    <button type="button" class="btn btn-header" data-open-contact>{{ home.nav.cta_label }}</button>
+    {% endif %}
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobile" hidden>
+    {% for link in home.nav.links %}<a href="{{ headerBase | default('') }}{{ link.url }}">{{ link.label }}</a>{% endfor %}
+    <button type="button" class="btn btn-primary mt-1" data-open-contact>{{ home.nav.cta_label }}</button>
+  </nav>
+</header>

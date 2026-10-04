@@ -6,12 +6,23 @@
     "phone_display": "+41 76 541 03 60",
     "email": "med@evo360.ch",
     "address_street": "Avenue Edouard-Dubois 20",
-    "address_city": "2000 Neuchâtel",
+    "address_city": "Neuchâtel",
+    "postal_code": "2000",
+    "address_region": "NE",
+    "address_country": "CH",
+    "latitude": "46.9930",
+    "longitude": "6.9298",
     "maps_url": "https://maps.app.goo.gl/9MD3DLrxaKWLTy6TA",
     "hours_short": "Lun–Ven · 7h30–18h30 ",
     "hours_days": "Lundi – Vendredi ",
     "hours_time": "7h30 – 18h30",
-    "payment": "LAMal, LAA, Card"
+    "hours_open": "07:30",
+    "hours_close": "18:30",
+    "opening_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "payment": "LAMal, LAA, Card",
+    "payment_badge": "LAMal & LAA",
+    "parent_organization_name": "evo360",
+    "parent_organization_url": "https://evo360.ch"
   },
   "nav": {
     "links": [

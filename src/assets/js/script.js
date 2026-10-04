@@ -9,30 +9,78 @@
   var manage  = document.getElementById('cookie-manage');
   if (!banner) return;
 
+  function enableExternalContent() {
+    document.querySelectorAll('iframe[data-external-src]').forEach(function (iframe) {
+      if (!iframe.getAttribute('src')) {
+        iframe.setAttribute('src', iframe.dataset.externalSrc);
+      }
+      iframe.removeAttribute('hidden');
+      var container = iframe.closest('[data-external-content]');
+      var placeholder = container && container.querySelector('[data-external-placeholder]');
+      if (placeholder) placeholder.setAttribute('hidden', '');
+    });
+  }
+
+  function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    banner.setAttribute('hidden', '');
+    enableExternalContent();
+    window.dispatchEvent(new Event('cookieConsented'));
+  }
+
   // Show banner if no choice has been stored yet
   if (!localStorage.getItem('cookie_consent')) {
     banner.removeAttribute('hidden');
   }
 
-  accept.addEventListener('click', function () {
-    localStorage.setItem('cookie_consent', 'accepted');
-    banner.setAttribute('hidden', '');
-    window.dispatchEvent(new Event('cookieConsented'));
+  accept.addEventListener('click', acceptCookies);
+
+  document.querySelectorAll('[data-accept-external-content]').forEach(function (button) {
+    button.addEventListener('click', acceptCookies);
   });
 
   refuse.addEventListener('click', function () {
+    var wasAccepted = localStorage.getItem('cookie_consent') === 'accepted';
     localStorage.setItem('cookie_consent', 'refused');
     banner.setAttribute('hidden', '');
+    // Remove already-loaded third-party services by starting a fresh page without consent.
+    if (wasAccepted) window.location.reload();
   });
 
   if (manage) {
     manage.addEventListener('click', function (e) {
       e.preventDefault();
-      localStorage.removeItem('cookie_consent');
       banner.removeAttribute('hidden');
       banner.scrollIntoView({ behavior: 'smooth', block: 'end' });
     });
   }
+
+  if (localStorage.getItem('cookie_consent') === 'accepted') enableExternalContent();
+}());
+
+/* ── Analytics (only after explicit consent) ── */
+(function () {
+  var MEASUREMENT_ID = 'G-THHRDGB6X6';
+  var loaded = false;
+
+  function loadAnalytics() {
+    if (loaded || document.querySelector('script[data-sportmed360-analytics]')) return;
+    loaded = true;
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + MEASUREMENT_ID;
+    script.async = true;
+    script.dataset.sportmed360Analytics = 'true';
+    document.head.appendChild(script);
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', MEASUREMENT_ID, { anonymize_ip: true });
+    };
+  }
+
+  if (localStorage.getItem('cookie_consent') === 'accepted') loadAnalytics();
+  window.addEventListener('cookieConsented', loadAnalytics, { once: true });
 }());
 
 /* ── Service Worker Registration ── */

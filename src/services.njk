@@ -28,8 +28,8 @@ permalink: "services/{{ service.slug }}/"
   <meta property="og:site_name"   content="{{ home.site.name }}" />
 
   <!-- Geo -->
-  <meta name="geo.region"    content="CH-NE" />
-  <meta name="geo.placename" content="Neuchâtel" />
+  <meta name="geo.region"    content="{{ home.site.address_country }}-{{ home.site.address_region }}" />
+  <meta name="geo.placename" content="{{ home.site.address_city }}" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/logo/logo-e-192.svg" />
@@ -72,9 +72,9 @@ permalink: "services/{{ service.slug }}/"
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "{{ home.site.address_street }}",
-        "addressLocality": "Neuchâtel",
-        "postalCode": "2000",
-        "addressCountry": "CH"
+        "addressLocality": "{{ home.site.address_city }}",
+        "postalCode": "{{ home.site.postal_code }}",
+        "addressCountry": "{{ home.site.address_country }}"
       }
     }
   }
@@ -85,22 +85,9 @@ permalink: "services/{{ service.slug }}/"
 
 <body class="service-page">
 
-  <!-- ══ HEADER ══ -->
-  <header class="site-header opaque" role="banner">
-    <div class="header-inner">
-      <a href="/" class="header-logo" aria-label="{{ home.site.name }} — accueil">
-        <img class="logo-dark"  src="/assets/logo/logo-dark.svg"  alt="" width="328" height="40" aria-hidden="true" />
-        <img class="logo-white" src="/assets/logo/logo-white.svg" alt="" width="328" height="40" aria-hidden="true" />
-      </a>
-      <nav class="main-nav" aria-label="Navigation principale">
-        <a href="/#equipe">Équipe</a>
-        <a href="/#services">Services</a>
-        <a href="/#partenariat">evo360</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-      <a href="/#contact" class="btn btn-header">{{ home.nav.cta_label }}</a>
-    </div>
-  </header>
+  {% set headerBase = '/' %}
+  {% set headerOpaque = true %}
+  {% include "site-header.njk" %}
 
   <main>
 
@@ -122,7 +109,7 @@ permalink: "services/{{ service.slug }}/"
         <div class="svc-hero-text">
           <p class="eyebrow eyebrow--dark">
             <span class="eyebrow-dot" aria-hidden="true"></span>
-            {{ home.site.name }} · Neuchâtel
+            {{ home.site.name }} · {{ home.site.address_city }}
           </p>
           <h1>{{ service.title }}</h1>
           <p class="svc-intro">{{ service.intro }}</p>
@@ -213,18 +200,21 @@ permalink: "services/{{ service.slug }}/"
     </section>
 
     <!-- ══ AUTRES SERVICES ══ -->
+    {% if service.related and service.related.length %}
     <section class="svc-related-section" aria-labelledby="svc-related-h2">
       <div class="section-container">
         <h2 id="svc-related-h2">Nos autres services</h2>
         <div class="svc-related-grid">
-          {% for s in servicePages %}
-            {% if s.slug != service.slug %}
+          {% for relatedSlug in service.related %}
+            {% for s in servicePages %}
+            {% if s.slug == relatedSlug %}
             <a href="/services/{{ s.slug }}/" class="svc-related-card">
               <span class="svc-related-num">{{ s.order | default("0") | string | padStart(2, "0") }}</span>
               <strong class="svc-related-title">{{ s.title }}</strong>
               <span class="svc-related-desc">{{ s.description }}</span>
             </a>
             {% endif %}
+            {% endfor %}
           {% endfor %}
         </div>
         <div class="svc-back-home">
@@ -235,6 +225,7 @@ permalink: "services/{{ service.slug }}/"
         </div>
       </div>
     </section>
+    {% endif %}
 
   </main>
 
@@ -262,7 +253,7 @@ permalink: "services/{{ service.slug }}/"
         <ul>
           <li><a href="tel:{{ home.site.phone }}">{{ home.site.phone_display }}</a></li>
           <li><a href="mailto:{{ home.site.email }}">{{ home.site.email }}</a></li>
-          <li><a href="{{ home.site.maps_url }}" target="_blank" rel="noopener noreferrer">{{ home.site.address_street }}, Neuchâtel</a></li>
+          <li><a href="{{ home.site.maps_url }}" target="_blank" rel="noopener noreferrer">{{ home.site.address_street }}, {{ home.site.postal_code }} {{ home.site.address_city }}</a></li>
           <li>{{ home.site.hours_short }}</li>
         </ul>
       </address>

@@ -129,7 +129,7 @@ push → main
 | | |
 |-|-|
 | 🌐 Site | [sportmed360.ch](https://sportmed360.ch) |
-| 📧 Email | [med@evo360.ch](mailto:med@evo360.ch) |
+| 📧 Email | [hello@evo360.ch](mailto:hello@evo360.ch) |
 | 📞 Téléphone | +41 76 541 03 60 |
 | 📍 Adresse | Avenue Edouard-Dubois 20, 2000 Neuchâtel |
 | 🕐 Horaires | Lundi – Vendredi · 7h30 – 18h30 |

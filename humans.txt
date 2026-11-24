@@ -1,7 +1,7 @@
 /* TEAM */
 Name: SportMed360 by evo360
 Location: Neuchâtel, Switzerland
-Contact: med [at] evo360.ch
+Contact: hello [at] evo360.ch
 Site: https://sportmed360.ch
 
 /* SITE */
